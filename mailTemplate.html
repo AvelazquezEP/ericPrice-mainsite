@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Notification LAIA</title>
+</head>
+
+<style>
+    .container {
+        /* background-color: #001E3E; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 50rem; //<-- This was change to min-height from height only
+        color: white;
+        font-family: sans-serif;
+    }
+
+    .emailContainer {
+        height: 70%;
+        width: 90%;
+        padding: 2rem;
+        border-radius: 0.4rem;
+        background-color: #001E3E;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 1.4rem;
+        color: white;
+    }
+
+    .title,
+    .subtitle {
+        text-align: center;
+        color: white;
+    }
+
+    .title {
+        border: 2px solid white;
+        padding: 1rem;
+        color: white;
+    }
+
+    .subtitle {
+        margin-bottom: 3rem;
+        font-weight: 700;
+        color: white;
+    }
+
+    .duplicate {
+        font-weight: 700;
+        color: white;
+        text-decoration: underline;
+    }
+
+    .leadDetail {
+        text-align: left;
+        color: white;
+    }
+
+    .leadDetail>span {
+        font-weight: lighter;
+        color: white;
+    }
+
+    .leadDetail {
+        font-weight: bold;
+        color: white;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="emailContainer">
+            <h1 class="title">New Lead</h1>
+            <p class="subtitle">Hi, new lead from Eric Price Web Site </p>
+            <p class="duplicate"> %duplicate% </p>
+            <div class="leadDetailContainer">
+                <p class="leadDetail"><span>Language:</span> %language%</p>
+                <p class="leadDetail"><span>Email:</span> %email%</p>
+                <p class="leadDetail"><span>Name:</span> %name%</p>
+                <p class="leadDetail"><span>Last Name:</span> %lastName%</p>
+                <p class="leadDetail"><span>Phone Number:</span> %mobile%</p>
+                <p class="leadDetail"><span>Comment:</span> %message%</p>
+                <p class="leadDetail"><span>Lead:</span>
+                    <a href="https://greencardla.lightning.force.com/lightning/r/Lead/%leadID%/view">View Lead</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

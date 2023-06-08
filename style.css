@@ -1,0 +1,73 @@
+:root {
+    --primary-color: #001e3e;
+    --secondary-color: #ff5e00;
+    --secondary-contrast: #ff5e00;
+    --accent-color: #bfdbf7;
+    --white-color: #ffff;
+    --green-color: #1f7a8c;
+    --black-color: #686868;
+    --second-font: 'Poppins', sans-serif;
+    --primary-font: 'Roboto', sans-serif;
+}
+
+img{
+    max-width: 100%;
+}
+
+body {
+    font-family: var(--primary-font);
+}
+
+.headerBackground {
+    /* background-image: url(images/blueBG.png); */
+    background-image:
+        linear-gradient(45deg,
+            rgba(32, 32, 32, 0.9),
+            rgba(22, 22, 22, 0.9)), url(images/blueBG.png);
+            /* rgba(22, 22, 22, 0.9)), url(images/lawCover.webp); */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.cta {
+    background-image:
+        linear-gradient(45deg,
+            rgba(32, 32, 32, 0.9),
+            rgba(22, 22, 22, 0.9)), url(images/lawCover.webp);
+}
+
+.testimonials>figure{
+    box-shadow: 1px 1px 4px #212122;
+}
+
+/* .testimonials>figure:nth-child(even) {
+    background-color: #001E3E;
+}
+
+.testimonials>figure:nth-child(odd) {
+    background-color: white;
+    background-color: rgb(233, 166, 103);
+} */
+
+.circle {
+  display: inline-block;
+  margin-left: 55px;
+  height: 150px;
+  width: 150px;
+  border-radius: 100%;
+  /* border: 2px solid black; */
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  align-items: center; 
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.sendButton{
+    background-color: #ff5e00;
+}
+
+.sendButton:hover{
+    background-color: #ff8239;
+}
