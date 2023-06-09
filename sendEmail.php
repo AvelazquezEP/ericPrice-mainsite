@@ -47,9 +47,14 @@ function sendEmail($language, $email, $name, $lastName, $number, $question, $lea
       $message = str_replace('%mobile%', $number, $message);
       $message = str_replace('%message%', $question, $message);
       $message = str_replace('%leadID%', $leadID, $message);
+
       if($leadID == "" || $leadID == null || $leadID == undefined) {
+          $leadID = 'This lead may already have an account with us';
           $message = str_replace('%duplicate%','This lead may already have an account with us', $message);
+      } else {
+          $message = str_replace('%duplicate%','-', $message);
       }
+      
 
       //Server settings
       // $mail->SMTPDebug = SMTP::DEBUG_SERVER; //<-- imprime todos los pasos que realiza el proceso de enviar correo
