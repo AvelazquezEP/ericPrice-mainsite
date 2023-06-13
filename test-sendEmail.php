@@ -26,7 +26,7 @@ try {
         $question = "-";
     }
     
-    $sendEmail = sendEmail($language, $email, $name, $lasName, $mobile, $question, $leadID);     
+    $sendEmail = sendEmail('Spanish', 'test@test.com', 'Test', 'LTest', '8888222264', 'TEST - EMAIL SERVICE', 0);     
 
     // echo $db_status;
     echo $sendEmail;
@@ -48,21 +48,23 @@ function sendEmail($language, $email, $name, $lastName, $number, $question, $lea
       $message = str_replace('%message%', $question, $message);
       $message = str_replace('%leadID%', $leadID, $message);
 
-      if($leadID == "" || $leadID == null || $leadID == undefined) {
-          $leadID = 'This lead may already have an account with us';
-          $message = str_replace('%duplicate%','This lead may already have an account with us', $message);
+      if($leadID == "" || $leadID == null || $leadID == undefined || $leadID == 0) {
+          $leadID = '***This is a weekly maintenance test';
+          $message = str_replace('%duplicate%','This is a weekly maintenance test', $message);
       } else {
           $message = str_replace('%duplicate%','-', $message);
       }
       
 
       //Server settings
-    //   $mail->SMTPDebug = SMTP::DEBUG_SERVER; //<-- imprime todos los pasos que realiza el proceso de enviar correo
+      $mail->SMTPDebug = SMTP::DEBUG_SERVER; //<-- imprime todos los pasos que realiza el proceso de enviar correo
       $mail->isSMTP();
       $mail->Host       = 'smtp.office365.com';
       $mail->SMTPAuth   = true;
       $mail->Username   = 'support56@abogadoericprice.com';
       $mail->Password   = '500LaTerrazaBlvd.';
+      // $mail->Username   = 'avelazquez2873@LosAngelesImmigration.onmicrosoft.com';
+      // $mail->Password   = '700Flower!';
       $mail->SMTPSecure = 'tls';
       $mail->Port       = 587;
 
@@ -70,10 +72,8 @@ function sendEmail($language, $email, $name, $lastName, $number, $question, $lea
       $mail->setFrom('support56@abogadoericprice.com');      
 
       // Correos a quienes le llegan
-      $mail->addAddress('iku@abogadoericprice.com', 'Ivy Ku Flores');
-      $mail->addAddress('fmartinez@greencardla.com', 'Floriberta Martinez');
-      $mail->addAddress('support56@abogadoericprice.com', 'Paola Carolina');
-      $mail->addCC('rterrazas@greencardla.com', 'Robert Terrazas');
+    //   $mail->addAddress('iku@abogadoericprice.com', 'Ivy Ku Flores');
+      // a
       $mail->addCC('avelazquez2873@LosAngelesImmigration.onmicrosoft.com', 'Alberto Martinez');
 
       //Content
