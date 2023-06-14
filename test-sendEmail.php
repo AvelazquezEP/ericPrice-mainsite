@@ -37,16 +37,16 @@ try {
 // Send a email
 function sendEmail($language, $email, $name, $lastName, $number, $question, $leadID)
 {            
-      $mail = new PHPMailer(true);
-      // Email Template
-      $message = file_get_contents('mailTemplate.html');
-      $message = str_replace('%language%', $language, $message);
-      $message = str_replace('%email%', $email, $message);
-      $message = str_replace('%name%', $name, $message);
-      $message = str_replace('%lastName%', $lastName, $message);
-      $message = str_replace('%mobile%', $number, $message);
-      $message = str_replace('%message%', $question, $message);
-      $message = str_replace('%leadID%', $leadID, $message);
+    $mail = new PHPMailer(true);
+    // Email Template
+    $message = file_get_contents('mailTemplate.html');
+    $message = str_replace('%language%', $language, $message);
+    $message = str_replace('%email%', $email, $message);
+    $message = str_replace('%name%', $name, $message);
+    $message = str_replace('%lastName%', $lastName, $message);
+    $message = str_replace('%mobile%', $number, $message);
+    $message = str_replace('%message%', $question, $message);
+    $message = str_replace('%leadID%', $leadID, $message);
 
       if($leadID == "" || $leadID == null || $leadID == undefined || $leadID == 0) {
           $leadID = '***This is a weekly maintenance test';
@@ -56,36 +56,32 @@ function sendEmail($language, $email, $name, $lastName, $number, $question, $lea
       }
       
 
-      //Server settings
-      $mail->SMTPDebug = SMTP::DEBUG_SERVER; //<-- imprime todos los pasos que realiza el proceso de enviar correo
-      $mail->isSMTP();
-      $mail->Host       = 'smtp.office365.com';
-      $mail->SMTPAuth   = true;
-      $mail->Username   = 'support56@abogadoericprice.com';
-      $mail->Password   = '500LaTerrazaBlvd.';
-      // $mail->Username   = 'avelazquez2873@LosAngelesImmigration.onmicrosoft.com';
-      // $mail->Password   = '700Flower!';
-      $mail->SMTPSecure = 'tls';
-      $mail->Port       = 587;
+    //Server settings
+    $mail->SMTPDebug = SMTP::DEBUG_SERVER; //<-- imprime todos los pasos que realiza el proceso de enviar correo
+    $mail->isSMTP();
+    $mail->Host = 'smtp.office365.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'support56@abogadoericprice.com';
+    $mail->Password = '500LaTerrazaBlvd';
+    $mail->SMTPSecure = 'tls';
+    $mail->Port = 587;
 
-      //Correo saliente
-      $mail->setFrom('support56@abogadoericprice.com');      
+    $mail->setFrom('no-reply@abogadoericprice.com', 'No Reply');
 
-      // Correos a quienes le llegan
-    //   $mail->addAddress('iku@abogadoericprice.com', 'Ivy Ku Flores');
-      // a
-      $mail->addCC('avelazquez2873@LosAngelesImmigration.onmicrosoft.com', 'Alberto Martinez');
+    $mail->addAddress('no-reply@abogadoericprice.com');
+    $mail->addReplyTo('no-reply@abogadoericprice.com', 'No Reply');
+    $mail->addCC('avelazquez2873@LosAngelesImmigration.onmicrosoft.com', 'Alberto Martinez');
 
-      //Content
-      $mail->Encoding = 'base64';
-      $mail->CharSet = "UTF-8";
+    //Content
+    $mail->Encoding = 'base64';
+    $mail->CharSet = "UTF-8";
         
-      $mail->isHTML(true);
-      $mail->Subject = 'Someone has opted in to contac form web site';
-      $mail->msgHTML($message); //Toma el template(mailTemplate.html) para construtir el contenido del correo
-      $mail->AltBody = 'Sending email'; // <-- Esta linea solo funciona para algun mensaje / NO SE UTILIZA puede quedar asi o comentada    
-      // Toma todos los parametros anteriorres y realiza el envio del correo
-      $mail->send();
+    $mail->isHTML(true);
+    $mail->Subject = 'Someone has opted in to contac form web site';
+    $mail->msgHTML($message); //Toma el template(mailTemplate.html) para construtir el contenido del correo
+    $mail->AltBody = 'Sending email'; // <-- Esta linea solo funciona para algun mensaje / NO SE UTILIZA puede quedar asi o comentada    
+    // Toma todos los parametros anteriorres y realiza el envio del correo
+    $mail->send();
 }
 
 // TRABAJANDO EN ESTA SECCION

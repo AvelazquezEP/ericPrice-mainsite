@@ -58,16 +58,20 @@ function sendEmail($language, $email, $name, $lastName, $number, $question, $lea
 
       //Server settings
     //   $mail->SMTPDebug = SMTP::DEBUG_SERVER; //<-- imprime todos los pasos que realiza el proceso de enviar correo
-      $mail->isSMTP();
-      $mail->Host       = 'smtp.office365.com';
-      $mail->SMTPAuth   = true;
-      $mail->Username   = 'support56@abogadoericprice.com';
-      $mail->Password   = '500LaTerrazaBlvd.';
-      $mail->SMTPSecure = 'tls';
-      $mail->Port       = 587;
+    $mail->isSMTP();
+    $mail->Host = 'smtp.office365.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'support56@abogadoericprice.com';
+    $mail->Password = '500LaTerrazaBlvd';
+    $mail->SMTPSecure = 'tls';
+    $mail->Port = 587;
 
       //Correo saliente
-      $mail->setFrom('support56@abogadoericprice.com');      
+      $mail->setFrom('no-reply@abogadoericprice.com', 'No Reply');
+    //   $mail->setFrom('support56@abogadoericprice.com');      
+
+    $mail->addAddress('no-reply@abogadoericprice.com');
+    $mail->addReplyTo('no-reply@abogadoericprice.com', 'No Reply');    
 
       // Correos a quienes le llegan
       $mail->addAddress('iku@abogadoericprice.com', 'Ivy Ku Flores');
