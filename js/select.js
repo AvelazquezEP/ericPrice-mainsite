@@ -23,10 +23,6 @@ const changeLocation = () => {
         meetingTypePhone.disabled = false;
         meetingTypePerson.disabled = false;
         meetingTypePerson.checked = true; //TODO DEBE SER EN PERSONA
-
-        //NO ESTAN VISIBLES NO ES NECESARIO ESTS DOS LINEA
-        // document.getElementById("personTxt").style.color = 'black';
-        // document.getElementById("phoneTxt").style.color = 'black';
     }
 
 }

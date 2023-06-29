@@ -22,28 +22,13 @@ $(document).ready(function () {
 });
 
 const sendData = (firstName, lastName, email, mobilePhone, location, language, meetingType, comment, sms) => {
-
-    // if (mobilePhone.length < 10) {
-    //     document.getElementById('mobileInput').innerHTML = 'The phone number must be 10 digits';
-    //     document.getElementById('mobileInput').style.color = "#F93C17";
-    // } else {
-    //     document.getElementById('ButtonSend').style.backgroundColor = 'gray';
-    //     document.getElementById('ButtonSend').innerHTML = 'Sending Data';
-    //     createLeadApi(firstName, lastName, email, mobilePhone, location, language, sms, comment);
-    //     document.getElementById('mobileInput').innerHTML = '';
-    // }
-
     document.getElementById('ButtonSend').style.backgroundColor = 'gray';
     document.getElementById('ButtonSend').innerHTML = 'Sending Data';
     createLeadApi(firstName, lastName, email, mobilePhone, location, language, sms, comment);
     document.getElementById('mobileInput').innerHTML = '';
-
-    // PARA EL FUNCIONAMIENTO DEL DOBLE CLICK
-    // setTimeout('$("#ButtonSend").removeAttr("disabled")', 3800);
 }
 
 const createLeadApi = (first_name, last_name, email, mobile_phone, location_name, language_site, sms_option, comment = "-") => {
-    // let urlApi = 'https://greencardla.my.salesforce.com/services/data/v57.0/sobjects/Lead';
     $.ajax({
         type: 'POST',
         url: 'apiData.php',
@@ -64,8 +49,7 @@ const createLeadApi = (first_name, last_name, email, mobile_phone, location_name
             let leadID = data.id;
             log(`ID: ${leadID}`);
 
-            let locationCode = getLocation(location_name);
-            // log(`Code: ${locationCode}`);
+            let locationCode = getLocation(location_name);            
 
             let inPerson = "OUR_LOCATION";
             let byPhone = "VID_CONFERENCE";
