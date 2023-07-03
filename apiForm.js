@@ -22,16 +22,44 @@ $(document).ready(function () {
 });
 
 const sendData = (firstName, lastName, email, mobilePhone, location, language, meetingType, comment, sms) => {
-    if (mobilePhone.length < 10) {
+    // if (mobilePhone.length < 10) {
+    //     document.getElementById('mobileInput').innerHTML = 'The phone number must be 10 digits';
+    //     document.getElementById('mobileInput').style.color = "#F93C17";
+    //     setTimeout('$("#ButtonSend").removeAttr("disabled")', 3800);
+    // } else {
+    //     document.getElementById('ButtonSend').style.backgroundColor = 'gray';
+    //     document.getElementById('ButtonSend').innerHTML = 'Sending Data';
+    //     createLeadApi(firstName, lastName, email, mobilePhone, location, language, sms, comment);
+    //     document.getElementById('mobileInput').innerHTML = '';
+    // }
+
+    if (mobilePhone.length < 10 && location === "") {
+        // Ninguno de los dos campos estan registrados
+        log('1st IF')
         document.getElementById('mobileInput').innerHTML = 'The phone number must be 10 digits';
         document.getElementById('mobileInput').style.color = "#F93C17";
+
+        document.getElementById('locationInput').innerHTML = 'select a location please';
+        document.getElementById('mobileInput').style.color = "#F93C17";
         setTimeout('$("#ButtonSend").removeAttr("disabled")', 3800);
-    } else {
+    }
+    else if (location !== "" && mobilePhone.length < 10) {
+        // Phone number no cumple con los 10 digitos
+        log('2nd IF')
+        document.getElementById('mobileInput').innerHTML = 'The phone number must be 10 digits';
+        document.getElementById('mobileInput').style.color = "#F93C17";
+
+        document.getElementById('locationInput').innerHTML = '';
+        setTimeout('$("#ButtonSend").removeAttr("disabled")', 3800);
+    }    
+    else {
+        // Aquí se crea el LEAD
         document.getElementById('ButtonSend').style.backgroundColor = 'gray';
         document.getElementById('ButtonSend').innerHTML = 'Sending Data';
         createLeadApi(firstName, lastName, email, mobilePhone, location, language, sms, comment);
         document.getElementById('mobileInput').innerHTML = '';
     }
+
 }
 
 const createLeadApi = (first_name, last_name, email, mobile_phone, location_name, language_site, sms_option, comment = "-") => {
