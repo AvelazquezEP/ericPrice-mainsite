@@ -33,6 +33,40 @@ const sendData = (firstName, lastName, email, mobilePhone, location, language, m
   //   document.getElementById('mobileInput').innerHTML = '';
   // }
 
+  // if (mobilePhone.length < 10 && location === "") {
+  //   // Ninguno de los dos campos estan registrados        
+  //   document.getElementById('mobileInput').innerHTML = 'The phone number must be 10 digits';
+  //   document.getElementById('mobileInput').style.color = "#F93C17";
+
+  //   document.getElementById('locationInput').innerHTML = 'select a location please';
+  //   document.getElementById('mobileInput').style.color = "#F93C17";
+  //   setTimeout('$("#ButtonSend").removeAttr("disabled")', 3800);
+  // }
+  // else if (location !== "" && mobilePhone.length < 10) {
+  //   // Phone number no cumple con los 10 digitos        
+  //   document.getElementById('mobileInput').innerHTML = 'The phone number must be 10 digits';
+  //   document.getElementById('mobileInput').style.color = "#F93C17";
+
+  //   document.getElementById('locationInput').innerHTML = '';
+  //   setTimeout('$("#ButtonSend").removeAttr("disabled")', 3800);
+  // }
+  // else if (mobilePhone.length > 10 && location != 'Chicago' || location != 'Los Angeles' || location != 'National' || location != 'Orange County' || location != 'San Diego' || location != ' San Marcos' || location != 'San Bernardino') {
+  //   // Ninguna location seleccionada
+  //   document.getElementById('mobileInput').innerHTML = '';
+  //   document.getElementById('mobileInput').style.color = "#F93C17";
+
+  //   document.getElementById('locationInput').innerHTML = 'select a location please';
+  //   document.getElementById('mobileInput').style.color = "#F93C17";
+  //   setTimeout('$("#ButtonSend").removeAttr("disabled")', 3800);
+  // }
+  // else {
+  //   // Aquí se crea el LEAD
+  //   document.getElementById('ButtonSend').style.backgroundColor = 'gray';
+  //   document.getElementById('ButtonSend').innerHTML = 'Sending Data';
+  //   log('creacion del lead');
+  //   createLeadApi(firstName, lastName, email, mobilePhone, location, language, sms, comment);
+  //   document.getElementById('mobileInput').innerHTML = '';
+  // }
   if (mobilePhone.length < 10 && location === "") {
     // Ninguno de los dos campos estan registrados        
     document.getElementById('mobileInput').innerHTML = 'The phone number must be 10 digits';
