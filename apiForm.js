@@ -24,7 +24,7 @@ $(document).ready(function () {
 const sendData = (firstName, lastName, email, mobilePhone, location, language, meetingType, comment, sms) => {
     if (!/^ *$/.test(location) && mobilePhone.length >= 10) {
         // Creación del LEAD
-        log('Creación del Lead');
+        // log('Creación del Lead');
         createLeadApi(firstName, lastName, email, mobilePhone, location, language, sms, comment);
 
         document.getElementById('mobileInput').innerHTML = '';
@@ -36,7 +36,7 @@ const sendData = (firstName, lastName, email, mobilePhone, location, language, m
 
     } else if (/^ *$/.test(location) && mobilePhone.length >= 10) {
         // Falta numero telefónico
-        log('Faltan Location');
+        // log('Faltan Location');
 
         document.getElementById('mobileInput').innerHTML = '';
         document.getElementById('mobileInput').style.color = "#F93C17";
@@ -47,7 +47,7 @@ const sendData = (firstName, lastName, email, mobilePhone, location, language, m
         setTimeout('$("#ButtonSend").removeAttr("disabled")', 3800);
     } else if (!/^ *$/.test(location) && mobilePhone.length < 10) {
         // Falta numero telefónico
-        log('Faltan Phone number');
+        // log('Faltan Phone number');
 
         document.getElementById('mobileInput').innerHTML = 'The phone number must be 10 digits';
         document.getElementById('mobileInput').style.color = "#F93C17";
@@ -58,7 +58,7 @@ const sendData = (firstName, lastName, email, mobilePhone, location, language, m
         setTimeout('$("#ButtonSend").removeAttr("disabled")', 3800);
     } else {
         // Falta numero telefónico
-        log('Faltan Location / Phone Number');
+        // log('Faltan Location / Phone Number');
 
         document.getElementById('mobileInput').innerHTML = 'The phone number must be 10 digits';
         document.getElementById('mobileInput').style.color = "#F93C17";
@@ -127,8 +127,7 @@ const getLocation = (location) => {
     let SDCode = "a1b5f000000eT8bAAE";
     let SMCode = "a1b5f000000eT8gAAE";
     let CHCode = "a1b5f000000enBnAAI";
-    let SBCode = "a1b5f000001signAAA";
-    // $NCode = ""; TODAVIA NO HAY CODIGO
+    let SBCode = "a1b5f000001signAAA";    
 
     switch (location) {
         case "Los Angeles":

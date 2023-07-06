@@ -2,7 +2,7 @@
 <?php
 
 session_start();
-$newToken = $_SESSION["newKey"]; //<--- este siempre se actualiza a las 5 am/pm
+$newToken = $_SESSION["newKey"];
 
 try {
 
