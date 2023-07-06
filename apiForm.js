@@ -26,6 +26,12 @@ const sendData = (firstName, lastName, email, mobilePhone, location, language, m
         // Creación del LEAD
         log('Creación del Lead');
         createLeadApi(firstName, lastName, email, mobilePhone, location, language, sms, comment);
+
+        document.getElementById('mobileInput').innerHTML = '';
+        document.getElementById('locationInput').innerHTML = '';
+
+        document.getElementById('ButtonSend').style.backgroundColor = 'gray';
+        document.getElementById('ButtonSend').innerHTML = 'Sending Data';
         // setTimeout('$("#ButtonSend").removeAttr("disabled")', 3800);
 
     } else if (/^ *$/.test(location) && mobilePhone.length >= 10) {
@@ -58,7 +64,7 @@ const sendData = (firstName, lastName, email, mobilePhone, location, language, m
         document.getElementById('mobileInput').style.color = "#F93C17";
 
         document.getElementById('locationInput').innerHTML = 'select a location please';
-        document.getElementById('mobileInput').style.color = "#F93C17";        
+        document.getElementById('mobileInput').style.color = "#F93C17";
 
         setTimeout('$("#ButtonSend").removeAttr("disabled")', 3800);
     }
