@@ -25,7 +25,8 @@ const sendData = (firstName, lastName, email, mobilePhone, location, language, m
     if (!/^ *$/.test(location) && mobilePhone.length >= 10) {
         // Creación del LEAD
         log('Creación del Lead');
-        setTimeout('$("#ButtonSend").removeAttr("disabled")', 3800);
+        createLeadApi(firstName, lastName, email, mobilePhone, location, language, sms, comment);
+        // setTimeout('$("#ButtonSend").removeAttr("disabled")', 3800);
 
     } else if (/^ *$/.test(location) && mobilePhone.length >= 10) {
         // Falta numero telefónico
@@ -57,9 +58,7 @@ const sendData = (firstName, lastName, email, mobilePhone, location, language, m
         document.getElementById('mobileInput').style.color = "#F93C17";
 
         document.getElementById('locationInput').innerHTML = 'select a location please';
-        document.getElementById('mobileInput').style.color = "#F93C17";
-        
-        createLeadApi(firstName, lastName, email, mobilePhone, location, language, sms, comment);
+        document.getElementById('mobileInput').style.color = "#F93C17";        
 
         setTimeout('$("#ButtonSend").removeAttr("disabled")', 3800);
     }
