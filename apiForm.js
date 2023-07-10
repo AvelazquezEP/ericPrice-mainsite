@@ -1,7 +1,6 @@
 // CONSOLE LOG SHORT
 var log = console.log;
 
-
 $(document).ready(function () {
     $("#ButtonSend").on("click", function () {
         $(this).attr("disabled", "disabled");
@@ -16,58 +15,90 @@ $(document).ready(function () {
         let comment = document.getElementById("message").value;
         let sms = document.getElementById("00N5f00000SB1XU").value;
 
-        sendData(firstName, lastName, email, mobilePhone, location, language, meetingType, comment, sms); //this method contains your logic
+        var name_input = name_input_validation(firstName);
+        var email_input = email_input_validation(email);
+        var location_input = location_input_validation(location);
+        var phone_number = phone_input_validation(mobilePhone);
 
+        if (name_input == true && email_input == true && location_input == true && phone_number == true) {
+            // log('Return true');
+            // setTimeout('$("#ButtonSend").removeAttr("disabled")', 3800);
+            log('TRUE');
+            sendData(firstName, lastName, email, mobilePhone, location, language, meetingType, comment, sms); //this method contains your logic
+        } else {
+            // log('Return false - faltan datos');
+            setTimeout('$("#ButtonSend").removeAttr("disabled")', 3800);
+            log('FALSE');
+        }
+
+        // sendData(firstName, lastName, email, mobilePhone, location, language, meetingType, comment, sms); //this method contains your logic
     });
 });
 
 const sendData = (firstName, lastName, email, mobilePhone, location, language, meetingType, comment, sms) => {
-    if (!/^ *$/.test(location) && mobilePhone.length >= 10) {
-        // Creación del LEAD
-        // log('Creación del Lead');
-        createLeadApi(firstName, lastName, email, mobilePhone, location, language, sms, comment);
 
-        document.getElementById('mobileInput').innerHTML = '';
-        document.getElementById('locationInput').innerHTML = '';
+    document.getElementById('mobileInput').innerHTML = '';
 
-        document.getElementById('ButtonSend').style.backgroundColor = 'gray';
-        document.getElementById('ButtonSend').innerHTML = 'Sending Data';
-        // setTimeout('$("#ButtonSend").removeAttr("disabled")', 3800);
+    document.getElementById('locationInput').innerHTML = '';
+    document.getElementById('nameInput').innerHTML = '';
+    document.getElementById('emailInput').innerHTML = '';
 
-    } else if (/^ *$/.test(location) && mobilePhone.length >= 10) {
-        // Falta numero telefónico
-        // log('Faltan Location');
+    document.getElementById('ButtonSend').style.backgroundColor = 'gray';
+    document.getElementById('ButtonSend').innerHTML = 'Sending Data';
 
-        document.getElementById('mobileInput').innerHTML = '';
-        document.getElementById('mobileInput').style.color = "#F93C17";
+    createLeadApi(firstName, lastName, email, mobilePhone, location, language, sms, comment);
 
-        document.getElementById('locationInput').innerHTML = 'select a location please';
-        document.getElementById('mobileInput').style.color = "#F93C17";
+    // setTimeout('$("#ButtonSend").removeAttr("disabled")', 3800);
+    // log('Lead creation');
 
-        setTimeout('$("#ButtonSend").removeAttr("disabled")', 3800);
-    } else if (!/^ *$/.test(location) && mobilePhone.length < 10) {
-        // Falta numero telefónico
-        // log('Faltan Phone number');
+    // createLeadApi(firstName, lastName, email, mobilePhone, location, language, sms, comment);
 
-        document.getElementById('mobileInput').innerHTML = 'The phone number must be 10 digits';
-        document.getElementById('mobileInput').style.color = "#F93C17";
+    // if (!/^ *$/.test(location) && mobilePhone.length >= 10) {
+    //     // Creación del LEAD
+    //     // log('Creación del Lead');
+    //     createLeadApi(firstName, lastName, email, mobilePhone, location, language, sms, comment);
 
-        document.getElementById('locationInput').innerHTML = '';
-        document.getElementById('mobileInput').style.color = "#F93C17";
+    //     document.getElementById('mobileInput').innerHTML = '';
+    //     document.getElementById('locationInput').innerHTML = '';
 
-        setTimeout('$("#ButtonSend").removeAttr("disabled")', 3800);
-    } else {
-        // Falta numero telefónico
-        // log('Faltan Location / Phone Number');
+    //     document.getElementById('ButtonSend').style.backgroundColor = 'gray';
+    //     document.getElementById('ButtonSend').innerHTML = 'Sending Data';
+    //     // setTimeout('$("#ButtonSend").removeAttr("disabled")', 3800);
 
-        document.getElementById('mobileInput').innerHTML = 'The phone number must be 10 digits';
-        document.getElementById('mobileInput').style.color = "#F93C17";
+    // } else if (/^ *$/.test(location) && mobilePhone.length >= 10) {
+    //     // Falta numero telefónico
+    //     // log('Faltan Location');
 
-        document.getElementById('locationInput').innerHTML = 'select a location please';
-        document.getElementById('mobileInput').style.color = "#F93C17";
+    //     document.getElementById('mobileInput').innerHTML = '';
+    //     document.getElementById('mobileInput').style.color = "#F93C17";
 
-        setTimeout('$("#ButtonSend").removeAttr("disabled")', 3800);
-    }
+    //     document.getElementById('locationInput').innerHTML = 'select a location please';
+    //     document.getElementById('mobileInput').style.color = "#F93C17";
+
+    //     setTimeout('$("#ButtonSend").removeAttr("disabled")', 3800);
+    // } else if (!/^ *$/.test(location) && mobilePhone.length < 10) {
+    //     // Falta numero telefónico
+    //     // log('Faltan Phone number');
+
+    //     document.getElementById('mobileInput').innerHTML = 'The phone number must be 10 digits';
+    //     document.getElementById('mobileInput').style.color = "#F93C17";
+
+    //     document.getElementById('locationInput').innerHTML = '';
+    //     document.getElementById('mobileInput').style.color = "#F93C17";
+
+    //     setTimeout('$("#ButtonSend").removeAttr("disabled")', 3800);
+    // } else {
+    //     // Falta numero telefónico
+    //     // log('Faltan Location / Phone Number');
+
+    //     document.getElementById('mobileInput').innerHTML = 'The phone number must be 10 digits';
+    //     document.getElementById('mobileInput').style.color = "#F93C17";
+
+    //     document.getElementById('locationInput').innerHTML = 'select a location please';
+    //     document.getElementById('mobileInput').style.color = "#F93C17";
+
+    //     setTimeout('$("#ButtonSend").removeAttr("disabled")', 3800);
+    // }
 
 }
 
@@ -127,7 +158,7 @@ const getLocation = (location) => {
     let SDCode = "a1b5f000000eT8bAAE";
     let SMCode = "a1b5f000000eT8gAAE";
     let CHCode = "a1b5f000000enBnAAI";
-    let SBCode = "a1b5f000001signAAA";    
+    let SBCode = "a1b5f000001signAAA";
 
     switch (location) {
         case "Los Angeles":
@@ -174,4 +205,60 @@ const sendEmail = (first_name, last_name, email, mobile_phone, language_site, le
             "question": comment
         }
     });
+}
+
+// Name validation
+const name_input_validation = (name_element) => {
+
+    if (/^ *$/.test(name_element)) {
+        document.getElementById('nameInput').innerHTML = 'Please write your name';
+        document.getElementById('nameInput').style.color = "#F93C17";
+        return false;
+    } else {
+        document.getElementById('nameInput').innerHTML = '';
+        document.getElementById('nameInput').style.color = "#F93C17";
+        return true;
+    }
+}
+
+// Email validation
+const email_input_validation = (email_element) => {
+
+    if (/^ *$/.test(email_element)) {
+        document.getElementById('emailInput').innerHTML = 'Write an email please';
+        document.getElementById('emailInput').style.color = "#F93C17";
+        return false;
+    } else {
+        document.getElementById('emailInput').innerHTML = '';
+        document.getElementById('emailInput').style.color = "#F93C17";
+        return true;
+    }
+}
+
+// location validation
+const location_input_validation = (location_element) => {
+    0
+
+    if (/^ *$/.test(location_element)) {
+        document.getElementById('locationInput').innerHTML = 'select a location please';
+        document.getElementById('locationInput').style.color = "#F93C17";
+        return false;
+    } else {
+        document.getElementById('locationInput').innerHTML = '';
+        document.getElementById('locationInput').style.color = "#F93C17";
+        return true;
+    }
+}
+
+// phone validation
+const phone_input_validation = (mobilePhone) => {
+    if (mobilePhone.length < 10) {
+        document.getElementById('mobileInput').innerHTML = 'The phone number must be 10 digits';
+        document.getElementById('mobileInput').style.color = "#F93C17";
+        return false;
+    } else {
+        document.getElementById('mobileInput').innerHTML = '';
+        document.getElementById('mobileInput').style.color = "#F93C17";
+        return true;
+    }
 }
