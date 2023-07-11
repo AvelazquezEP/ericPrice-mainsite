@@ -21,9 +21,9 @@ $(document).ready(function () {
     // var phone_number = phone_input_validation(mobilePhone);
 
     // if (name_input == true && email_input == true && location_input == true && phone_number == true) {
-    //     sendData(firstName, lastName, email, mobilePhone, location, language, meetingType, comment, sms); //this method contains your logic
+    //   sendData(firstName, lastName, email, mobilePhone, location, language, meetingType, comment, sms); //this method contains your logic
     // } else {
-    //     setTimeout('$("#ButtonSend").removeAttr("disabled")', 3800);
+    //   setTimeout('$("#ButtonSend").removeAttr("disabled")', 3800);
     // }
 
     sendData(firstName, lastName, email, mobilePhone, location, language, meetingType, comment, sms); //this method contains your logic
