@@ -2,6 +2,10 @@
 var log = console.log;
 
 $(document).ready(function () {
+    // $('#mobile.disablecopypaste').bind('copy paste', function (e) {
+    //     e.preventDefault();
+    // });
+
     $("#ButtonSend").on("click", function () {
         $(this).attr("disabled", "disabled");
         let firstName = document.getElementById("first_name").value;
