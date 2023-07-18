@@ -25,7 +25,7 @@ function sendEmail($language, $email, $name, $lastName, $number, $question)
     $message = str_replace('%message%', $question, $message);
 
     //Server settings
-    // $mail->SMTPDebug = SMTP::DEBUG_SERVER; //<-- imprime todos los pasos que realiza el proceso de enviar correo
+    // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
     $mail->isSMTP();
     $mail->Host       = 'smtp.office365.com';
     $mail->SMTPAuth   = true;

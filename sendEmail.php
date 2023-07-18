@@ -54,7 +54,7 @@ function sendEmail($language, $email, $name, $lastName, $number, $question, $lea
         $message = str_replace('%duplicate%','-', $message);
     }
     
-    //   $mail->SMTPDebug = SMTP::DEBUG_SERVER; //<-- imprime todos los pasos que realiza el proceso de enviar correo
+    //   $mail->SMTPDebug = SMTP::DEBUG_SERVER;
     $mail->isSMTP();
     $mail->Host = 'smtp.office365.com';
     $mail->SMTPAuth = true;
@@ -80,8 +80,8 @@ function sendEmail($language, $email, $name, $lastName, $number, $question, $lea
 
     $mail->isHTML(true);
     $mail->Subject = 'Someone has opted in to contac form web site';
-    $mail->msgHTML($message); //Usa las variables a mandar y envia el correo usando el template
-    $mail->AltBody = 'Sending email'; // <-- Esta linea solo funciona para algun mensaje / NO SE UTILIZA puede quedar asi o comentada    com    
+    $mail->msgHTML($message); 
+    $mail->AltBody = 'Sending email';
     $mail->send();
 }
 
