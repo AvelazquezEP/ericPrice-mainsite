@@ -2,9 +2,6 @@
 var log = console.log;
 
 $(document).ready(function () {
-    // $('#mobile.disablecopypaste').bind('copy paste', function (e) {
-    //     e.preventDefault();
-    // });
 
     $("#ButtonSend").on("click", function () {
         $(this).attr("disabled", "disabled");
@@ -31,8 +28,6 @@ $(document).ready(function () {
             setTimeout('$("#ButtonSend").removeAttr("disabled")', 3800);
         }
 
-        // sendData(firstName, lastName, email, mobilePhone, location, language, meetingType, comment, sms); //this method contains your logic
-
     });
 });
 
@@ -45,52 +40,6 @@ const sendData = (firstName, lastName, email, mobilePhone, location, language, m
     document.getElementById('ButtonSend').innerHTML = 'Sending Data';
 
     createLeadApi(firstName, lastName, email, mobilePhone, location, language, sms, comment);
-    // log('Crear el lead');
-
-
-
-    // if (!/^ *$/.test(location) && mobilePhone.length >= 10) {
-    //   // Creación del LEAD
-    //   createLeadApi(firstName, lastName, email, mobilePhone, location, language, sms, comment);
-
-    //   document.getElementById('mobileInput').innerHTML = '';
-    //   document.getElementById('locationInput').innerHTML = '';
-
-    //   document.getElementById('ButtonSend').style.backgroundColor = 'gray';
-    //   document.getElementById('ButtonSend').innerHTML = 'Sending Data';
-    //   // setTimeout('$("#ButtonSend").removeAttr("disabled")', 3800);
-
-    // } else if (/^ *$/.test(location) && mobilePhone.length >= 10) {
-    //   // Falta location    
-
-    //   document.getElementById('mobileInput').innerHTML = '';
-    //   document.getElementById('mobileInput').style.color = "#F93C17";
-
-    //   document.getElementById('locationInput').innerHTML = 'select a location please';
-    //   document.getElementById('mobileInput').style.color = "#F93C17";
-
-    //   setTimeout('$("#ButtonSend").removeAttr("disabled")', 3800);
-    // } else if (!/^ *$/.test(location) && mobilePhone.length < 10) {
-    //   // Falta numero telefónico    
-
-    //   document.getElementById('mobileInput').innerHTML = 'The phone number must be 10 digits';
-    //   document.getElementById('mobileInput').style.color = "#F93C17";
-
-    //   document.getElementById('locationInput').innerHTML = '';
-    //   document.getElementById('mobileInput').style.color = "#F93C17";
-
-    //   setTimeout('$("#ButtonSend").removeAttr("disabled")', 3800);
-    // } else {
-    //   // Falta Location / Phone Number    
-
-    //   document.getElementById('mobileInput').innerHTML = 'The phone number must be 10 digits';
-    //   document.getElementById('mobileInput').style.color = "#F93C17";
-
-    //   document.getElementById('locationInput').innerHTML = 'select a location please';
-    //   document.getElementById('mobileInput').style.color = "#F93C17";
-
-    //   setTimeout('$("#ButtonSend").removeAttr("disabled")', 3800);
-    // }
 }
 
 const createLeadApi = (first_name, last_name, email, mobile_phone, location_name, language_site, sms_option, comment = "-") => {
