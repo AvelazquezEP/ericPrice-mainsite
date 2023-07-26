@@ -29,15 +29,12 @@ function sendEmail($language, $email, $name, $lastName, $number, $question)
     $mail->isSMTP();
     $mail->Host       = 'smtp.office365.com';
     $mail->SMTPAuth   = true;
-    $mail->Username   = 'support56@abogadoericprice.com';
-    // $mail->Password   = '500LaTerrazaBlvd.';
+    $mail->Username   = 'support56@abogadoericprice.com';    
     $mail->SMTPSecure = 'tls';
     $mail->Port       = 587;
 
     //Correo saliente
-    $mail->setFrom('support56@abogadoericprice.com');
-
-    // Correos a quienes le llegan
+    $mail->setFrom('support56@abogadoericprice.com');    
     // $mail->addAddress('iku@abogadoericprice.com', 'Ivy Ku Flores');
     $mail->addAddress('avelazquez2873@LosAngelesImmigration.onmicrosoft.com', 'Alberto Velazquez');
 
@@ -187,93 +184,3 @@ try {
 }
 
 ?>
-
-<!-- CODE TO WEB-TO-LEAD
-    // WEB-TO-LEAD
-    // $url = "https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8";
-    // Solo se usa la inforacion necesaria para la creacion del LEAD en SALESFORCE.
-    // $data = [
-    //     'oid' => $strOid,
-    //     'first_name' => $strName,
-    //     'last_name' => $strlastName,
-    //     'email' => $stremail,
-    //     'mobile' => $strnumber
-    // ];
-
-    // Se usa CURL para poder realizar un envio de tipo POST al $url, tomando en cuenta como parametros el array $data
-    // $curl = curl_init($url);
-    // curl_setopt($curl, CURLOPT_POST, true);
-    // curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($data));
-    // curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-    // curl_exec($curl);
-    // curl_close($curl); //Esta linea puede que ocasione tomar algunos segundos extras si tarda demasiado considerar COMENTAR/eliminar
--->
-
-<!-- Empieza la vista que se muestra mientras se procesan los datos -->
-<!-- HTML SITE IN THE SAME PHP
-    <!DOCTYPE html>
-    <html lang="en">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/x-icon" href="/images/EP_Website-01.png">
-        <title>Sending Data</title>
-    </head>
-    <style>
-        body {
-            background-color: #001e3e;
-        }
-
-        .container {
-            padding-top: 4rem;
-            text-align: center;
-            font-family: sans-serif;
-            color: white;
-        }
-
-        .container>h1 {
-            font-size: 3rem;
-        }
-
-        .container>p {
-            font-size: 1.5rem;
-        }
-
-        .dots {
-            font-size: 2rem;
-        }
-    </style>
-
-    <body>
-        <div class="container">
-            <h1>Sending the information.</h1>
-            <p>Wait a moment please.</p>
-            <p>We are processing your data to be able to provide better appointment options.</p>
-            <span class="dots" id="wait">.</span>
-        </div>
-
-        <script>
-            window.dotsGoingUp = true;
-            var dots = window.setInterval(function () {
-                var wait = document.getElementById("wait");
-                if (window.dotsGoingUp)
-                    wait.innerHTML += ".";
-                else {
-                    wait.innerHTML = wait.innerHTML.substring(1, wait.innerHTML.length);
-                    if (wait.innerHTML === "")
-                        window.dotsGoingUp = true;
-                }
-                if (wait.innerHTML.length > 5)
-                    window.dotsGoingUp = false;
-
-
-
-            }, 500);
-        </script>
-
-    </body>
-
-    </html> 
--->

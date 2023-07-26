@@ -65,9 +65,10 @@ function sendEmail($language, $email, $name, $lastName, $number, $question, $lea
 
     $mail->setFrom('no-reply@abogadoericprice.com', 'No Reply');
 
+    // Correos a quienes le llegan
     $mail->addAddress('no-reply@abogadoericprice.com');
     $mail->addReplyTo('no-reply@abogadoericprice.com', 'No Reply');
-    // Correos a quienes le llegan
+    
     $mail->addAddress('iku@abogadoericprice.com', 'Ivy Ku Flores');
     $mail->addAddress('fmartinez@greencardla.com', 'Floriberta Martinez');
     $mail->addAddress('support56@abogadoericprice.com', 'Paola Carolina');

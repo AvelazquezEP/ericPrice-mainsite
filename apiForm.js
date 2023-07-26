@@ -20,11 +20,8 @@ $(document).ready(function () {
         var phone_number = phone_input_validation(mobilePhone);
 
         if (name_input == true && location_input == true && phone_number == true) {
-            // log('Return true - se crea lead');
-            sendData(firstName, lastName, email, mobilePhone, location, language, meetingType, comment, sms); //this method contains your logic
-            // setTimeout('$("#ButtonSend").removeAttr("disabled")', 3800);
+            sendData(firstName, lastName, email, mobilePhone, location, language, meetingType, comment, sms); //this method contains your logic            
         } else {
-            // log('Return false - faltan datos');
             setTimeout('$("#ButtonSend").removeAttr("disabled")', 3800);
         }
 
@@ -120,8 +117,7 @@ const getLocation = (location) => {
             code = SBCode;
             break;
         case "National":
-            code = LACode;
-            // $code = strval($NCode);
+            code = LACode;            
             break;
         default:
             code = strval(LACode);
