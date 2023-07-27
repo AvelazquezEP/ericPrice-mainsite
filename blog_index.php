@@ -55,7 +55,6 @@ $all_post = pg_query($sql);
 
 <body class="bg-gray-50 leading-normal">
 
-
     <!-- HEADER -->
     <header class="" id="Header">
         <div class="bg-[#001e3e]">
