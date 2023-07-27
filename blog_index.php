@@ -19,7 +19,6 @@ $sql = "select *from posts order by title asc";
 
 $all_post = pg_query($sql);
 
-
 /* #region New query - DATE/TIMESTAMP */
 $sql_unique = "select *from posts where id_post='" . $id_post . "'";
 $post_data_unique = pg_query($sql_unique);
@@ -30,7 +29,6 @@ $date_edited = date("Y-m-d",strtotime($new_date));
 // $date_edited = date('m-d-Y', $new_date);
 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -129,8 +127,8 @@ $date_edited = date("Y-m-d",strtotime($new_date));
             <section>
                 <article class="p-6 bg-white rounded border border-gray-200 shadow-md ">
                     <figure class="flex flex-col justify-between items-center gap-4 md:w-4/5 md:mx-auto md:flex-row">
-                    <span class="text-sm" style="text-align:left;"><?= $date_edited ?></span>
                         <div>
+                            <span class="text-sm" style="text-align:left;"><?= $date_edited ?></span>
                             <div class="mb-5 text-gray-500">
                                 <!-- <span class="text-sm"><?= $post->created_at ?></span>-->
                             </div>
