@@ -18,6 +18,17 @@ $dbconn = pg_connect($connection_string) or die('Could not reach database.');
 $sql = "select *from posts order by title asc";
 
 $all_post = pg_query($sql);
+
+
+/* #region New query - DATE/TIMESTAMP */
+$sql_unique = "select *from posts where id_post='" . $id_post . "'";
+$post_data_unique = pg_query($sql_unique);
+$unique_post = pg_fetch_object($post_data_unique);
+
+$new_date = $unique_post->created_at;
+$date_edited = date("Y-m-d",strtotime($new_date));
+// $date_edited = date('m-d-Y', $new_date);
+
 ?>
 
 
@@ -118,10 +129,10 @@ $all_post = pg_query($sql);
             <section>
                 <article class="p-6 bg-white rounded border border-gray-200 shadow-md ">
                     <figure class="flex flex-col justify-between items-center gap-4 md:w-4/5 md:mx-auto md:flex-row">
+                    <span class="text-sm" style="text-align:left;"><?= $date_edited ?></span>
                         <div>
                             <div class="mb-5 text-gray-500">
-                                <!-- <span class="text-sm">Septiembre 09, 2022</span> -->
-                                <span class="text-sm"><?= $post->created_at ?></span>
+                                <!-- <span class="text-sm"><?= $post->created_at ?></span>-->
                             </div>
                             <div class="">
                                 <!-- <img src="images/blog1.png" alt="Blog image" class="rounded md:w-[400px]"> -->

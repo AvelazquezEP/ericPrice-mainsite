@@ -26,7 +26,7 @@ $post_data_unique = pg_query($sql_unique);
 $unique_post = pg_fetch_object($post_data_unique);
 
 $new_date = $unique_post->created_at;
-$date_edited = date('m-d-Y', $new_date);
+$date_edited = date("Y-m-d",strtotime($new_date));
 ?>
 
 <!DOCTYPE html>
@@ -51,6 +51,13 @@ $date_edited = date('m-d-Y', $new_date);
             background-color: #f2f2f2;
             padding: 25px;
         }
+
+        @media only screen and (min-width: 824px) {
+            .post_picture_custom {
+                width: 400px;
+            }
+        }
+
     </style>
 
 </head>
@@ -74,27 +81,31 @@ $date_edited = date('m-d-Y', $new_date);
         </div>
     </nav>
 
-    <div class="container-fluid bg-3 text-center">
-
-        <?php while ($post = pg_fetch_object($post_data)) : ?>
-            <h3></h3>
+    <div class="container-fluid bg-3 text-center" style="padding-top: 6rem;">
             <a href="javascript:window.history.back();" class="btn btn-primary pull-right" style='margin-top:-30px'>
                 <span class="glyphicon glyphicon-step-backward"></span>Back
-            </a>
-            <a href="javascript:window.history.back();" class="py-2 px-4 bg-orange-400 font-semibold rounded text-white">
-            </a>
+            </a>            
             <br>
 
-            <div class="panel panel-primary" style="border: none;">
-                <div class="">-</div>
+        <?php while ($post = pg_fetch_object($post_data)) : ?>            
+            <div class="panel panel-primary post-container" style="border: none;">                
                 <div class="form-horizontal">
-                    <div class=" panel-body">
+                    <div class=" panel-body" style="display: flex; flex-direction: column;">
 
-                        <h2><?= $post->title ?></h2>
+                        <div>
+                            <h2><?= $post->title ?></h2>
+                        </div>
+                        <div>
+                            <small> <?= $date_edited ?> </small>
+                        </div>
+                        <div>
+                            <img src="data:image/png;base64,<?= $post->post_picture ?>" alt="blog picture" class="post_picture_custom">
+                            <!-- <img src="data:image/png;base64,<?= $post->post_picture ?>" alt="blog picture" style="width:90%;" class="post_picture_custom"> -->
+                        </div>
                         <!-- <span class="text-sm"><?= $post->created_at ?></span> -->
-                        <small> <?= $post->created_at ?> </small>
-                        <img src="data:image/png;base64,<?= $post->post_picture ?>" alt="blog picture" style="width:90%;">
-                        <h2><?= $post->content_post ?></h2>
+                        <div>
+                            <h2><?= $post->content_post ?></h2>
+                        </div>
 
                     </div>
                 </div>
