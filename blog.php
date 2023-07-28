@@ -18,14 +18,12 @@ $sql = "select *from posts order by title asc";
 
 $all_post = pg_query($sql);
 
-/* #region New query - DATE/TIMESTAMP */
 $sql_unique = "select *from posts where id_post='" . $id_post . "'";
 $post_data_unique = pg_query($sql_unique);
 $unique_post = pg_fetch_object($post_data_unique);
 
 $new_date = $unique_post->created_at;
 $date_edited = date("Y-m-d",strtotime($new_date));
-// $date_edited = date('m-d-Y', $new_date);
 
 ?>
 
@@ -128,11 +126,9 @@ $date_edited = date("Y-m-d",strtotime($new_date));
                     <figure class="flex flex-col justify-between items-center gap-4 md:w-4/5 md:mx-auto md:flex-row">
                         <div>
                             <span class="text-sm" style="text-align:left;"><?= $date_edited ?></span>
-                            <div class="mb-5 text-gray-500">
-                                <!-- <span class="text-sm"><?= $post->created_at ?></span>-->
+                            <div class="mb-5 text-gray-500">                                
                             </div>
-                            <div class="">
-                                <!-- <img src="images/blog1.png" alt="Blog image" class="rounded md:w-[400px]"> -->
+                            <div class="">                                
                                 <img src="data:image/png;base64,<?= $post->post_picture ?>" alt="blog picture" class="postImage rounded md:w-[400px]" style="width: 100%;">
                             </div>
                         </div>
