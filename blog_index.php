@@ -129,11 +129,9 @@ $date_edited = date("Y-m-d",strtotime($new_date));
                     <figure class="flex flex-col justify-between items-center gap-4 md:w-4/5 md:mx-auto md:flex-row">
                         <div>
                             <span class="text-sm" style="text-align:left;"><?= $date_edited ?></span>
-                            <div class="mb-5 text-gray-500">
-                                <!-- <span class="text-sm"><?= $post->created_at ?></span>-->
+                            <div class="mb-5 text-gray-500">                                
                             </div>
-                            <div class="">
-                                <!-- <img src="images/blog1.png" alt="Blog image" class="rounded md:w-[400px]"> -->
+                            <div class="">                                
                                 <img src="data:image/png;base64,<?= $post->post_picture ?>" alt="blog picture" class="postImage rounded md:w-[400px]" style="width: 100%;">
                             </div>
                         </div>
