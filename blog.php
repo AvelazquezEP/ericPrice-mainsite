@@ -1,5 +1,4 @@
 <?php
-
 header("Cache-Control: no-cache, must-revalidate");
 header("Expires: Mon, 26 Jul 2024 05:00:00 GMT"); //Update before 26/Jul/2024
 header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
@@ -18,6 +17,16 @@ $dbconn = pg_connect($connection_string) or die('Could not reach database.');
 $sql = "select *from posts order by title asc";
 
 $all_post = pg_query($sql);
+
+/* #region New query - DATE/TIMESTAMP */
+$sql_unique = "select *from posts where id_post='" . $id_post . "'";
+$post_data_unique = pg_query($sql_unique);
+$unique_post = pg_fetch_object($post_data_unique);
+
+$new_date = $unique_post->created_at;
+$date_edited = date("Y-m-d",strtotime($new_date));
+// $date_edited = date('m-d-Y', $new_date);
+
 ?>
 
 <!DOCTYPE html>
@@ -110,20 +119,21 @@ $all_post = pg_query($sql);
     </header>
 
     <main class="flex flex-col gap-4 py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-
+    
         <?php while ($post = pg_fetch_object($all_post)) : ?>
 
             <!-- Best Post -->
-            <section style="background-color: #4E4E4E;">
+            <section>
                 <article class="p-6 bg-white rounded border border-gray-200 shadow-md ">
                     <figure class="flex flex-col justify-between items-center gap-4 md:w-4/5 md:mx-auto md:flex-row">
                         <div>
+                            <span class="text-sm" style="text-align:left;"><?= $date_edited ?></span>
                             <div class="mb-5 text-gray-500">
-                                <span class="text-sm">Septiembre 09, 2022</span>
+                                <!-- <span class="text-sm"><?= $post->created_at ?></span>-->
                             </div>
                             <div class="">
                                 <!-- <img src="images/blog1.png" alt="Blog image" class="rounded md:w-[400px]"> -->
-                                <img src="data:image/png;base64,<?= $post->post_picture ?>" alt="Picture" class="postImage rounded md:w-[400px]" style="width: 100%;">
+                                <img src="data:image/png;base64,<?= $post->post_picture ?>" alt="blog picture" class="postImage rounded md:w-[400px]" style="width: 100%;">
                             </div>
                         </div>
                         <div class="">
@@ -346,6 +356,7 @@ $all_post = pg_query($sql);
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/nav.js"></script>
     <script src="js/toggle.js"></script>
+    <script src="js/post.js"></script>
 </body>
 
 </html>
