@@ -152,13 +152,17 @@ $text_split = explode(".",$new_content);
                             <h2 style="font-size: 20px; font-weight: bold;"><?= $post->title ?></h2>
                         </div>
                         <div>
-                            <small class="text-gray-500"> <?= $date_edited ?> </small>
+                            <small class="text-gray-500"> 
+                                <?= $date_edited ?> 
+                            </small>
                         </div>
                         <div>
                             <img src="data:image/png;base64,<?= $post->post_picture ?>" alt="blog picture" class="post_picture_custom mx-auto">
                         </div>                        
                         <div style="text-align: justify; line-height: 2rem;">
-                            <h2 style="text-align: justify; line-height: 2rem;"><?= $post->content_post ?></h2>                
+                            <h2 style="text-align: justify; line-height: 2rem;">
+                                <?= $post->content_post ?>
+                            </h2>
                         </div>
 
                     </div>
