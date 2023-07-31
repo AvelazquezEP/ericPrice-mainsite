@@ -20,13 +20,14 @@ $id_post = $_SERVER['QUERY_STRING'];
 $sql = "select *from posts where id_post='" . $id_post . "'";
 $post_data = pg_query($sql);
 
-/* #region New query - DATE/TIMESTAMP */
+// new data
 $sql_unique = "select *from posts where id_post='" . $id_post . "'";
 $post_data_unique = pg_query($sql_unique);
 $unique_post = pg_fetch_object($post_data_unique);
 
 $new_date = $unique_post->created_at;
-$date_edited = date("Y-m-d", strtotime($new_date));
+$date_edited = date("d/m/Y", strtotime($new_date));
+// $date_edited = date("Y-m-d", strtotime($new_date));
 
 ?>
 
