@@ -58,6 +58,15 @@ $date_edited = date("d/m/Y", strtotime($new_date));
     <link rel="stylesheet" href="style.css">
 
     <title>Eric Price - Immigration Attorney</title>
+
+    <style>
+        @media only screen and (max-width: 600px) {
+            .picture_post {
+                width: 50%;
+            }
+        }
+    </style>
+
 </head>
 
 <body class="bg-gray-50 leading-normal">
@@ -125,15 +134,17 @@ $date_edited = date("d/m/Y", strtotime($new_date));
             <section>
                 <article class="p-6 bg-white rounded border border-gray-200 shadow-md ">
                     <figure class="flex flex-col justify-between items-center gap-4 md:w-4/5 md:mx-auto md:flex-row">
-                        <div>
+                        <!-- the picture container -->
+                        <div class="md: w-1/2">
                             <span class="text-sm text-gray-500" style="text-align:left;"><?= $date_edited ?></span>
                             <div class="mb-5 text-gray-500">                                
                             </div>
                             <div class="">                                
-                                <img src="data:image/png;base64,<?= $post->post_picture ?>" alt="blog picture" class="postImage rounded md:w-[400px]" style="width: 100%;">
+                                <img src="data:image/png;base64,<?= $post->post_picture ?>" alt="blog picture" class="postImage rounded md:w-[400px]" style="max-width: 100%;">
                             </div>
                         </div>
-                        <div class="">
+                        <!-- the description container -->
+                        <div class="md: w-1/2">
                             <h2 class="mb-2 text-xl font-bold tracking-tight text-gray-900">
                                 <a href="#">
                                     <?= $post->title ?>
