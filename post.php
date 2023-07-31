@@ -37,17 +37,6 @@ $new_content = $unique_content->content_post;
 $content_split = explode(',', strval($new_content));
 $text_split = explode(".",$new_content);
 
-// echo count($text_split);
-// print_r (explode(".",$new_content));
-
-// foreach($text_split as $item){
-//     print_r($item);
-// }
-
-// for ($x = 0; $x < count($text_split); $x++){
-//     echo $text_split[x];
-// }
-
 ?>
 
 <!DOCTYPE html>
