@@ -25,8 +25,8 @@ $post_data_unique = pg_query($sql_unique);
 $unique_post = pg_fetch_object($post_data_unique);
 
 $new_date = $unique_post->created_at;
-$date_edited = date("Y-m-d",strtotime($new_date));
-// $date_edited = date('m-d-Y', $new_date);
+$date_edited = date("d/m/Y", strtotime($new_date));
+// $date_edited = date("Y-m-d",strtotime($new_date));
 
 ?>
 
@@ -52,9 +52,7 @@ $date_edited = date("Y-m-d",strtotime($new_date));
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-
-    <script src="https://kit.fontawesome.com/b50aac37d5.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">    
 
     <link rel="stylesheet" href="/dist/output.css">
     <link rel="stylesheet" href="style.css">
@@ -128,7 +126,7 @@ $date_edited = date("Y-m-d",strtotime($new_date));
                 <article class="p-6 bg-white rounded border border-gray-200 shadow-md ">
                     <figure class="flex flex-col justify-between items-center gap-4 md:w-4/5 md:mx-auto md:flex-row">
                         <div>
-                            <span class="text-sm" style="text-align:left;"><?= $date_edited ?></span>
+                            <span class="text-sm text-gray-500" style="text-align:left;"><?= $date_edited ?></span>
                             <div class="mb-5 text-gray-500">                                
                             </div>
                             <div class="">                                

@@ -56,7 +56,7 @@ $date_edited = date("Y-m-d", strtotime($new_date));
 
     <script src="https://kit.fontawesome.com/b50aac37d5.js" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
 
     <link rel="stylesheet" href="/dist/output.css">
     <link rel="stylesheet" href="style.css">
@@ -124,9 +124,9 @@ $date_edited = date("Y-m-d", strtotime($new_date));
     <main class="flex flex-col gap-4 py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
     
         <div class="container-fluid bg-3 text-center" style="padding-top: 6rem;">
-        <a href="javascript:window.history.back();" class="btn btn-primary pull-right" style='margin-top:-30px'>
-            <span class="glyphicon glyphicon-step-backward"></span>Back
-        </a>
+            <!-- <a href="javascript:window.history.back();" class="btn btn-primary pull-right" style='margin-top:-30px'>
+                <span class="glyphicon glyphicon-step-backward"></span>Back
+            </a> -->
         <br>
 
         <?php while ($post = pg_fetch_object($post_data)) : ?>
@@ -135,13 +135,13 @@ $date_edited = date("Y-m-d", strtotime($new_date));
                     <div class=" panel-body" style="display: flex; flex-direction: column;">
 
                         <div>
-                            <h2><?= $post->title ?></h2>
+                            <h2 style="font-size: 20px; font-weight: bold;"><?= $post->title ?></h2>
                         </div>
                         <div>
-                            <small> <?= $date_edited ?> </small>
+                            <small class="text-gray-500"> <?= $date_edited ?> </small>
                         </div>
                         <div>
-                            <img src="data:image/png;base64,<?= $post->post_picture ?>" alt="blog picture" class="post_picture_custom">                            
+                            <img src="data:image/png;base64,<?= $post->post_picture ?>" alt="blog picture" class="post_picture_custom mx-auto">                            
                         </div>                        
                         <div>
                             <h2><?= $post->content_post ?></h2>
