@@ -34,10 +34,18 @@ $conten_post = pg_query($sql_content);
 $unique_content = pg_fetch_object($conten_post);
 
 $new_content = $unique_content->content_post;
-$content_split = explode(',', $new);
+$content_split = explode(',', strval($new_content));
+$text_split = explode(".",$new_content);
 
-// for ($x = 0; $x < count($content_split); $x++){
-//     $content_split[x];
+// echo count($text_split);
+// print_r (explode(".",$new_content));
+
+// foreach($text_split as $item){
+//     print_r($item);
+// }
+
+// for ($x = 0; $x < count($text_split); $x++){
+//     echo $text_split[x];
 // }
 
 ?>
@@ -140,7 +148,6 @@ $content_split = explode(',', $new);
                 <span class="glyphicon glyphicon-step-backward"></span>Back
             </a> -->
         <br>
-
         <?php while ($post = pg_fetch_object($post_data)) : ?>
             <div class="panel panel-primary post-container" style="border: none;">
                 <div class="form-horizontal">
@@ -156,7 +163,10 @@ $content_split = explode(',', $new);
                             <img src="data:image/png;base64,<?= $post->post_picture ?>" alt="blog picture" class="post_picture_custom mx-auto">                            
                         </div>                        
                         <div>
-                            <h2 style="text-align: justify; line-height: 2rem;"><?= $post->content_post ?></h2>
+                            <?php foreach($text_split as $item): ?>                                    
+                                <h2 style="text-align: justify; line-height: 2rem;"><?= $item ?></h2>
+                                <!-- <h2 style="text-align: justify; line-height: 2rem;"><?= $post->content_post ?></h2> -->
+                            <?php endforeach; ?>
                         </div>
 
                     </div>
