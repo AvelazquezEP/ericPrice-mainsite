@@ -158,10 +158,7 @@ $text_split = explode(".",$new_content);
                             <img src="data:image/png;base64,<?= $post->post_picture ?>" alt="blog picture" class="post_picture_custom mx-auto">
                         </div>                        
                         <div style="text-align: justify; line-height: 2rem;">
-                            <?php foreach($text_split as $item): ?>
-                                <h2><?= $item ?></h2>
-                                <!-- <h2 style="text-align: justify; line-height: 2rem;"><?= $post->content_post ?></h2> -->
-                            <?php endforeach; ?>
+                            <h2 style="text-align: justify; line-height: 2rem;"><?= $post->content_post ?></h2>                
                         </div>
 
                     </div>
