@@ -74,9 +74,7 @@ $text_split = explode(".",$new_content);
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
-    <script src="https://kit.fontawesome.com/b50aac37d5.js" crossorigin="anonymous"></script>
-
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+    <script src="https://kit.fontawesome.com/b50aac37d5.js" crossorigin="anonymous"></script>    
 
     <link rel="stylesheet" href="/dist/output.css">
     <link rel="stylesheet" href="style.css">
@@ -143,10 +141,7 @@ $text_split = explode(".",$new_content);
 
     <main class="flex flex-col gap-4 py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
     
-        <div class="container-fluid bg-3 text-center" style="padding-top: 6rem;">
-            <!-- <a href="javascript:window.history.back();" class="btn btn-primary pull-right" style='margin-top:-30px'>
-                <span class="glyphicon glyphicon-step-backward"></span>Back
-            </a> -->
+        <div class="container-fluid bg-3 text-center" style="padding-top: 6rem;">            
         <br>
         <?php while ($post = pg_fetch_object($post_data)) : ?>
             <div class="panel panel-primary post-container" style="border: none;">
@@ -162,9 +157,9 @@ $text_split = explode(".",$new_content);
                         <div>
                             <img src="data:image/png;base64,<?= $post->post_picture ?>" alt="blog picture" class="post_picture_custom mx-auto">
                         </div>                        
-                        <div>
+                        <div style="text-align: justify; line-height: 2rem;">
                             <?php foreach($text_split as $item): ?>
-                                <h2 style="text-align: justify; line-height: 2rem;"><?= $item ?></h2>
+                                <h2><?= $item ?></h2>
                                 <!-- <h2 style="text-align: justify; line-height: 2rem;"><?= $post->content_post ?></h2> -->
                             <?php endforeach; ?>
                         </div>
