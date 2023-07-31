@@ -36,6 +36,10 @@ $unique_content = pg_fetch_object($conten_post);
 $new_content = $unique_content->content_post;
 $content_split = explode(',', $new);
 
+// for ($x = 0; $x < count($content_split); $x++){
+//     $content_split[x];
+// }
+
 ?>
 
 <!DOCTYPE html>
@@ -151,9 +155,8 @@ $content_split = explode(',', $new);
                         <div>
                             <img src="data:image/png;base64,<?= $post->post_picture ?>" alt="blog picture" class="post_picture_custom mx-auto">                            
                         </div>                        
-                        <div>                        
-                            <h2><?= $content_split ?></h2>
-                            <!-- <h2><?= $post->content_post ?></h2> -->
+                        <div>
+                            <h2 style="text-align: justify; line-height: 2rem;"><?= $post->content_post ?></h2>
                         </div>
 
                     </div>
