@@ -27,7 +27,14 @@ $unique_post = pg_fetch_object($post_data_unique);
 
 $new_date = $unique_post->created_at;
 $date_edited = date("d/m/Y", strtotime($new_date));
-// $date_edited = date("Y-m-d", strtotime($new_date));
+
+// content query
+$sql_content = "select *from posts where id_post='" . $id_post . "'";
+$conten_post = pg_query($sql_content);
+$unique_content = pg_fetch_object($conten_post);
+
+$new_content = $unique_content->content_post;
+$content_split = var_export(',', $new) ;
 
 ?>
 
@@ -144,8 +151,9 @@ $date_edited = date("d/m/Y", strtotime($new_date));
                         <div>
                             <img src="data:image/png;base64,<?= $post->post_picture ?>" alt="blog picture" class="post_picture_custom mx-auto">                            
                         </div>                        
-                        <div>
-                            <h2><?= $post->content_post ?></h2>
+                        <div>                        
+                            <h2><?= $$content_split ?></h2>
+                            <!-- <h2><?= $post->content_post ?></h2> -->
                         </div>
 
                     </div>
