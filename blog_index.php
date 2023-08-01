@@ -19,22 +19,22 @@ header("Pragma: no-cache");
 
 // $all_post = pg_query($sql);
 
-$host = "abogadoericprice.com";
-$port = "3306";
-$dbname = "dbdjohdoytqu5g";
-$user = "uitptpqgh2awf";
-$password = "5thr2jquzgih";
+$host = 'abogadoericprice.com';
+$port = '3306';
+$dbname = 'dbdjohdoytqu5g';
+$user = 'uitptpqgh2awf';
+$password = '5thr2jquzgih';
 
 $conn = mysqli_connect($host, $user, $password, $dbname);
 // Check connection
- if (!$conn) {
+if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
 // $connection_string = "host={$host} port={$port} dbname={$dbname} user={$user} password={$password} ";
 // $dbconn = pg_connect($connection_string) or die('Could not reach database.');
 
-$sql = "select *from posts order by title asc";
+$sql = "select *from ipv_posts order by post_title asc";
 $all_post = $conn->query($sql);
 
 /* #region New query - DATE/TIMESTAMP */
@@ -155,10 +155,10 @@ $all_post = $conn->query($sql);
                             <span class="text-sm text-gray-500" style="text-align:left;"><?= $date_edited ?></span>
                             <div class="mb-5 text-gray-500">                                
                             </div>
-                            <div class="">                                
+                            <div class="">
                                 <img src="data:image/png;base64,<?= $post->post_picture ?>" alt="blog picture" class="postImage rounded md:w-[400px]" style="max-width: 100%;">
                             </div>
-                        </div>                        
+                        </div>
                         <div class="md: w-1/2">
                             <h2 class="mb-2 text-xl font-bold tracking-tight text-gray-900">
                                 <a href="#">
@@ -166,7 +166,7 @@ $all_post = $conn->query($sql);
                                 </a>
                             </h2>
                             <figcaption class="mb-5 font-light text-gray-500">
-                                <?= $post->post_content ?>
+                                <!-- <?= $post->post_content ?> -->
                             </figcaption>
                             <div class="flex justify-start items-center">
                                 <a class="inline-flex items-center font-medium text-primary-600 hover:underline bg-orange-400 rounded p-2 text-white" onclick="send_post(<?= $post->id_post ?>)">
