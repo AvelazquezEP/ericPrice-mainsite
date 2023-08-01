@@ -150,8 +150,7 @@ $all_post = $conn->query($sql);
             <!-- Best Post -->
             <section>
                 <article class="p-6 bg-white rounded border border-gray-200 shadow-md ">
-                    <figure class="flex flex-col justify-between items-center gap-4 md:w-4/5 md:mx-auto md:flex-row">
-                        <!-- the picture container -->
+                    <figure class="flex flex-col justify-between items-center gap-4 md:w-4/5 md:mx-auto md:flex-row">                        
                         <div class="md: w-1/2">
                             <span class="text-sm text-gray-500" style="text-align:left;"><?= $date_edited ?></span>
                             <div class="mb-5 text-gray-500">                                
