@@ -209,7 +209,7 @@ $all_post = $conn->query($sql);
                             </a>
                         </div>
                     </div>
-                </div>                
+                </div>
 
                 <div class="flex flex-row justify-around w-4/5 mx-auto">
                     <div class="font-bold rounded-full bg-white flex items-center justify-center" style="height: 40px; width: 40px; font-size: 18px;">
