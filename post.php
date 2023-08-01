@@ -184,8 +184,7 @@ $text_split = explode(".",$new_content);
                             </a>
                         </div>
                     </div>
-                </div>
-                <!-- SOCIAL MEDIA FOOTER -->
+                </div>                
 
                 <div class="flex flex-row justify-around w-4/5 mx-auto">
                     <div class="font-bold rounded-full bg-white flex items-center justify-center" style="height: 40px; width: 40px; font-size: 18px;">

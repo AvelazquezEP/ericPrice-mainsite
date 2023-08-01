@@ -1,4 +1,3 @@
-// CONSOLE LOG SHORT
 var log = console.log;
 
 $(document).ready(function () {

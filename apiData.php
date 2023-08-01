@@ -22,7 +22,7 @@ try {
 
     echo $response;
 } catch (Exception $e) {
-    header("Location: https://abogadoericprice.com/sorry.html");    // <--- show this site when something is wrong    
+    header("Location: https://abogadoericprice.com/sorry.html");
 }
 
 // FUNCTIONS SECTIONS

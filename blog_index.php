@@ -26,7 +26,6 @@ $unique_post = pg_fetch_object($post_data_unique);
 
 $new_date = $unique_post->created_at;
 $date_edited = date("d/m/Y", strtotime($new_date));
-// $date_edited = date("Y-m-d",strtotime($new_date));
 
 ?>
 
@@ -142,8 +141,7 @@ $date_edited = date("d/m/Y", strtotime($new_date));
                             <div class="">                                
                                 <img src="data:image/png;base64,<?= $post->post_picture ?>" alt="blog picture" class="postImage rounded md:w-[400px]" style="max-width: 100%;">
                             </div>
-                        </div>
-                        <!-- the description container -->
+                        </div>                        
                         <div class="md: w-1/2">
                             <h2 class="mb-2 text-xl font-bold tracking-tight text-gray-900">
                                 <a href="#">
