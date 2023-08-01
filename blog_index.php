@@ -26,10 +26,6 @@ $user = 'uitptpqgh2awf';
 $password = '5thr2jquzgih';
 
 $conn = mysqli_connect($host, $user, $password, $dbname);
-// Check connection
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
 
 // $connection_string = "host={$host} port={$port} dbname={$dbname} user={$user} password={$password} ";
 // $dbconn = pg_connect($connection_string) or die('Could not reach database.');
@@ -145,7 +141,8 @@ $all_post = $conn->query($sql);
 
     <main class="flex flex-col gap-4 py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
     
-        <?php while ($post = pg_fetch_object($all_post)) : ?>
+        <!-- <?php while ($post = pg_fetch_object($all_post)) : ?> -->
+        <?php while ($post = $all_post->fetch_assoc()) : ?>        
 
             <!-- Best Post -->
             <section>
@@ -161,8 +158,9 @@ $all_post = $conn->query($sql);
                         </div>
                         <div class="md: w-1/2">
                             <h2 class="mb-2 text-xl font-bold tracking-tight text-gray-900">
-                                <a href="#">
-                                    <?= $post->post_title ?>
+                                <a href="#">                                
+                                    <?= $post["post_title"] ?>
+                                    <!-- <?= $post->post_title ?> -->
                                 </a>
                             </h2>
                             <figcaption class="mb-5 font-light text-gray-500">

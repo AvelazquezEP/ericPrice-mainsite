@@ -115,3 +115,6 @@ Stack trace:
 #0 {main}
   thrown in /home/customer/www/abogadoericprice.com/public_html/post.php on line 167
 [01-Aug-2023 17:14:01 UTC] PHP Parse error:  syntax error, unexpected '$port' (T_VARIABLE) in /home/customer/www/abogadoericprice.com/public_html/blog_index.php on line 23
+[01-Aug-2023 23:26:03 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/customer/www/abogadoericprice.com/public_html/blog_index.php on line 397
+[01-Aug-2023 23:26:44 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/customer/www/abogadoericprice.com/public_html/blog_index.php on line 386
+[01-Aug-2023 23:32:04 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/customer/www/abogadoericprice.com/public_html/blog_index.php on line 382
