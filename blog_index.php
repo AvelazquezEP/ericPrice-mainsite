@@ -6,26 +6,44 @@ header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
 header("Cache-Control: post-check=0, pre-check=0", false);
 header("Pragma: no-cache");
 
-$host = "abogadoericprice.com";
-$port = "5432";
-$dbname = "dbezl1uquldojv";
-$user = "uhgpgzxv2hhak";
-$password = "700Flower!";
+// $host = "abogadoericprice.com";
+// $port = "5432";
+// $dbname = "dbezl1uquldojv";
+// $user = "uhgpgzxv2hhak";
+// $password = "700Flower!";
 
-$connection_string = "host={$host} port={$port} dbname={$dbname} user={$user} password={$password} ";
-$dbconn = pg_connect($connection_string) or die('Could not reach database.');
+// $connection_string = "host={$host} port={$port} dbname={$dbname} user={$user} password={$password} ";
+// $dbconn = pg_connect($connection_string) or die('Could not reach database.');
+
+// $sql = "select *from posts order by title asc";
+
+// $all_post = pg_query($sql);
+
+$host = "abogadoericprice.com";
+$port = "3306";
+$dbname = "dbdjohdoytqu5g";
+$user = "uitptpqgh2awf";
+$password = "5thr2jquzgih";
+
+$conn = mysqli_connect($host, $user, $password, $dbname);
+// Check connection
+ if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+// $connection_string = "host={$host} port={$port} dbname={$dbname} user={$user} password={$password} ";
+// $dbconn = pg_connect($connection_string) or die('Could not reach database.');
 
 $sql = "select *from posts order by title asc";
-
-$all_post = pg_query($sql);
+$all_post = $conn->query($sql);
 
 /* #region New query - DATE/TIMESTAMP */
-$sql_unique = "select *from posts where id_post='" . $id_post . "'";
-$post_data_unique = pg_query($sql_unique);
-$unique_post = pg_fetch_object($post_data_unique);
+// $sql_unique = "select *from posts where id_post='" . $id_post . "'";
+// $post_data_unique = pg_query($sql_unique);
+// $unique_post = pg_fetch_object($post_data_unique);
 
-$new_date = $unique_post->created_at;
-$date_edited = date("d/m/Y", strtotime($new_date));
+// $new_date = $unique_post->created_at;
+// $date_edited = date("d/m/Y", strtotime($new_date));
 
 ?>
 
@@ -145,11 +163,11 @@ $date_edited = date("d/m/Y", strtotime($new_date));
                         <div class="md: w-1/2">
                             <h2 class="mb-2 text-xl font-bold tracking-tight text-gray-900">
                                 <a href="#">
-                                    <?= $post->title ?>
+                                    <?= $post->post_title ?>
                                 </a>
                             </h2>
                             <figcaption class="mb-5 font-light text-gray-500">
-                                <?= $post->description_post ?>
+                                <?= $post->post_content ?>
                             </figcaption>
                             <div class="flex justify-start items-center">
                                 <a class="inline-flex items-center font-medium text-primary-600 hover:underline bg-orange-400 rounded p-2 text-white" onclick="send_post(<?= $post->id_post ?>)">

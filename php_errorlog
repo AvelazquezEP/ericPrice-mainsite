@@ -114,3 +114,4 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in /home/customer/www/abogadoericprice.com/public_html/post.php on line 167
+[01-Aug-2023 17:14:01 UTC] PHP Parse error:  syntax error, unexpected '$port' (T_VARIABLE) in /home/customer/www/abogadoericprice.com/public_html/blog_index.php on line 23
