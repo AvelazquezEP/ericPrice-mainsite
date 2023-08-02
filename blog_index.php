@@ -116,11 +116,9 @@ $all_post = $conn->query($sql);
     </header>
 
     <main class="flex flex-col gap-4 py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-    
-        <!-- <?php while ($post = pg_fetch_object($all_post)) : ?> -->
+        
         <?php while ($post = $all_post->fetch_assoc()) : ?>        
 
-            <!-- Best Post -->
             <section>
                 <article class="p-6 bg-white rounded border border-gray-200 shadow-md ">
                     <figure class="flex flex-col justify-between items-center gap-4 md:w-4/5 md:mx-auto md:flex-row">                        
@@ -135,12 +133,10 @@ $all_post = $conn->query($sql);
                         <div class="md: w-1/2">
                             <h2 class="mb-2 text-xl font-bold tracking-tight text-gray-900">
                                 <a href="#">                                
-                                    <?= $post["post_title"] ?>
-                                    <!-- <?= $post->post_title ?> -->
+                                    <?= $post["post_title"] ?>                                    
                                 </a>
                             </h2>
-                            <figcaption class="mb-5 font-light text-gray-500">
-                                <!-- <?= $post->post_content ?> -->
+                            <figcaption class="mb-5 font-light text-gray-500">                                
                             </figcaption>
                             <div class="flex justify-start items-center">
                                 <a class="inline-flex items-center font-medium text-primary-600 hover:underline bg-orange-400 rounded p-2 text-white" onclick="send_post(<?= $post->id_post ?>)">
@@ -159,8 +155,7 @@ $all_post = $conn->query($sql);
         <?php endwhile; ?>
 
     </main>
-
-    <!-- FOOTER -->
+    
     <footer class="p-3 mt-8 bg-[#001E3E]">
         <div class="flex flex-col gap-5 pt-5 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-600 md:flex-row">
             <div class="md:w-4/12">
