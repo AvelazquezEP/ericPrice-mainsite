@@ -3,26 +3,26 @@ const changeLocation = () => {
     const meetingTypePhone = document.getElementById('meetingTypePhone');
     const meetingTypePerson = document.getElementById('meetingTypePerson');
 
-    if (location == "San Bernardino") { //NUNCA ENTRA AUQI PORQUE NO LO TENGO EN LA LISTA
-        meetingTypePhone.checked = false; //The radioButton (Phone) become false
-        meetingTypePerson.checked = true; //The radioButton (Person) become true
+    if (location == "San Bernardino") {
+        meetingTypePhone.checked = false;
+        meetingTypePerson.checked = true;
 
-        meetingTypePhone.disabled = true; //need to change to disabled
-        document.getElementById("personTxt").style.color = 'black'; //Change the text color (label in radiobutton) for the active radiobutton
-        document.getElementById("phoneTxt").style.color = 'gray'; //Change the text color (label in radiobutton) for the disable radiobutton
+        meetingTypePhone.disabled = true;
+        document.getElementById("personTxt").style.color = 'black';
+        document.getElementById("phoneTxt").style.color = 'gray';
 
     } else if (location == "National") {
-        meetingTypePhone.checked = true; //The radioButton (Phone) become true
-        meetingTypePerson.checked = false; //the radioButton (Person) become false
+        meetingTypePhone.checked = true;
+        meetingTypePerson.checked = false
 
         meetingTypePerson.disabled = true;
-        document.getElementById("personTxt").style.color = 'gray'; //Change the text color (label in radiobutton) for the active radiobutton
+        document.getElementById("personTxt").style.color = 'gray';
         document.getElementById("phoneTxt").style.color = 'black';
 
     } else {
         meetingTypePhone.disabled = false;
         meetingTypePerson.disabled = false;
-        meetingTypePerson.checked = true; //TODO DEBE SER EN PERSONA
+        meetingTypePerson.checked = true;
     }
 
 }
