@@ -17,17 +17,14 @@ try {
     $mobile = $_POST['MobilePhone'];
     $language = $_POST['Language'];
     $leadID = $_POST['leadID'];
-    $question = $_POST['question'];
-
-    // $db_status = 0;
+    $question = $_POST['question'];    
 
     if(empty($question)){
         $question = "-";
     }
     
     $sendEmail = sendEmail($language, $email, $name, $lasName, $mobile, $question, $leadID);     
-
-    // echo $db_status;
+    
     echo $sendEmail;
 } catch (Exception $ex) {
     echo "****Email Error****";
@@ -37,7 +34,7 @@ try {
 function sendEmail($language, $email, $name, $lastName, $number, $question, $leadID)
 {            
     $mail = new PHPMailer(true);
-    // Email Template
+
     $message = file_get_contents('mailTemplate.html');
     $message = str_replace('%language%', $language, $message);
     $message = str_replace('%email%', $email, $message);
@@ -64,8 +61,7 @@ function sendEmail($language, $email, $name, $lastName, $number, $question, $lea
     $mail->Port = 587;
 
     $mail->setFrom('no-reply@abogadoericprice.com', 'No Reply');
-
-    // Correos a quienes le llegan
+    
     $mail->addAddress('no-reply@abogadoericprice.com');
     $mail->addReplyTo('no-reply@abogadoericprice.com', 'No Reply');
     
@@ -86,7 +82,6 @@ function sendEmail($language, $email, $name, $lastName, $number, $question, $lea
     $mail->send();
 }
 
-// TRABAJANDO EN ESTA SECCION
 function getLeads($number, $email)
 {    
     $host = "abogadoericprice.com";
