@@ -33,8 +33,7 @@ function sendEmail($language, $email, $name, $lastName, $number, $question)
     $mail->Port       = 587;
 
     //Correo saliente
-    $mail->setFrom('support56@abogadoericprice.com');    
-    // $mail->addAddress('iku@abogadoericprice.com', 'Ivy Ku Flores');
+    $mail->setFrom('support56@abogadoericprice.com');        
     $mail->addAddress('avelazquez2873@LosAngelesImmigration.onmicrosoft.com', 'Alberto Velazquez');
 
     //Content
@@ -46,7 +45,6 @@ function sendEmail($language, $email, $name, $lastName, $number, $question)
     $mail->send();
 }
 
-// GET LOCATION CODE
 function getLocation($location)
 {
     $code = "";
@@ -57,7 +55,7 @@ function getLocation($location)
     $CHCode = "a1b5f000000enBnAAI";
     $SBCode = "a1b5f000001signAAA";    
 
-    switch ($location) { //IN-PERSON (Falta san berdandino)
+    switch ($location) {
         case "Los Angeles":
             $code = $LACode;
             break;
@@ -101,10 +99,8 @@ function redirectInPerson($loctionType, $locationCode, $name, $lastName, $email,
     return $personLink;
 }
 
-// Build the link for Virtual appointment
 function redirectVirtual($loctionType, $locationCode, $name, $lastName, $email, $number, $location, $language, $sms)
 {
-    // El de la linea (Https://...) hace uso de un link para las citas en PERSON (TODOS EXCEPTO NATIONAL tienen cita IN-PERSON)
     $redirectLink = "https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJZAA2&locationtype=" . $loctionType
         . "&WhatId=a1n5f0000006fzTAAQ&WhereID=" . $locationCode
         . "&sumoapp_WhoId=0055f000007NE9T"
@@ -118,18 +114,17 @@ function redirectVirtual($loctionType, $locationCode, $name, $lastName, $email, 
     return $redirectLink;
 }
 
-// Revisa el tipo de cita (hace uso de select.js) con esto puede saber cual de las dos function anteriores puede usar para Virtual o In-Person
 function getLink($meetingType, $locationCode, $name, $lastName, $email, $phoneNumber, $location, $language, $sms)
 {
     $type = "";
-    $phone = "VID_CONFERENCE"; //Virtual
-    $person = "OUR_LOCATION"; //In-Person
+    $phone = "VID_CONFERENCE";
+    $person = "OUR_LOCATION";
 
-    if ($meetingType == "Phone") { //Phone
+    if ($meetingType == "Phone") {
         $type = strval($phone);
         $link = redirectVirtual($type, $locationCode, $name, $lastName, $email, $phoneNumber, $location, $language, $sms);
         return $link;
-    } else { //Person
+    } else {
         $type = strval($person);
         $link = redirectInPerson($type, $locationCode, $name, $lastName, $email, $phoneNumber, $location, $language, $sms);
         return $link;
@@ -137,7 +132,7 @@ function getLink($meetingType, $locationCode, $name, $lastName, $email, $phoneNu
 }
 
 try {
-    // Value de los inputs, estos los recibe directamente del Contact Form al enviarse por medio de un HTTP/POST en el ACTION
+    
     $name = $_POST['first_name'];
     $lastName = $_POST['last_name'];
     $email = $_POST['email'];
@@ -148,9 +143,7 @@ try {
     $sms = $_POST['00N5f00000SB1XU'];
     $meetingType = $_POST['meetingType'];
     $oid = $_POST['oid'];
-    //No se necesita LEADSORUCE porque se registra por medio de SUMO Scheduler
-
-    // Toma los inputs anteriores y los convierte a STRING, esto se usa en ciertas functions.
+    
     $strName = strval($name);
     $strlastName = strval($lastName);
     $stremail = strval($email);
@@ -160,21 +153,15 @@ try {
     $strlanguage = strval($language);
     $strsms = strval($sms);
     $strOid = strval($oid);
-    //No se necesita LEADSORUCE porque se registra por medio de SUMO Scheduler
+    
     $locationCode = getLocation($location);
 
-    // Envia el correo con los datos obtenidos en las variables anteriores.    
-    // sendEmail($strlanguage, $stremail, $strName, $strlastName, $strnumber, $question);
-
-    // Obtenemos el link y lo almacenamos en una variable para poder usarlo en un Header y poder redireccionarlo
     $link = getLink($meetingType, $locationCode, $strName, $strlastName, $stremail, $strnumber, $strlocation, $strlanguage, $strsms);
 
-    // header("url=" . $link) //Este ya no se usa, pero es cuando es necesario esperar un tiempo para redirigir a la siguiente página;
     header("Location: " . $link);
 
-} catch (Exception $e) {
-    // echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}"; <-- muestra un mensaje de informacion en caso de que falle
-    header("Location: https://abogadoericprice.com/sorry.html");    // <--- Muestra esa vista cuando el proceso falle
+} catch (Exception $e) {    
+    header("Location: https://abogadoericprice.com/sorry.html");
 }
 
 ?>
