@@ -1,7 +1,7 @@
 <?php
 
 header("Cache-Control: no-cache, must-revalidate");
-header("Expires: Mon, 26 Jul 2024 05:00:00 GMT"); //Update before 26/Jul/2024
+header("Expires: Mon, 26 Jul 2024 05:00:00 GMT");
 header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
 header("Cache-Control: post-check=0, pre-check=0", false);
 header("Pragma: no-cache");
@@ -161,8 +161,7 @@ $text_split = explode(".",$new_content);
     </div>
 
     </main>
-
-    <!-- FOOTER -->
+    
     <footer class="p-3 mt-8 bg-[#001E3E]">
         <div class="flex flex-col gap-5 pt-5 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-600 md:flex-row">
             <div class="md:w-4/12">

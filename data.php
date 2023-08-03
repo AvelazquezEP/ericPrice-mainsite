@@ -23,8 +23,7 @@ function sendEmail($language, $email, $name, $lastName, $number, $question)
     $message = str_replace('%lastName%', $lastName, $message);
     $message = str_replace('%mobile%', $number, $message);
     $message = str_replace('%message%', $question, $message);
-
-    //Server settings
+    
     // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
     $mail->isSMTP();
     $mail->Host       = 'smtp.office365.com';
@@ -41,10 +40,9 @@ function sendEmail($language, $email, $name, $lastName, $number, $question)
     //Content
     $mail->isHTML(true);
     $mail->Subject = 'Someone has opted in to form AEP Google PPC';
-    $mail->msgHTML($message); //Toma el template(mailTemplate.html) para construtir el contenido del correo
-    $mail->AltBody = 'Sending email'; // <-- Esta linea solo funciona para algun mensaje / NO SE UTILIZA puede quedar asi o comentada
-
-    // Toma todos los parametros anteriorres y realiza el envio del correo
+    $mail->msgHTML($message);
+    $mail->AltBody = 'Sending email';
+    
     $mail->send();
 }
 
@@ -57,8 +55,7 @@ function getLocation($location)
     $SDCode = "a1b5f000000eT8bAAE";
     $SMCode = "a1b5f000000eT8gAAE";
     $CHCode = "a1b5f000000enBnAAI";
-    $SBCode = "a1b5f000001signAAA";
-    // $NCode = ""; no tiene codigo ya que se registra como un cita VIRTUAL
+    $SBCode = "a1b5f000001signAAA";    
 
     switch ($location) { //IN-PERSON (Falta san berdandino)
         case "Los Angeles":
@@ -79,8 +76,7 @@ function getLocation($location)
         case "San Bernardino":
             $code = strval($SBCode);
             break;
-        case "National":
-            // NO se usa codigo de Location porque solo permite citas Virtuales.
+        case "National":            
             break;
         default:
             $code = strval($LACode);
@@ -90,10 +86,8 @@ function getLocation($location)
     return $code;
 }
 
-// Build the link for In-Person appointment
 function redirectInPerson($loctionType, $locationCode, $name, $lastName, $email, $number, $location, $language, $sms)
-{
-    // El de la linea (Https://...) hace uso de un link para las citas en VIRTUAL (NATIONAL es el unico que no permite citas en persona SOLO cita virtual)
+{    
     $personLink = "https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJCAA2&locationtype=" . $loctionType
         . "&WhatId=a1n5f0000006fzTAAQ&WhereID=" . $locationCode
         . "&sumoapp_WhoId=0055f000007NE9T"
