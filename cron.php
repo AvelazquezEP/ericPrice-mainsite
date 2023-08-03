@@ -20,7 +20,6 @@ try {
     echo "Error: " . $e;
 }
 
-// function refreshAccessToken()
 function refreshAccessToken($typeRequest, $client_id, $secret_id, $refresh_token)
 {
     $urlApi = 'https://login.salesforce.com/services/oauth2/token';
@@ -38,15 +37,11 @@ function refreshAccessToken($typeRequest, $client_id, $secret_id, $refresh_token
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
     $result = curl_exec($curl);
     $jsonArrayResponse = json_decode($result);
-    curl_close($curl); //Esta linea puede que ocasione tomar algunos segundos extras si tarda demasiado considerar COMENTAR/eliminar
+    curl_close($curl); // Remove this code in case take more than 50sec
 
     $new_token = strval($jsonArrayResponse->access_token);
 
     $date = date('Y-m-d H:i:s.uO');
-
-    // $date = new DateTime("now", new DateTimeZone('GMT-5') );
-    // $date->format('Y-m-d H:i:s');
-
 
     saveToken($new_token, $date);
 
@@ -55,12 +50,6 @@ function refreshAccessToken($typeRequest, $client_id, $secret_id, $refresh_token
 
 function saveToken($tokenString, $dateToken)
 {
-    // include_once('connection.inc.php');
-    // $host = "ericp138.sg-host.com";
-    // $port = "5432";
-    // $dbname = "dbhxe3qcvkv7wx";
-    // $user = "uexeeqopvpkgb";
-    // $password = "9gXq&(jy1)b4";
 
     $host = "abogadoericprice.com";
     $port = "5432";
