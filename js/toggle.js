@@ -1,3 +1,4 @@
+/* GITHUB LINK */
 /*https://gist.github.com/slavapas/593e8e50cf4cc16ac972afcbad4f70c8*/
 
 var navMenuDiv = document.getElementById("nav-content");
