@@ -5,7 +5,6 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-//Load Composer's autoloader
 require 'vendor/autoload.php';
 
 try {
@@ -25,7 +24,6 @@ try {
     header("Location: https://abogadoericprice.com/sorry.html");
 }
 
-// FUNCTIONS SECTIONS
 function createLeadApi($first_name, $last_name, $email, $mobile_phone, $location_name, $language_site, $sms_option) {
 
     $Token = getLastToken();

@@ -86,7 +86,6 @@ const createLeadApi = (first_name, last_name, email, mobile_phone, location_name
     });
 }
 
-// GET LOCATION CODE
 const getLocation = (location) => {
     var code = "";
     let LACode = "a1b5f000000eT4OAAU";
@@ -142,7 +141,6 @@ const sendEmail = (first_name, last_name, email, mobile_phone, language_site, le
     });
 }
 
-// Name validation
 const name_input_validation = (name_element) => {
 
     if (/^ *$/.test(name_element)) {
@@ -156,7 +154,6 @@ const name_input_validation = (name_element) => {
     }
 }
 
-// Email validation
 const email_input_validation = (email_element) => {
 
     if (/^ *$/.test(email_element)) {
@@ -170,7 +167,6 @@ const email_input_validation = (email_element) => {
     }
 }
 
-// location validation
 const location_input_validation = (location_element) => {
     if (/^ *$/.test(location_element)) {
         document.getElementById('locationInput').innerHTML = 'select a location please';
@@ -183,7 +179,6 @@ const location_input_validation = (location_element) => {
     }
 }
 
-// phone validation
 const phone_input_validation = (mobilePhone) => {
     if (mobilePhone.length < 10) {
         document.getElementById('mobileInput').innerHTML = 'The phone number must be 10 digits';
