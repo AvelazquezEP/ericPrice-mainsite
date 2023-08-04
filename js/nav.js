@@ -4,7 +4,7 @@ var navcontent = document.getElementById("nav-content");
 var brandname = document.getElementById("brandname");
 var toToggle = document.querySelectorAll(".toggleColour");
 
-document.addEventListener("scroll", function () {    
+document.addEventListener("scroll", function () {
     scrollpos = window.scrollY;
 
     if (scrollpos > 10) {
@@ -15,7 +15,7 @@ document.addEventListener("scroll", function () {
         }
         header.classList.add("shadow");
         navcontent.classList.remove("bg-gray-100");
-        navcontent.classList.add("bg-gray-900"); //no cambiar esta linea: es el fondo del navbar
+        navcontent.classList.add("bg-gray-900");
     } else {
         header.classList.remove("bg-gray-900");
         for (var i = 0; i < toToggle.length; i++) {

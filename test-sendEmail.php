@@ -4,11 +4,10 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-//Load Composer's autoloader
 require 'vendor/autoload.php';
 
 header("Cache-Control: no-cache, must-revalidate");
-header("Expires: Mon, 26 Jul 2024 05:00:00 GMT"); //Update before 26/Jul/2024
+header("Expires: Mon, 26 Jul 2024 05:00:00 GMT");
 
 try {
 
@@ -19,16 +18,14 @@ try {
     $language = $_POST['Language'];
     $leadID = $_POST['leadID'];
     $question = $_POST['question'];
-
-    // $db_status = 0;
+    
 
     if(empty($question)){
         $question = "-";
     }
     
     $sendEmail = sendEmail('Spanish', 'test@test.com', 'Test', 'LTest', '8888222264', 'TEST - EMAIL SERVICE', 0);     
-
-    // echo $db_status;
+    
     echo $sendEmail;
 } catch (Exception $ex) {
     echo "****Email Error****";

@@ -7,7 +7,7 @@ use PHPMailer\PHPMailer\Exception;
 require 'vendor/autoload.php';
 
 header("Cache-Control: no-cache, must-revalidate");
-header("Expires: Mon, 26 Jul 2024 05:00:00 GMT"); //Update before 26/Jul/2024
+header("Expires: Mon, 26 Jul 2024 05:00:00 GMT");
 
 try {
 
@@ -30,7 +30,7 @@ try {
     echo "****Email Error****";
 }
 
-// Send a email
+
 function sendEmail($language, $email, $name, $lastName, $number, $question, $leadID)
 {            
     $mail = new PHPMailer(true);
@@ -70,8 +70,7 @@ function sendEmail($language, $email, $name, $lastName, $number, $question, $lea
     $mail->addAddress('support56@abogadoericprice.com', 'Paola Carolina');
     $mail->addCC('rterrazas@greencardla.com', 'Robert Terrazas');
     $mail->addCC('avelazquez2873@LosAngelesImmigration.onmicrosoft.com', 'Alberto Martinez');
-
-    //Content
+    
     $mail->Encoding = 'base64';
     $mail->CharSet = "UTF-8";
 
