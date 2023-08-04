@@ -1,7 +1,7 @@
 <?php
 
 header("Cache-Control: no-cache, must-revalidate");
-header("Expires: Mon, 26 Jul 2024 05:00:00 GMT"); //Update before 26/Jul/2024
+header("Expires: Mon, 26 Jul 2024 05:00:00 GMT");
 header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
 header("Cache-Control: post-check=0, pre-check=0", false);
 header("Pragma: no-cache");
@@ -59,8 +59,7 @@ $all_post = $conn->query($sql);
 </head>
 
 <body class="bg-gray-50 leading-normal">
-
-    <!-- HEADER -->
+    
     <header class="" id="Header">
         <div class="bg-[#001e3e]">
             <nav id="header" class="w-full z-30 top-0">

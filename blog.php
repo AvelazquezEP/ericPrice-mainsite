@@ -1,6 +1,6 @@
 <?php
 header("Cache-Control: no-cache, must-revalidate");
-header("Expires: Mon, 26 Jul 2024 05:00:00 GMT"); //Update before 26/Jul/2024
+header("Expires: Mon, 26 Jul 2024 05:00:00 GMT");
 header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
 header("Cache-Control: post-check=0, pre-check=0", false);
 header("Pragma: no-cache");
@@ -59,9 +59,7 @@ $date_edited = date("Y-m-d",strtotime($new_date));
     <title>Eric Price - Immigration Attorney</title>
 </head>
 
-<body class="bg-gray-50 leading-normal">
-
-    <!-- HEADER -->
+<body class="bg-gray-50 leading-normal">    
     <header class="" id="Header">
         <div class="bg-[#001e3e]">
             <nav id="header" class="w-full z-30 top-0">
@@ -119,8 +117,7 @@ $date_edited = date("Y-m-d",strtotime($new_date));
     <main class="flex flex-col gap-4 py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
     
         <?php while ($post = pg_fetch_object($all_post)) : ?>
-
-            <!-- Best Post -->
+            
             <section>
                 <article class="p-6 bg-white rounded border border-gray-200 shadow-md ">
                     <figure class="flex flex-col justify-between items-center gap-4 md:w-4/5 md:mx-auto md:flex-row">
@@ -158,8 +155,7 @@ $date_edited = date("Y-m-d",strtotime($new_date));
         <?php endwhile; ?>
 
     </main>
-
-    <!-- FOOTER -->
+    
     <footer class="p-3 mt-8 bg-[#001E3E]">
         <div class="flex flex-col gap-5 pt-5 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-600 md:flex-row">
             <div class="md:w-4/12">
@@ -181,8 +177,7 @@ $date_edited = date("Y-m-d",strtotime($new_date));
                             </a>
                         </div>
                     </div>
-                </div>
-                <!-- SOCIAL MEDIA FOOTER -->
+                </div>                
 
                 <div class="flex flex-row justify-around w-4/5 mx-auto">
                     <div class="font-bold rounded-full bg-white flex items-center justify-center" style="height: 40px; width: 40px; font-size: 18px;">
