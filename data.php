@@ -1,21 +1,17 @@
 <?php
 
-// 2da PARTE
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-//Load Composer's autoloader
 require 'vendor/autoload.php';
 
 header("Cache-Control: no-cache, must-revalidate");
-header("Expires: Mon, 26 Jul 2024 05:00:00 GMT"); //Update before 26/Jul/2024
+header("Expires: Mon, 26 Jul 2024 05:00:00 GMT");
 
-// Send a email
 function sendEmail($language, $email, $name, $lastName, $number, $question)
 {
-    $mail = new PHPMailer(true);
-    // Email Template
+    $mail = new PHPMailer(true);    
     $message = file_get_contents('mailTemplate.html');
     $message = str_replace('%language%', $language, $message);
     $message = str_replace('%email%', $email, $message);
@@ -23,20 +19,17 @@ function sendEmail($language, $email, $name, $lastName, $number, $question)
     $message = str_replace('%lastName%', $lastName, $message);
     $message = str_replace('%mobile%', $number, $message);
     $message = str_replace('%message%', $question, $message);
-    
-    // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+        
     $mail->isSMTP();
     $mail->Host       = 'smtp.office365.com';
     $mail->SMTPAuth   = true;
     $mail->Username   = 'support56@abogadoericprice.com';    
     $mail->SMTPSecure = 'tls';
     $mail->Port       = 587;
-
-    //Correo saliente
+    
     $mail->setFrom('support56@abogadoericprice.com');        
     $mail->addAddress('avelazquez2873@LosAngelesImmigration.onmicrosoft.com', 'Alberto Velazquez');
-
-    //Content
+    
     $mail->isHTML(true);
     $mail->Subject = 'Someone has opted in to form AEP Google PPC';
     $mail->msgHTML($message);
