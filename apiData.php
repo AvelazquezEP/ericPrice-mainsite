@@ -55,6 +55,7 @@ function createLeadApi($first_name, $last_name, $email, $mobile_phone, $location
     return $result;    
 }
 
+// #region Get the Token for Salesforce
 function getLastToken()
 {
     $host = "abogadoericprice.com";
