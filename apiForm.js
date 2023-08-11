@@ -141,6 +141,9 @@ const sendEmail = (first_name, last_name, email, mobile_phone, language_site, le
     });
 }
 
+
+// #region for validation functions
+
 const name_input_validation = (name_element) => {
 
     if (/^ *$/.test(name_element)) {
