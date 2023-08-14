@@ -1,5 +1,6 @@
 var log = console.log;
 
+// function to disable the submit button and send the data
 $(document).ready(function () {
 
     $("#ButtonSend").on("click", function () {
@@ -27,6 +28,7 @@ $(document).ready(function () {
     });
 });
 
+// Main function to send and create the lead to salesforce and cerate the respective lead
 const sendData = (firstName, lastName, email, mobilePhone, location, language, meetingType, comment, sms) => {
 
     document.getElementById('locationInput').innerHTML = '';
@@ -38,6 +40,7 @@ const sendData = (firstName, lastName, email, mobilePhone, location, language, m
     createLeadApi(firstName, lastName, email, mobilePhone, location, language, sms, comment);
 }
 
+// this function its the main logic for the creation of the lead
 const createLeadApi = (first_name, last_name, email, mobile_phone, location_name, language_site, sms_option, comment = "-") => {
     $.ajax({
         type: 'POST',
@@ -86,6 +89,7 @@ const createLeadApi = (first_name, last_name, email, mobile_phone, location_name
     });
 }
 
+// #region function like a utilities to can invoce in the main funcion (try/catch)
 const getLocation = (location) => {
     var code = "";
     let LACode = "a1b5f000000eT4OAAU";

@@ -17,6 +17,7 @@ try {
     $sms_option = $_POST['SMS_Opt_In__c'];
     $comments = $_POST['comments'];
 
+    // Invoke the function to create the Lead
     $response =  createLeadApi( $firstName, $LastName, $Email, $mobile_phone, $location_name, $Language_site, $sms_option);
 
     echo $response;
@@ -24,6 +25,7 @@ try {
     header("Location: https://abogadoericprice.com/sorry.html");
 }
 
+// #region function to create the lead
 function createLeadApi($first_name, $last_name, $email, $mobile_phone, $location_name, $language_site, $sms_option) {
 
     $Token = getLastToken();
