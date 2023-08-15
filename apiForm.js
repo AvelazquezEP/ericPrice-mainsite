@@ -119,7 +119,7 @@ const getLocation = (location) => {
             code = SBCode;
             break;
         case "National":
-            code = LACode;            
+            code = LACode;
             break;
         default:
             code = strval(LACode);
