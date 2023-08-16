@@ -25,7 +25,6 @@ try {
     header("Location: https://abogadoericprice.com/sorry.html");
 }
 
-// #region function to create the lead
 function createLeadApi($first_name, $last_name, $email, $mobile_phone, $location_name, $language_site, $sms_option) {
 
     $Token = getLastToken();
@@ -57,7 +56,6 @@ function createLeadApi($first_name, $last_name, $email, $mobile_phone, $location
     return $result;    
 }
 
-// #region Get the Token for Salesforce
 function getLastToken()
 {
     $host = "abogadoericprice.com";
