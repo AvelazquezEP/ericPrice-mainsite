@@ -31,11 +31,9 @@ try {
     echo "****Email Error****";
 }
 
-// Send a email
 function sendEmail($language, $email, $name, $lastName, $number, $question, $leadID)
 {            
-    $mail = new PHPMailer(true);
-    // Email Template
+    $mail = new PHPMailer(true);    
     $message = file_get_contents('mailTemplate.html');
     $message = str_replace('%language%', $language, $message);
     $message = str_replace('%email%', $email, $message);
@@ -51,10 +49,8 @@ function sendEmail($language, $email, $name, $lastName, $number, $question, $lea
       } else {
           $message = str_replace('%duplicate%','-', $message);
       }
-      
-
-    //Server settings
-    $mail->SMTPDebug = SMTP::DEBUG_SERVER; //<-- imprime todos los pasos que realiza el proceso de enviar correo
+          
+    $mail->SMTPDebug = SMTP::DEBUG_SERVER;
     $mail->isSMTP();
     $mail->Host = 'smtp.office365.com';
     $mail->SMTPAuth = true;
@@ -75,13 +71,11 @@ function sendEmail($language, $email, $name, $lastName, $number, $question, $lea
         
     $mail->isHTML(true);
     $mail->Subject = 'Someone has opted in to contac form web site';
-    $mail->msgHTML($message); //Toma el template(mailTemplate.html) para construtir el contenido del correo
-    $mail->AltBody = 'Sending email'; // <-- Esta linea solo funciona para algun mensaje / NO SE UTILIZA puede quedar asi o comentada    
-    // Toma todos los parametros anteriorres y realiza el envio del correo
+    $mail->msgHTML($message); 
+    $mail->AltBody = 'Sending email';
     $mail->send();
 }
 
-// TRABAJANDO EN ESTA SECCION
 function getLeads($number, $email)
 {    
     $host = "abogadoericprice.com";
