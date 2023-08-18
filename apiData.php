@@ -16,8 +16,7 @@ try {
     $Language_site = $_POST['Language__c'];
     $sms_option = $_POST['SMS_Opt_In__c'];
     $comments = $_POST['comments'];
-
-    // Invoke the function to create the Lead
+    
     $response =  createLeadApi( $firstName, $LastName, $Email, $mobile_phone, $location_name, $Language_site, $sms_option);
 
     echo $response;

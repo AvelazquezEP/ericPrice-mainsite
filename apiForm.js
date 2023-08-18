@@ -28,7 +28,6 @@ $(document).ready(function () {
     });
 });
 
-// Main function to send and create the lead to salesforce and cerate the respective lead
 const sendData = (firstName, lastName, email, mobilePhone, location, language, meetingType, comment, sms) => {
 
     document.getElementById('locationInput').innerHTML = '';
@@ -88,7 +87,6 @@ const createLeadApi = (first_name, last_name, email, mobile_phone, location_name
     });
 }
 
-// #region function like a utilities to can invoce in the main funcion (try/catch)
 const getLocation = (location) => {
     var code = "";
     let LACode = "a1b5f000000eT4OAAU";
@@ -143,8 +141,6 @@ const sendEmail = (first_name, last_name, email, mobile_phone, language_site, le
         }
     });
 }
-
-// #region for validation functions
 
 const name_input_validation = (name_element) => {
     if (/^ *$/.test(name_element)) {
