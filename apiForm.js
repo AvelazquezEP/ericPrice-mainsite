@@ -40,7 +40,6 @@ const sendData = (firstName, lastName, email, mobilePhone, location, language, m
     createLeadApi(firstName, lastName, email, mobilePhone, location, language, sms, comment);
 }
 
-// this function its the main logic for the creation of the lead
 const createLeadApi = (first_name, last_name, email, mobile_phone, location_name, language_site, sms_option, comment = "-") => {
     $.ajax({
         type: 'POST',
