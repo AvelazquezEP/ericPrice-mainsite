@@ -51,7 +51,7 @@ function sendEmail($language, $email, $name, $lastName, $number, $question, $lea
         $message = str_replace('%duplicate%','-', $message);
     }
     
-    //   $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+    //  $mail->SMTPDebug = SMTP::DEBUG_SERVER;
     $mail->isSMTP();
     $mail->Host = 'smtp.office365.com';
     $mail->SMTPAuth = true;
