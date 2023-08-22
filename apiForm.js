@@ -17,9 +17,10 @@ $(document).ready(function () {
 
         var name_input = name_input_validation(firstName);
         var location_input = location_input_validation(location);
-        var phone_number = phone_input_validation(mobilePhone);
+        var phone_number = phone_input_validation(mobilePhone);        
+        var email_validation = email_input_validation(email);
 
-        if (name_input == true && location_input == true && phone_number == true) {
+        if (name_input == true && location_input == true && phone_number == true && email_validation) {
             sendData(firstName, lastName, email, mobilePhone, location, language, meetingType, comment, sms); //this method contains your logic            
         } else {
             setTimeout('$("#ButtonSend").removeAttr("disabled")', 3800);
