@@ -58,7 +58,7 @@ const createLeadApi = (first_name, last_name, email, mobile_phone, location_name
         success: function (data) {
             var fullUrl = "";
             let leadID = data.id;
-            log(`ID: ${leadID}`);
+            // log(`ID: ${leadID}`); <-- Log the LEAD ID on the site 
 
             let locationCode = getLocation(location_name);
 
