@@ -30,7 +30,6 @@ try {
     echo "****Email Error****";
 }
 
-
 function sendEmail($language, $email, $name, $lastName, $number, $question, $leadID)
 {            
     $mail = new PHPMailer(true);
