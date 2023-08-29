@@ -9,7 +9,7 @@
 </head>
 
 <style>
-    .container {        
+    .container {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -52,7 +52,7 @@
     .duplicate {
         margin-bottom: 3rem;
         font-weight: 700;
-        color: white;        
+        color: white;
     }
 
     .leadDetail {
@@ -69,6 +69,10 @@
         font-weight: bold;
         color: white;
     }
+
+    .comment_detail {
+        line-height: 2.1rem;
+    }
 </style>
 
 <body>
@@ -83,7 +87,7 @@
                 <p class="leadDetail"><span>Name:</span> %name%</p>
                 <p class="leadDetail"><span>Last Name:</span> %lastName%</p>
                 <p class="leadDetail"><span>Phone Number:</span> %mobile%</p>
-                <p class="leadDetail"><span>Comment:</span> %message%</p>
+                <p class="leadDetail comment_detail"><span>Comment:</span> %message%</p>
                 <p class="leadDetail"><span>Lead:</span>
                     <a href="https://greencardla.lightning.force.com/lightning/r/Lead/%leadID%/view">View-Lead</a>
                 </p>

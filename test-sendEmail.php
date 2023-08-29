@@ -23,8 +23,10 @@ try {
     if(empty($question)){
         $question = "-";
     }
+
+    $question_detail = "Hello, I own and manage a Digital Marketing Company that can help you get more than 100% ROI for your business. We specialize in managing the digital presence of immigration attorneys and generating high value leads for them. Potential clients often respond to the advertisement and reels to find legal experts who can help them navigate the complex immigration process. Here's how we can help: Strategic Content Creation: I will curate and create compelling content that showcases your expertise, educates your audience about immigration processes, and highlights successful case studies. This content will position you as a knowledgeable and trustworthy authority in the field. Consistent Engagement: Engaging with your audience is crucial. I will manage your social media accounts by responding to comments, messages, and inquiries promptly. This active engagement will foster a sense of trust and approachability among your potential clients. Targeted Advertising: I will design and implement targeted advertising campaigns to reach individuals who are actively seeking immigration legal services. This will maximize your exposure to the right audience and increase the likelihood of generating qualified leads. Monthly Analytics Reports: You will receive detailed monthly reports that outline the growth of your social media accounts, the performance of different posts, and the engagement metrics. This will help us refine our strategy and ensure that we're on track to meet your goals. We are sure to generate 40+ leads every month through Social Media Platforms like Facebook and Instagram. Also, we are able to create youtube shorts and reels for you that can go viral and increase your brand awareness. In today's digital age, 76% of consumers look at the online presence of a business before making a purchase. We help you build that digital presence through our services mentioned below: 1. Website Designing 2. Search Engine Optimization (#1 Page of Google) 3. Social Media Management 4. Google Ads and Analytics 5. Graphic Designing and Video Development If you're interested in exploring how an effective social media strategy can elevate your immigration law practice, I would be more than happy to schedule a call at your convenience through the calendly link given below, or call at +1(714) 249-0848 and I'll be ready to discuss the possibilities. Schedule here: https://calendly.com/5coredigitalmarketing/consultation-call";
     
-    $sendEmail = sendEmail('Spanish', 'test@test.com', 'Test', 'LTest', '8888222264', 'TEST - EMAIL SERVICE', 0);     
+    $sendEmail = sendEmail('Spanish', 'test@test.com', 'Test', 'LTest', '8888222264', $question_detail, 0);     
     
     echo $sendEmail;
 } catch (Exception $ex) {
@@ -55,7 +57,7 @@ function sendEmail($language, $email, $name, $lastName, $number, $question, $lea
     $mail->Host = 'smtp.office365.com';
     $mail->SMTPAuth = true;
     $mail->Username = 'support56@abogadoericprice.com';
-    $mail->Password = '500LaTerrazaBlvd';
+    $mail->Password = 'M3xicali56';
     $mail->SMTPSecure = 'tls';
     $mail->Port = 587;
 
