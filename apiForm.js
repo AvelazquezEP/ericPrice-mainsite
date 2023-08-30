@@ -1,6 +1,6 @@
 var log = console.log;
 
-// function to disable the submit button and send the data
+// function to disable the submit button and send the data and cant submit again
 $(document).ready(function () {
 
     $("#ButtonSend").on("click", function () {
@@ -17,7 +17,7 @@ $(document).ready(function () {
 
         var name_input = name_input_validation(firstName);
         var location_input = location_input_validation(location);
-        var phone_number = phone_input_validation(mobilePhone);        
+        var phone_number = phone_input_validation(mobilePhone);
         var email_validation = email_input_validation(email);
 
         if (name_input == true && location_input == true && phone_number == true && email_validation) {
@@ -59,7 +59,7 @@ const createLeadApi = (first_name, last_name, email, mobile_phone, location_name
         success: function (data) {
             var fullUrl = "";
             let leadID = data.id;
-            // log(`ID: ${leadID}`); <-- Log the LEAD ID on the site 
+            // log(`ID: ${leadID}`); <-- Log the LEAD ID on the site
 
             let locationCode = getLocation(location_name);
 
