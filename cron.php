@@ -37,7 +37,7 @@ function refreshAccessToken($typeRequest, $client_id, $secret_id, $refresh_token
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
     $result = curl_exec($curl);
     $jsonArrayResponse = json_decode($result);
-    curl_close($curl); // Remove this code in case take more than 50sec
+    curl_close($curl);
 
     $new_token = strval($jsonArrayResponse->access_token);
 
