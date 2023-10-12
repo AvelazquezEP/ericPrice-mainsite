@@ -61,7 +61,7 @@ function sendEmail($language, $email, $name, $lastName, $number, $question, $lea
 
     $mail->setFrom('no-reply@abogadoericprice.com', 'No Reply');
     
-    // All emails
+    // All emails to send the Lead notification
     $mail->addAddress('no-reply@abogadoericprice.com');
     $mail->addReplyTo('no-reply@abogadoericprice.com', 'No Reply');
     
