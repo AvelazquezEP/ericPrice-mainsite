@@ -23,7 +23,7 @@ function sendEmail($language, $email, $name, $lastName, $number, $question)
     $mail->isSMTP();
     $mail->Host       = 'smtp.office365.com';
     $mail->SMTPAuth   = true;
-    $mail->Username   = 'support56@abogadoericprice.com';    
+    $mail->Username   = 'support56@abogadoericprice.com'; // <-- the carolina email to send lead notification
     $mail->SMTPSecure = 'tls';
     $mail->Port       = 587;
     
