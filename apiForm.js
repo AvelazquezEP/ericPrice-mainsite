@@ -23,7 +23,7 @@ $(document).ready(function () {
         if (name_input == true && location_input == true && phone_number == true && email_validation) {
             sendData(firstName, lastName, email, mobilePhone, location, language, meetingType, comment, sms); //this method contains your logic            
         } else {
-            setTimeout('$("#ButtonSend").removeAttr("disabled")', 3800);
+            setTimeout('$("#ButtonSend").removeAttr("disabled")', 3800); //<-- the time we need to wait for the button could be enable again
         }
 
     });
