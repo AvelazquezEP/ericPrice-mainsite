@@ -60,7 +60,7 @@ function saveToken($tokenString, $dateToken)
     $connection_string = "host={$host} port={$port} dbname={$dbname} user={$user} password={$password} ";
     $dbconn = pg_connect($connection_string) or die('Could not reach database.');
         
-    $sql = "INSERT INTO tokenacess(new_token, newToken_date) " . "VALUES('" . cleanData($tokenString) . "','" . cleanData($dateToken) . "')";    
+    $sql = "INSERT INTO tokenacess(new_token, newToken_date) " . "VALUES('" . cleanData($tokenString) . "','" . cleanData($dateToken) . "')";
     return pg_affected_rows(pg_query($sql));
 }
 
