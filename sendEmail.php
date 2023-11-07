@@ -65,10 +65,11 @@ function sendEmail($language, $email, $name, $lastName, $number, $question, $lea
     $mail->addAddress('no-reply@abogadoericprice.com');
     $mail->addReplyTo('no-reply@abogadoericprice.com', 'No Reply');
     
+    // Main emails to send notification
     $mail->addAddress('iku@abogadoericprice.com', 'Ivy Ku Flores');
-    $mail->addAddress('fmartinez@greencardla.com', 'Floriberta Martinez');
-    $mail->addAddress('support56@abogadoericprice.com', 'Paola Carolina');
-    $mail->addCC('rterrazas@greencardla.com', 'Robert Terrazas');
+    // $mail->addAddress('fmartinez@greencardla.com', 'Floriberta Martinez');
+    // $mail->addAddress('support56@abogadoericprice.com', 'Paola Carolina');
+    // $mail->addCC('rterrazas@greencardla.com', 'Robert Terrazas');
     $mail->addCC('avelazquez2873@LosAngelesImmigration.onmicrosoft.com', 'Alberto Martinez');
     
     $mail->Encoding = 'base64';
@@ -81,21 +82,21 @@ function sendEmail($language, $email, $name, $lastName, $number, $question, $lea
     $mail->send();
 }
 
-function getLeads($number, $email)
-{    
-    $host = "abogadoericprice.com";
-    $port = "5432";
-    $dbname = "dbezl1uquldojv";
-    $user = "uhgpgzxv2hhak";
-    $password = "700Flower!";
+// function getLeads($number, $email)
+// {    
+//     $host = "abogadoericprice.com";
+//     $port = "5432";
+//     $dbname = "dbezl1uquldojv";
+//     $user = "uhgpgzxv2hhak";
+//     $password = "700Flower!";
 
-    $connection_string = "host={$host} port={$port} dbname={$dbname} user={$user} password={$password} ";
-    $dbconn = pg_connect($connection_string) or die('Could not reach database.');
+//     $connection_string = "host={$host} port={$port} dbname={$dbname} user={$user} password={$password} ";
+//     $dbconn = pg_connect($connection_string) or die('Could not reach database.');
 
-    $sql = "select lead_name, lead_lastname, phone_number, email from leads where phone_number = '" . $number . "' or email = '" . $email . "' order by id_lead desc";
-    $result = pg_query($sql);
-    return pg_fetch_object($result);
-}
+//     $sql = "select lead_name, lead_lastname, phone_number, email from leads where phone_number = '" . $number . "' or email = '" . $email . "' order by id_lead desc";
+//     $result = pg_query($sql);
+//     return pg_fetch_object($result);
+// }
 
 // function saveLead($name, $lastName, $phoneNumber, $email)
 // {
