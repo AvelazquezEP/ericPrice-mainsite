@@ -11,9 +11,9 @@ $(document).ready(function () {
         let mobilePhone = document.getElementById("mobile").value;
         let location = document.getElementById("00N5f00000SB1X0").value;
         let language = document.getElementById("00N5f00000SB1Ws").value;
-        let meetingType = document.getElementById("meetingTypePerson").value;
+        let meetingType = document.getElementById("meetingTypePerson").value; //<-- this was updated in the html (CONTACT FORM)
         let comment = document.getElementById("message").value;
-        let sms = document.getElementById("00N5f00000SB1XU").value;
+        let sms = document.getElementById("00N5f00000SB1XU").value; //<-- this was updated in the html (CONTACT FORM)
 
         var name_input = name_input_validation(firstName);
         var location_input = location_input_validation(location);
