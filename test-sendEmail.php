@@ -63,8 +63,8 @@ function sendEmail($language, $email, $name, $lastName, $number, $question, $lea
 
     $mail->setFrom('no-reply@abogadoericprice.com', 'No Reply');
 
-    $mail->addAddress('no-reply@abogadoericprice.com');
-    $mail->addReplyTo('no-reply@abogadoericprice.com', 'No Reply');
+    // $mail->addAddress('no-reply@abogadoericprice.com');
+    // $mail->addReplyTo('no-reply@abogadoericprice.com', 'No Reply');
     $mail->addCC('avelazquez2873@LosAngelesImmigration.onmicrosoft.com', 'Alberto Martinez');
 
     //Content
