@@ -119,3 +119,20 @@ Stack trace:
 [01-Aug-2023 23:26:44 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/customer/www/abogadoericprice.com/public_html/blog_index.php on line 386
 [01-Aug-2023 23:32:04 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/customer/www/abogadoericprice.com/public_html/blog_index.php on line 382
 [02-Aug-2023 04:38:47 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/customer/www/abogadoericprice.com/public_html/blog_index.php on line 382
+[08-Nov-2023 00:22:53 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function cleanData() in /home/customer/www/abogadoericprice.com/public_html/test.php:18
+Stack trace:
+#0 /home/customer/www/abogadoericprice.com/public_html/test.php(3): saveLead('Test', 'Lead', '6895421358', 'test@lead.com')
+#1 {main}
+  thrown in /home/customer/www/abogadoericprice.com/public_html/test.php on line 18
+[08-Nov-2023 00:27:04 UTC] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /home/customer/www/abogadoericprice.com/public_html/test.php on line 16
+[08-Nov-2023 00:27:16 UTC] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /home/customer/www/abogadoericprice.com/public_html/test.php on line 16
+[08-Nov-2023 00:27:19 UTC] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /home/customer/www/abogadoericprice.com/public_html/test.php on line 16
+[08-Nov-2023 00:27:21 UTC] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /home/customer/www/abogadoericprice.com/public_html/test.php on line 16
+[08-Nov-2023 00:27:26 UTC] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /home/customer/www/abogadoericprice.com/public_html/test.php on line 16
+[08-Nov-2023 00:39:34 UTC] PHP Fatal error:  Uncaught Error: Object of class stdClass could not be converted to string in /home/customer/www/abogadoericprice.com/public_html/test.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/abogadoericprice.com/public_html/test.php on line 3
+[08-Nov-2023 00:55:35 UTC] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home/customer/www/abogadoericprice.com/public_html/test.php on line 7
+[08-Nov-2023 00:56:03 UTC] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home/customer/www/abogadoericprice.com/public_html/test.php on line 7
+[08-Nov-2023 01:02:27 UTC] PHP Parse error:  syntax error, unexpected ')' in /home/customer/www/abogadoericprice.com/public_html/test.php on line 5

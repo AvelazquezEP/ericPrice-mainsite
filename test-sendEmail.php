@@ -52,6 +52,11 @@ function sendEmail($language, $email, $name, $lastName, $number, $question, $lea
           $message = str_replace('%duplicate%','-', $message);
       }
 
+    getLeads('5687456321', 'test@lead.com');
+    
+
+    saveLead('Test', 'lead', '5687456321', 'test@lead.com');
+
     $mail->SMTPDebug = SMTP::DEBUG_SERVER;
     $mail->isSMTP();
     $mail->Host = 'smtp.office365.com';
@@ -75,11 +80,12 @@ function sendEmail($language, $email, $name, $lastName, $number, $question, $lea
     $mail->Subject = 'Someone has opted in to contac form web site';
     $mail->msgHTML($message); 
     $mail->AltBody = 'Sending email';
-    $mail->send();
+    $mail->send();    
 }
 
+
 function getLeads($number, $email)
-{    
+{
     $host = "abogadoericprice.com";
     $port = "5432";
     $dbname = "dbezl1uquldojv";
@@ -89,7 +95,7 @@ function getLeads($number, $email)
     $connection_string = "host={$host} port={$port} dbname={$dbname} user={$user} password={$password} ";
     $dbconn = pg_connect($connection_string) or die('Could not reach database.');
 
-    $sql = "select lead_name, lead_lastname, phone_number, email from leads where phone_number = '" . $number . "' or email = '" . $email . "' order by id_lead desc";
+    $sql = "select lead_name, last_name, phone_number, email from save_leads where phone_number = '" . $number . "' or email = '" . $email . "' order by id_lead desc";
     $result = pg_query($sql);
     return pg_fetch_object($result);
 }
@@ -105,9 +111,10 @@ function saveLead($name, $lastName, $phoneNumber, $email)
     $connection_string = "host={$host} port={$port} dbname={$dbname} user={$user} password={$password} ";
     $dbconn = pg_connect($connection_string) or die('Could not reach database.');
 
-    $date = '2023/05/05 12:10:10.00';
+    // $date = '2023/05/05 12:10:10.00';
 
-    $sql = "INSERT INTO leads(lead_name, lead_lastname, phone_number, email) " . "VALUES('" . cleanData($name) . "','" . cleanData($lastName) . "','" . cleanData($phoneNumber) . "','" . cleanData($email) . "','" . cleanData($date) ."')";
+// $sql = "INSERT INTO save_leads(lead_name, last_name, phone_number, email) " . "VALUES('" . cleanData($name) . "','" . cleanData($lastName) . "','" . cleanData($phoneNumber) . "','" . cleanData($email) . "','" . cleanData($date) ."')";
+    $sql = "INSERT INTO save_leads(lead_name, last_name, phone_number, email) " . "VALUES('" . cleanData($name) . "','" . cleanData($lastName) . "','" . cleanData($phoneNumber) . "','" . cleanData($email) . "')";
     return pg_affected_rows(pg_query($sql));
 }
 
