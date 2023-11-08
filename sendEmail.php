@@ -82,39 +82,6 @@ function sendEmail($language, $email, $name, $lastName, $number, $question, $lea
     $mail->send();
 }
 
-// function getLeads($number, $email)
-// {
-//     $host = "abogadoericprice.com";
-//     $port = "5432";
-//     $dbname = "dbezl1uquldojv";
-//     $user = "uhgpgzxv2hhak";
-//     $password = "700Flower!";
-
-//     $connection_string = "host={$host} port={$port} dbname={$dbname} user={$user} password={$password} ";
-//     $dbconn = pg_connect($connection_string) or die('Could not reach database.');
-
-//     $sql = "select lead_name, lead_lastname, phone_number, email from leads where phone_number = '" . $number . "' or email = '" . $email . "' order by id_lead desc";
-//     $result = pg_query($sql);
-//     return pg_fetch_object($result);
-// }
-
-// function saveLead($name, $lastName, $phoneNumber, $email)
-// {
-//     $host = "abogadoericprice.com";
-//     $port = "5432";
-//     $dbname = "dbezl1uquldojv";
-//     $user = "uhgpgzxv2hhak";
-//     $password = "700Flower!";
-
-//     $connection_string = "host={$host} port={$port} dbname={$dbname} user={$user} password={$password} ";
-//     $dbconn = pg_connect($connection_string) or die('Could not reach database.');
-
-//     $date = '2023/05/05 12:10:10.00';
-
-//     $sql = "INSERT INTO leads(lead_name, lead_lastname, phone_number, email) " . "VALUES('" . cleanData($name) . "','" . cleanData($lastName) . "','" . cleanData($phoneNumber) . "','" . cleanData($email) . "','" . cleanData($date) ."')";
-//     return pg_affected_rows(pg_query($sql));
-// }
-
 function cleanData($val)
 {
     return pg_escape_string($val);
