@@ -24,6 +24,14 @@ try {
         $question = "-";
     }
 
+    $total_leads = getLeads('8888222264', 'test@lead.com');
+
+    if ($total_leads){
+    echo "We have found another lead with this data";
+    } else {
+    saveLead('Test', 'Lead', '6895421358', 'test@lead.com');    
+    }
+
     $question_detail = "Hello, I own and manage a Digital Marketing Company that can help you get more than 100% ROI for your business. We specialize in managing the digital presence of immigration attorneys and generating high value leads for them. Potential clients often respond to the advertisement and reels to find legal experts who can help them navigate the complex immigration process. Here's how we can help: Strategic Content Creation: I will curate and create compelling content that showcases your expertise, educates your audience about immigration processes, and highlights successful case studies. This content will position you as a knowledgeable and trustworthy authority in the field. Consistent Engagement: Engaging with your audience is crucial. I will manage your social media accounts by responding to comments, messages, and inquiries promptly. This active engagement will foster a sense of trust and approachability among your potential clients. Targeted Advertising: I will design and implement targeted advertising campaigns to reach individuals who are actively seeking immigration legal services. This will maximize your exposure to the right audience and increase the likelihood of generating qualified leads. Monthly Analytics Reports: You will receive detailed monthly reports that outline the growth of your social media accounts, the performance of different posts, and the engagement metrics. This will help us refine our strategy and ensure that we're on track to meet your goals. We are sure to generate 40+ leads every month through Social Media Platforms like Facebook and Instagram. Also, we are able to create youtube shorts and reels for you that can go viral and increase your brand awareness. In today's digital age, 76% of consumers look at the online presence of a business before making a purchase. We help you build that digital presence through our services mentioned below: 1. Website Designing 2. Search Engine Optimization (#1 Page of Google) 3. Social Media Management 4. Google Ads and Analytics 5. Graphic Designing and Video Development If you're interested in exploring how an effective social media strategy can elevate your immigration law practice, I would be more than happy to schedule a call at your convenience through the calendly link given below, or call at +1(714) 249-0848 and I'll be ready to discuss the possibilities. Schedule here: https://calendly.com/5coredigitalmarketing/consultation-call";
     
     $sendEmail = sendEmail('Spanish', 'test@test.com', 'Test', 'LTest', '8888222264', $question_detail, 0);
@@ -50,12 +58,7 @@ function sendEmail($language, $email, $name, $lastName, $number, $question, $lea
           $message = str_replace('%duplicate%','This is a weekly maintenance test', $message);
       } else {
           $message = str_replace('%duplicate%','-', $message);
-      }
-
-    getLeads('5687456321', 'test@lead.com');
-    
-
-    saveLead('Test', 'lead', '5687456321', 'test@lead.com');
+      }    
 
     $mail->SMTPDebug = SMTP::DEBUG_SERVER;
     $mail->isSMTP();
@@ -83,6 +86,20 @@ function sendEmail($language, $email, $name, $lastName, $number, $question, $lea
     $mail->send();    
 }
 
+function saveLead($name, $lastName, $phoneNumber, $email)
+{
+    $host = "abogadoericprice.com";
+    $port = "5432";
+    $dbname = "dbezl1uquldojv";
+    $user = "uhgpgzxv2hhak";
+    $password = "700Flower!";
+
+    $connection_string = "host={$host} port={$port} dbname={$dbname} user={$user} password={$password} ";
+    $dbconn = pg_connect($connection_string) or die('Could not reach database.');
+    
+    $sql = "INSERT INTO save_leads(lead_name, last_name, phone_number, email) " . "VALUES('" . cleanData($name) . "','" . cleanData($lastName) . "','" . cleanData($phoneNumber) . "','" . cleanData($email) . "')";
+    return pg_affected_rows(pg_query($sql));
+}
 
 function getLeads($number, $email)
 {
@@ -98,24 +115,6 @@ function getLeads($number, $email)
     $sql = "select lead_name, last_name, phone_number, email from save_leads where phone_number = '" . $number . "' or email = '" . $email . "' order by id_lead desc";
     $result = pg_query($sql);
     return pg_fetch_object($result);
-}
-
-function saveLead($name, $lastName, $phoneNumber, $email)
-{
-    $host = "abogadoericprice.com";
-    $port = "5432";
-    $dbname = "dbezl1uquldojv";
-    $user = "uhgpgzxv2hhak";
-    $password = "700Flower!";
-
-    $connection_string = "host={$host} port={$port} dbname={$dbname} user={$user} password={$password} ";
-    $dbconn = pg_connect($connection_string) or die('Could not reach database.');
-
-    // $date = '2023/05/05 12:10:10.00';
-
-// $sql = "INSERT INTO save_leads(lead_name, last_name, phone_number, email) " . "VALUES('" . cleanData($name) . "','" . cleanData($lastName) . "','" . cleanData($phoneNumber) . "','" . cleanData($email) . "','" . cleanData($date) ."')";
-    $sql = "INSERT INTO save_leads(lead_name, last_name, phone_number, email) " . "VALUES('" . cleanData($name) . "','" . cleanData($lastName) . "','" . cleanData($phoneNumber) . "','" . cleanData($email) . "')";
-    return pg_affected_rows(pg_query($sql));
 }
 
 function cleanData($val)

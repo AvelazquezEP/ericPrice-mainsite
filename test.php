@@ -2,13 +2,12 @@
 
 // var_dump(getLeads('5687456324', 'test@lead.com'));
 // echo "<br />";
-$total_leads = var_dump(getLeads('5687456324', 'teswt@lead.com'));
-// echo($total_leads);
+$total_leads = getLeads('5687456324', 'teswt@lead.com');
 
-if ($total_leads == "false"){
+if ($total_leads){
 echo "We have found another lead with this data";
 } else {
-saveLead('Test', 'Lead', '6895421358', 'test@lead.com');
+saveLead('Test', 'Lead', '6895421358', 'test@lead.com');    
 }
 
 function saveLead($name, $lastName, $phoneNumber, $email)

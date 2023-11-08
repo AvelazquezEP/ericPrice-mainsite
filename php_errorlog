@@ -136,3 +136,9 @@ Stack trace:
 [08-Nov-2023 00:55:35 UTC] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home/customer/www/abogadoericprice.com/public_html/test.php on line 7
 [08-Nov-2023 00:56:03 UTC] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home/customer/www/abogadoericprice.com/public_html/test.php on line 7
 [08-Nov-2023 01:02:27 UTC] PHP Parse error:  syntax error, unexpected ')' in /home/customer/www/abogadoericprice.com/public_html/test.php on line 5
+[08-Nov-2023 17:20:43 UTC] PHP Parse error:  syntax error, unexpected ')' in /home/customer/www/abogadoericprice.com/public_html/test.php on line 5
+[08-Nov-2023 17:21:34 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ';' or ',' in /home/customer/www/abogadoericprice.com/public_html/test.php on line 11
+[08-Nov-2023 17:22:14 UTC] PHP Fatal error:  Uncaught Error: Object of class stdClass could not be converted to string in /home/customer/www/abogadoericprice.com/public_html/test.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/abogadoericprice.com/public_html/test.php on line 6
