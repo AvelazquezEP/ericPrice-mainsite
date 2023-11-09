@@ -12,7 +12,7 @@ header("Expires: Mon, 26 Jul 2024 05:00:00 GMT");
 try {
 
     $name = $_POST['FirstName'];
-    $lasName = $_POST['LastName'];
+    $lastName = $_POST['LastName'];
     $email = $_POST['Email'];
     $mobile = $_POST['MobilePhone'];
     $language = $_POST['Language'];
@@ -31,7 +31,7 @@ try {
     saveLead($name, $lastName, $mobile, $email);
     }
     
-    $sendEmail = sendEmail($language, $email, $name, $lasName, $mobile, $question, $leadID);
+    $sendEmail = sendEmail($language, $email, $name, $lastName, $mobile, $question, $leadID);
     
     echo $sendEmail;
 } catch (Exception $ex) {
