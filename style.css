@@ -59,3 +59,9 @@ body {
 .sendButton:hover{
     background-color: #ff8239;
 }
+
+@media screen and (max-width: 1024px) {
+    .custom-office {
+        margin-left: 10%;        
+    }
+}
