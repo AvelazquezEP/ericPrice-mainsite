@@ -148,3 +148,21 @@ Stack trace:
 #0 /home/customer/www/abogadoericprice.com/public_html/test.php(14): updateLead(18)
 #1 {main}
   thrown in /home/customer/www/abogadoericprice.com/public_html/test.php on line 26
+[21-Nov-2023 22:32:28 UTC] PHP Fatal error:  Uncaught Error: Object of class stdClass could not be converted to string in /home/customer/www/abogadoericprice.com/public_html/test.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/abogadoericprice.com/public_html/test.php on line 8
+[21-Nov-2023 22:33:54 UTC] PHP Fatal error:  Uncaught Error: Object of class stdClass could not be converted to string in /home/customer/www/abogadoericprice.com/public_html/test.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/abogadoericprice.com/public_html/test.php on line 8
+[21-Nov-2023 22:36:31 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type stdClass as array in /home/customer/www/abogadoericprice.com/public_html/test.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/abogadoericprice.com/public_html/test.php on line 8
+[21-Nov-2023 22:51:07 UTC] PHP Parse error:  syntax error, unexpected 'function' (T_FUNCTION), expecting ';' or ',' in /home/customer/www/abogadoericprice.com/public_html/test.php on line 23
+[21-Nov-2023 23:30:18 UTC] PHP Fatal error:  Uncaught Error: Object of class stdClass could not be converted to string in /home/customer/www/abogadoericprice.com/public_html/test.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/abogadoericprice.com/public_html/test.php on line 6
+[21-Nov-2023 23:43:33 UTC] PHP Parse error:  syntax error, unexpected ';', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/customer/www/abogadoericprice.com/public_html/test.php on line 5

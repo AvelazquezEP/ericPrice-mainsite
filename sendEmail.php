@@ -26,7 +26,7 @@ try {
     $total_leads = getLeads($mobile, $email);
 
     if ($total_leads){
-    echo "We have found another lead with this data";
+    // echo "We have found another lead with this data";
     } else {
     saveLead($name, $lastName, $mobile, $email);
     }
