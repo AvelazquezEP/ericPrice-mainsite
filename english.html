@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KK99DKFKRQ"></script>
     <script>
@@ -15,15 +16,15 @@
     <!-- Meta Pixel Code -->
     <script>
         !function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '381364605320562');
-fbq('track', 'PageView');
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '381364605320562');
+        fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=381364605320562&ev=PageView&noscript=1"
@@ -141,7 +142,7 @@ src="https://www.facebook.com/tr?id=381364605320562&ev=PageView&noscript=1"
                             </li>
                             <li class="mr-3">
                                 <a class="inline-block no-underline bg-orange-400 hover:bg-orange-500 rounded hover:text-gray-50 hover:text-underline py-2 px-4 lg:text-white "
-                                    href="/index.html">Spanish</a>
+                                    href="/index.html">Espa&ntilde;ol</a>
                             </li>
                         </ul>
                     </div>
@@ -987,7 +988,7 @@ src="https://www.facebook.com/tr?id=381364605320562&ev=PageView&noscript=1"
             <div class="md:w-4/12">
                 <div>
                     <h2 class="mb-4 text-lg text-center font-semibold text-white uppercase">Route site</h2>
-                    <ul class="text-gray-200 text-center">
+                    <ul class="text-gray-200 text-center flex flex-col gap-3">
                         <li>
                             <a href="/english.html">Home</a>
                         </li>
@@ -1013,14 +1014,14 @@ src="https://www.facebook.com/tr?id=381364605320562&ev=PageView&noscript=1"
                             <a href="#Contacto">Contact</a>
                         </li>
                         <li>
-                            <a href="index.html">Español</a>
+                            <a href="index.html">Espa&ntilde;ol</a>
                         </li>
                     </ul>
                 </div>
             </div>
             <div class="md:w-4/12 md:mx-auto">
                 <h2 class="text-center mb-4 text-lg font-semibold text-white uppercase">Office</h2>
-                <div class="grid grid-cols-2 gap-4 md:mx-auto">
+                <div class="grid grid-cols-1 gap-4 md:mx-auto lg:grid-cols-2 custom-office">
                     <div class="flex items-center">
                         <i class="fa-sharp fa-solid fa-location-dot text-orange-400 text-2xl"></i>
                         <a href="https://cta.abogadoericprice.com/html/LADirectionsEnglish.html" target="_blank">
@@ -1087,24 +1088,20 @@ src="https://www.facebook.com/tr?id=381364605320562&ev=PageView&noscript=1"
             </div>
         </div>
         <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
-        <div class="text-center flex flex-col items-center justify-center gap-3 md:flex-row md:justify-between">
-            <span class="text-sm text-gray-500 sm:text-center">
-                © 2023 <a href="/index.html" class="hover:underline">Eric Price™</a>. All rights reserved.
-            </span>
-            <div>
-                <ul class="flex flex-col text-gray-500 md:flex-row">
+        <div class="flex flex gap-5 px-4 mx-auto max-w-screen-xl md:flex-row items-center text-center">
+            <div class="md:w-4/12">
+                <span class="text-sm text-gray-500">
+                    © 2023 <a href="/index.html" class="hover:underline">Eric Price™</a>. All rights reserved.
+                </span>
+            </div>
+            <div class="md:w-4/12">
+                <ul class="text-gray-500">
                     <li>
                         <a href="/privacyPolicy.html" class="mr-4 hover:underline md:mr-6">Privacy Policy</a>
                     </li>
-                    <li>
-                        <a href="#" class="mr-4 hover:underline md:mr-6 ">Resignation of responsibility</a>
-                    </li>
-                    <li>
-                        <a href="#" class="hover:underline">Legal Note</a>
-                    </li>
                 </ul>
             </div>
-            <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
+            <div class="md:w-4/12 flex flex-row items-center justify-center space-x-6">
                 <a href="https://www.facebook.com/abogadoericprice" class="text-gray-500">
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path fill-rule="evenodd"
@@ -1131,6 +1128,7 @@ src="https://www.facebook.com/tr?id=381364605320562&ev=PageView&noscript=1"
     <script src="js/toggle.js"></script>
     <script src="js/select.js"></script>
 
+    <!-- CSS/SCRIPT AOS - Animation (plugin/tool/code) -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
