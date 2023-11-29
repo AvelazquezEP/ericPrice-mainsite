@@ -11,7 +11,7 @@
     --primary-font: 'Roboto', sans-serif;
 }
 
-img{
+img {
     max-width: 100%;
 }
 
@@ -19,7 +19,7 @@ body {
     font-family: var(--primary-font);
 }
 
-.headerBackground {    
+.headerBackground {
     background-image:
         linear-gradient(45deg,
             rgba(32, 32, 32, 0.9),
@@ -35,34 +35,28 @@ body {
             rgba(22, 22, 22, 0.9)), url(images/lawCover.webp);
 }
 
-.testimonials>figure{
+.testimonials>figure {
     box-shadow: 1px 1px 4px #212122;
 }
 
 .circle {
-  display: inline-block;
-  margin-left: 55px;
-  height: 150px;
-  width: 150px;
-  border-radius: 100%;  
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  align-items: center; 
-  justify-content: center;
-  margin: 0 auto;
+    display: inline-block;
+    margin-left: 55px;
+    height: 150px;
+    width: 150px;
+    border-radius: 100%;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
 }
 
-.sendButton{
+.sendButton {
     background-color: #ff5e00;
 }
 
-.sendButton:hover{
+.sendButton:hover {
     background-color: #ff8239;
-}
-
-@media screen and (max-width: 1024px) {
-    .custom-office {
-        margin-left: 10%;        
-    }
 }
