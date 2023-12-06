@@ -1,9 +1,7 @@
-  <?php
+<?php
 
-  $date = date('Y-m-d H:i:s.uO');
+$date = date('Y-m-d H:i:s.uO');
 
-// create_month("test", $date);
-// create_week($date, $date, 1, $date);
 $daily = 1;
 $paid_search = 2;
 $direct = 3;
@@ -12,6 +10,9 @@ $organic_social = 5;
 $referral = 6;
 $created_at = $date;
 $week_id = 16;
+
+// create_month("test", $date);
+// create_week($date, $date, 1, $date);
 
 create_stat($daily, $paid_search, $direct, $organic_search, $organic_social, $referral, $created_at, $week_id);
 
