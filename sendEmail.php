@@ -26,7 +26,7 @@ try {
     $total_leads = getLeads($mobile, $email);
 
     if ($total_leads){
-    // echo "We have found another lead with this data"; <-- dont need show any data in this point
+        //  we dont need do nothing here
     } else {
     saveLead($name, $lastName, $mobile, $email);
     }
