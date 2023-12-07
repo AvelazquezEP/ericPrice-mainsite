@@ -1,5 +1,5 @@
 <?php
-
+// This file its only to show the post in the index file but for now we dont use this functions for now
 header("Cache-Control: no-cache, must-revalidate");
 header("Expires: Mon, 26 Jul 2024 05:00:00 GMT");
 header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
