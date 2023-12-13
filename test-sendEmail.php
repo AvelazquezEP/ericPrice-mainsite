@@ -119,6 +119,7 @@ function updateLead($lead_id) {
     return pg_affected_rows(pg_query($sql));
 }
 
+// Test comment
 function getLeads($number, $email)
 {
     $host = "abogadoericprice.com";
