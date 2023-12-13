@@ -12,7 +12,14 @@ $(document).ready(function () {
         let language = document.getElementById("00N5f00000SB1Ws").value;
         let meetingType = document.getElementById("meetingTypePerson").value;
         let comment = document.getElementById("message").value;
-        let sms = document.getElementById("00N5f00000SB1XU").value;
+        // let sms = document.getElementById("00N5f00000SB1XU").value;
+        var sms = '';
+        let sms_yes = document.getElementById('00N5f00000SB1XU1');
+        if(sms_yes == true) {
+            sms = "Yes";
+        } else {
+            sms = "No";
+        }
 
         var name_input = name_input_validation(firstName);
         var location_input = location_input_validation(location);
@@ -20,7 +27,8 @@ $(document).ready(function () {
         var email_validation = email_input_validation(email);
 
         if (name_input == true && location_input == true && phone_number == true && email_validation) {
-            sendData(firstName, lastName, email, mobilePhone, location, language, meetingType, comment, sms);
+            sendData(firstName, lastName, email, mobilePhone, location, language, comment, sms);
+            // sendData(firstName, lastName, email, mobilePhone, location, language, meetingType, comment, sms);
         } else {
             setTimeout('$("#ButtonSend").removeAttr("disabled")', 3800);
         }
@@ -28,7 +36,8 @@ $(document).ready(function () {
     });
 });
 
-const sendData = (firstName, lastName, email, mobilePhone, location, language, meetingType, comment, sms) => {
+// const sendData = (firstName, lastName, email, mobilePhone, location, language, meetingType, comment, sms) => {
+const sendData = (firstName, lastName, email, mobilePhone, location, language, comment, sms) => {
 
     document.getElementById('locationInput').innerHTML = '';
     document.getElementById('nameInput').innerHTML = '';
