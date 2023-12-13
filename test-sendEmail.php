@@ -81,7 +81,7 @@ function sendEmail($language, $email, $name, $lastName, $number, $question, $lea
     $mail->CharSet = "UTF-8";
         
     $mail->isHTML(true);
-    $mail->Subject = 'Someone has opted in to contac form web site';
+    $mail->Subject = 'Someone has opted in to contact form web site';
     $mail->msgHTML($message); 
     $mail->AltBody = 'Sending email';
     $mail->send();    
