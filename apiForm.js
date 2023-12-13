@@ -15,7 +15,7 @@ $(document).ready(function () {
         // let sms = document.getElementById("00N5f00000SB1XU").value;
         var sms = '';
         let sms_yes = document.getElementById('00N5f00000SB1XU1');
-        if(sms_yes == true) {
+        if(sms_yes.checked == true) {
             sms = "Yes";
         } else {
             sms = "No";
