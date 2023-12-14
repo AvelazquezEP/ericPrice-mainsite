@@ -15,7 +15,7 @@ $(document).ready(function () {
         // let sms = document.getElementById("00N5f00000SB1XU").value;
         var sms = '';
         let sms_yes = document.getElementById('00N5f00000SB1XU1');
-        if(sms_yes.checked == true) {
+        if (sms_yes.checked == true) {
             sms = "Yes";
         } else {
             sms = "No";
@@ -150,6 +150,7 @@ const sendEmail = (first_name, last_name, email, mobile_phone, language_site, le
     });
 }
 
+// Validation for each important input in the form
 const name_input_validation = (name_element) => {
     if (/^ *$/.test(name_element)) {
         document.getElementById('nameInput').innerHTML = 'Please write your name';
@@ -163,7 +164,6 @@ const name_input_validation = (name_element) => {
 }
 
 const email_input_validation = (email_element) => {
-
     if (/^ *$/.test(email_element)) {
         document.getElementById('emailInput').innerHTML = 'Write an email please';
         document.getElementById('emailInput').style.color = "#F93C17";
