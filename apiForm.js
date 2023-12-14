@@ -135,6 +135,7 @@ const getLocation = (location) => {
     return code;
 }
 
+// Send email main function, dont return anything because only send the data and send de email
 const sendEmail = (first_name, last_name, email, mobile_phone, language_site, leadID, comment) => {
     $.ajax({
         type: 'POST',
