@@ -116,14 +116,14 @@ $all_post = $conn->query($sql);
 
     <main class="flex flex-col gap-4 py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
         
-        <?php while ($post = $all_post->fetch_assoc()) : ?>        
+        <?php while ($post = $all_post->fetch_assoc()) : ?>
 
             <section>
                 <article class="p-6 bg-white rounded border border-gray-200 shadow-md ">
-                    <figure class="flex flex-col justify-between items-center gap-4 md:w-4/5 md:mx-auto md:flex-row">                        
+                    <figure class="flex flex-col justify-between items-center gap-4 md:w-4/5 md:mx-auto md:flex-row">
                         <div class="md: w-1/2">
                             <span class="text-sm text-gray-500" style="text-align:left;"><?= $date_edited ?></span>
-                            <div class="mb-5 text-gray-500">                                
+                            <div class="mb-5 text-gray-500">
                             </div>
                             <div class="">
                                 <img src="data:image/png;base64,<?= $post->post_picture ?>" alt="blog picture" class="postImage rounded md:w-[400px]" style="max-width: 100%;">
