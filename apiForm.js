@@ -49,6 +49,7 @@ const sendData = (firstName, lastName, email, mobilePhone, location, language, c
 }
 
 const createLeadApi = (first_name, last_name, email, mobile_phone, location_name, language_site, sms_option, comment = "-") => {
+    // we dont need use the meettyng type because we have another rules in the company so in this way is more easy manage this option
     $.ajax({
         type: 'POST',
         url: 'apiData.php',
