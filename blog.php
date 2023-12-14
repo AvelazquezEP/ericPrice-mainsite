@@ -15,6 +15,7 @@ $password = "700Flower!";
 $connection_string = "host={$host} port={$port} dbname={$dbname} user={$user} password={$password} ";
 $dbconn = pg_connect($connection_string) or die('Could not reach database.');
 
+// Query to get all the data
 $sql = "select *from posts order by title asc";
 
 $all_post = pg_query($sql);
