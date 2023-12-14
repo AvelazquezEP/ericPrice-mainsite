@@ -15,11 +15,12 @@ $password = "700Flower!";
 $connection_string = "host={$host} port={$port} dbname={$dbname} user={$user} password={$password} ";
 $dbconn = pg_connect($connection_string) or die('Could not reach database.');
 
-// Query to get all the data
+// Query to get all the posts in asc order
 $sql = "select *from posts order by title asc";
 
 $all_post = pg_query($sql);
 
+// Query to get the post whit specific ID
 $sql_unique = "select *from posts where id_post='" . $id_post . "'";
 $post_data_unique = pg_query($sql_unique);
 $unique_post = pg_fetch_object($post_data_unique);
