@@ -12,7 +12,7 @@ $referral = 6;
 $created_at = $date;
 $week_id = 16;
 
-// USE FUNCTIONS
+// Function section we can test each function per separate only dont comment
 // create_month("test", $date);
 // create_week($date, $date, 1, $date);
 
