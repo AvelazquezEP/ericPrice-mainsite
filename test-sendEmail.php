@@ -28,6 +28,7 @@ try {
 
     if ($total_leads){
         //  we dont need do nothing here
+        // only need the 
     } else {
         saveLead($name, $lastName, $mobile, $email);
     }
@@ -59,7 +60,8 @@ function sendEmail($language, $email, $name, $lastName, $number, $question, $lea
         $message = str_replace('%duplicate%','-', $message);
     }
     
-    //  $mail->SMTPDebug = SMTP::DEBUG_SERVER; <-- show the process when try to send the email and print all steps the serves need to make
+    // whit this we can render all de log for each procces we need when someone send the email notificacion
+    // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
     $mail->isSMTP();
     $mail->Host = 'smtp.office365.com';
     $mail->SMTPAuth = true;
