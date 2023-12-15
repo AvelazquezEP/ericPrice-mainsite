@@ -35,6 +35,7 @@ try {
     
     echo $sendEmail;
 } catch (Exception $ex) {
+    // For general use if something its wrong only will be redirect to the Thanks page
     echo "****Email Error****";
 }
 
