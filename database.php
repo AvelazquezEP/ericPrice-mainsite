@@ -1,5 +1,6 @@
 <?php
 
+// here we can try to make functions to save the stats data in some table on the database
 $date = date('Y-m-d H:i:s.uO');
 
 $daily = 1;
