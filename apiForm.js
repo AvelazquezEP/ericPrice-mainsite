@@ -1,7 +1,7 @@
 var log = console.log;
 
 $(document).ready(function () {
-    // function to disable the submit button and send the data and cant submit again
+    // function to disable the submit button and send the data and cant submit again in this way we can create duplicate of the same lead
     $("#ButtonSend").on("click", function () {
         $(this).attr("disabled", "disabled");
         let firstName = document.getElementById("first_name").value;
@@ -9,10 +9,8 @@ $(document).ready(function () {
         let email = document.getElementById("email").value;
         let mobilePhone = document.getElementById("mobile").value;
         let location = document.getElementById("00N5f00000SB1X0").value;
-        let language = document.getElementById("00N5f00000SB1Ws").value;
-        let meetingType = document.getElementById("meetingTypePerson").value;
-        let comment = document.getElementById("message").value;
-        // let sms = document.getElementById("00N5f00000SB1XU").value;
+        let language = document.getElementById("00N5f00000SB1Ws").value;        
+        let comment = document.getElementById("message").value;        
         var sms = '';
         let sms_yes = document.getElementById('00N5f00000SB1XU1');
         if (sms_yes.checked == true) {
@@ -27,8 +25,7 @@ $(document).ready(function () {
         var email_validation = email_input_validation(email);
 
         if (name_input == true && location_input == true && phone_number == true && email_validation) {
-            sendData(firstName, lastName, email, mobilePhone, location, language, comment, sms);
-            // sendData(firstName, lastName, email, mobilePhone, location, language, meetingType, comment, sms);
+            sendData(firstName, lastName, email, mobilePhone, location, language, comment, sms);            
         } else {
             setTimeout('$("#ButtonSend").removeAttr("disabled")', 3800);
         }
@@ -36,7 +33,6 @@ $(document).ready(function () {
     });
 });
 
-// const sendData = (firstName, lastName, email, mobilePhone, location, language, meetingType, comment, sms) => {
 const sendData = (firstName, lastName, email, mobilePhone, location, language, comment, sms) => {
 
     document.getElementById('locationInput').innerHTML = '';
