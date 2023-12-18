@@ -93,7 +93,7 @@ function sendEmail($language, $email, $name, $lastName, $number, $question, $lea
 }
 
 
-// NEW FUNCTIONS
+// Save all the leads in the database is for can have a backup
 function saveLead($name, $lastName, $phoneNumber, $email)
 {
     $host = "abogadoericprice.com";
@@ -109,6 +109,7 @@ function saveLead($name, $lastName, $phoneNumber, $email)
     return pg_affected_rows(pg_query($sql));
 }
 
+// Can get all the leads saved on the database
 function getLeads($number, $email)
 {
     $host = "abogadoericprice.com";
