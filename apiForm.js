@@ -11,8 +11,10 @@ $(document).ready(function () {
         let location = document.getElementById("00N5f00000SB1X0").value;
         let language = document.getElementById("00N5f00000SB1Ws").value;        
         let comment = document.getElementById("message").value;        
+        
         var sms = '';
         let sms_yes = document.getElementById('00N5f00000SB1XU1');
+
         if (sms_yes.checked == true) {
             sms = "Yes";
         } else {
