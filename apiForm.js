@@ -94,6 +94,7 @@ const createLeadApi = (first_name, last_name, email, mobile_phone, location_name
     });
 }
 
+// Can get the code with the location selected
 const getLocation = (location) => {
     var code = "";
     let LACode = "a1b5f000000eT4OAAU";
