@@ -1,4 +1,4 @@
-/* GITHUB LINK */
+/* GITHUB LINK - here is where we can get the original script and we used this like a example */
 /*https://gist.github.com/slavapas/593e8e50cf4cc16ac972afcbad4f70c8*/
 
 var navMenuDiv = document.getElementById("nav-content");
