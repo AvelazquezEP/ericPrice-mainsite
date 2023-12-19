@@ -20,6 +20,7 @@ function check(e) {
     }
 }
 
+// Check if the parent.
 const checkParent = (t, elm) => {
     while (t.parentNode) {
         if (t == elm) {
