@@ -25,6 +25,7 @@ $sql_unique = "select *from posts where id_post='" . $id_post . "'";
 $post_data_unique = pg_query($sql_unique);
 $unique_post = pg_fetch_object($post_data_unique);
 
+// Way to can create the date
 $new_date = $unique_post->created_at;
 $date_edited = date("Y-m-d",strtotime($new_date));
 
