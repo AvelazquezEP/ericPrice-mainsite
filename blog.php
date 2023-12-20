@@ -161,6 +161,7 @@ $date_edited = date("Y-m-d",strtotime($new_date));
 
     </main>
     
+    <!-- This section dont use a variables from php -->
     <footer class="p-3 mt-8 bg-[#001E3E]">
         <div class="flex flex-col gap-5 pt-5 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-600 md:flex-row">
             <div class="md:w-4/12">
