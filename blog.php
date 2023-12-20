@@ -31,6 +31,7 @@ $date_edited = date("Y-m-d",strtotime($new_date));
 
 ?>
 
+<!-- We take the php variables and we can render that data -->
 <!DOCTYPE html>
 <html lang="en">
 
