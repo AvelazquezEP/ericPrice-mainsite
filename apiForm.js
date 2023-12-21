@@ -12,6 +12,7 @@ $(document).ready(function () {
         let language = document.getElementById("00N5f00000SB1Ws").value;
         let comment = document.getElementById("message").value;
 
+        // This variables is only for the SMS and can save the YES/NO option in salesforce database when we create the the lead
         var sms = '';
         let sms_yes = document.getElementById('00N5f00000SB1XU1');
 
@@ -26,6 +27,7 @@ $(document).ready(function () {
         var phone_number = phone_input_validation(mobilePhone);
         var email_validation = email_input_validation(email);
 
+        // This conditions are for make be secure we donde have an empty inputs in the form
         if (name_input == true && location_input == true && phone_number == true && email_validation) {
             sendData(firstName, lastName, email, mobilePhone, location, language, comment, sms);
         } else {
@@ -35,6 +37,7 @@ $(document).ready(function () {
     });
 });
 
+// When send the data we need change the color in the button, from orange to gray
 const sendData = (firstName, lastName, email, mobilePhone, location, language, comment, sms) => {
 
     document.getElementById('locationInput').innerHTML = '';
@@ -46,6 +49,7 @@ const sendData = (firstName, lastName, email, mobilePhone, location, language, c
     createLeadApi(firstName, lastName, email, mobilePhone, location, language, sms, comment);
 }
 
+// can create the lead and send the data to salesforce but its necessary first send to php data file
 const createLeadApi = (first_name, last_name, email, mobile_phone, location_name, language_site, sms_option, comment = "-") => {
     // we dont need use the meettyng type because we have another rules in the company so in this way is more easy manage this option and now we can redirect only with the location
     $.ajax({
