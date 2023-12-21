@@ -1,20 +1,20 @@
-<!-- We dont need change anything here  -->
+<!-- We dont need change anything here this script start in automatic each 3 hours -->
 <!-- CRON FILE / every 3 hours (8am, 11pm, 2pm, 5pm, 8pm, 11pm, 2am, 5am) -->
-<!-- CRON FILE / every 3 hours (7am, 10pm, 1pm, 4pm, 7pm, 10pm, 1am, 4am) -->
 <?php
 
 session_start();
 $newToken = $_SESSION["newKey"];
 
 try {
-
     $typeRequest = "refresh_token";
     $client_id = "3MVG9p1Q1BCe9GmCTLOrzG0fy.Avu0cWom1hzgSzlZpvn.md7wGghadvLfkDKFVcYzeeeA7S23b8emt5JCbIq";
     $secret_id = "67EE826292B731BD3EB70D7780FA9BE7A7055E9D066E31C7805319CE549441AC";
     $refresh_token = '5Aep861FpKlGRwv8KAiV.sa3q6sPXVzio_hrVzMwc15tmOyIN1R2WLBImVQQKuEEVVij7ZAaKv.TLzVsmVcJDtz';
 
+    // We get the token
     $response = refreshAccessToken($typeRequest, $client_id, $secret_id, $refresh_token);
 
+    // we get only the token and not the complete json structure
     $newToken = $response->access_token;
     $_SESSION["newKey"] = $response;
     var_dump($response);
@@ -22,6 +22,7 @@ try {
     echo "Error: " . $e;
 }
 
+// This function create a new token every 3 hours
 function refreshAccessToken($typeRequest, $client_id, $secret_id, $refresh_token)
 {
     $urlApi = 'https://login.salesforce.com/services/oauth2/token';
@@ -45,14 +46,15 @@ function refreshAccessToken($typeRequest, $client_id, $secret_id, $refresh_token
 
     $date = date('Y-m-d H:i:s.uO');
 
+    // When get the token we need save this in the database
     saveToken($new_token, $date);
 
     return $jsonArrayResponse;
 }
 
+// We 
 function saveToken($tokenString, $dateToken)
 {
-
     $host = "abogadoericprice.com";
     $port = "5432";
     $dbname = "dbezl1uquldojv";
