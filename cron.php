@@ -1,11 +1,12 @@
 <!-- We dont need change anything here this script start in automatic each 3 hours -->
-<!-- CRON FILE / every 3 hours (8am, 11pm, 2pm, 5pm, 8pm, 11pm, 2am, 5am) -->
+<!-- CRON FILE / every 3 hours (7am, 10pm, 1pm, 4pm, 7pm, 10pm, 1am, 4am) -->
 <?php
 
 session_start();
 $newToken = $_SESSION["newKey"];
 
 try {
+    // This variables its not the real token, is only for can use the function
     $typeRequest = "refresh_token";
     $client_id = "3MVG9p1Q1BCe9GmCTLOrzG0fy.Avu0cWom1hzgSzlZpvn.md7wGghadvLfkDKFVcYzeeeA7S23b8emt5JCbIq";
     $secret_id = "67EE826292B731BD3EB70D7780FA9BE7A7055E9D066E31C7805319CE549441AC";
@@ -25,8 +26,10 @@ try {
 // This function create a new token every 3 hours
 function refreshAccessToken($typeRequest, $client_id, $secret_id, $refresh_token)
 {
+    // always is the same link because is the link api for salesforce
     $urlApi = 'https://login.salesforce.com/services/oauth2/token';
 
+    // we need this parameters for the correct functioning in the api
     $dataArray = [
         'grant_type' => $typeRequest,
         'client_id' => $client_id,
@@ -34,6 +37,7 @@ function refreshAccessToken($typeRequest, $client_id, $secret_id, $refresh_token
         'refresh_token' => $refresh_token
     ];
 
+    // The curl method helps to send the data with post and the salesforce server can receive
     $curl = curl_init($urlApi);
     curl_setopt($curl, CURLOPT_POST, true);
     curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($dataArray));
@@ -55,6 +59,7 @@ function refreshAccessToken($typeRequest, $client_id, $secret_id, $refresh_token
 // we need save the token every time start the refresh token function
 function saveToken($tokenString, $dateToken)
 {
+    // Its important to have the correct credentials
     $host = "abogadoericprice.com";
     $port = "5432";
     $dbname = "dbezl1uquldojv";
