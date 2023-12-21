@@ -1,5 +1,6 @@
 <?php
 
+// Whith this we can allow the access to this file from any api (http/https)
 header('Access-Control-Allow-Origin: *');
 
 session_start();
@@ -10,6 +11,7 @@ use PHPMailer\PHPMailer\Exception;
 require 'vendor/autoload.php';
 
 try {
+    // We need this variables for create the lead
     $firstName = $_POST['FirstName'];
     $LastName = $_POST['LastName'];
     $Email = $_POST['Email'];
@@ -19,10 +21,13 @@ try {
     $sms_option = $_POST['SMS_Opt_In__c'];
     $comments = $_POST['comments'];
     
+    // we need this function to can send the data to salesforce and create the lead
     $response =  createLeadApi( $firstName, $LastName, $Email, $mobile_phone, $location_name, $Language_site, $sms_option);
 
+    // we return the complete response but in the js we only take the ID_LEAD
     echo $response;
 } catch (Exception $e) {
+    // In case we get an error, the customer will be redirect to the sorry page, this is only a view to can say we cant proccess the data
     header("Location: https://abogadoericprice.com/sorry.html");
 }
 
@@ -31,6 +36,7 @@ function createLeadApi($first_name, $last_name, $email, $mobile_phone, $location
     $Token = getLastToken();
     $newToken = $Token->new_token;
 
+    // this url is to can send the data to salesforce
     $urlApi = 'https://greencardla.my.salesforce.com/services/data/v57.0/sobjects/Lead';
     $authorization = "Authorization: Bearer " . $newToken;
 
@@ -45,6 +51,7 @@ function createLeadApi($first_name, $last_name, $email, $mobile_phone, $location
         'SMS_Opt_In__c' => $sms_option
     ];
 
+    // we use the CURL method the dataArray to can send all the correct data to salesforce
     $ch = curl_init($urlApi);
     $payload = json_encode($dataArray);
     curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
@@ -57,6 +64,8 @@ function createLeadApi($first_name, $last_name, $email, $mobile_phone, $location
     return $result;    
 }
 
+// For send the data to salesforce it's necessary get the token from the database
+// this function allow the way to get this token
 function getLastToken()
 {
     $host = "abogadoericprice.com";
