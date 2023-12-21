@@ -52,7 +52,7 @@ function refreshAccessToken($typeRequest, $client_id, $secret_id, $refresh_token
     return $jsonArrayResponse;
 }
 
-// We 
+// we need save the token every time start the refresh token function
 function saveToken($tokenString, $dateToken)
 {
     $host = "abogadoericprice.com";
