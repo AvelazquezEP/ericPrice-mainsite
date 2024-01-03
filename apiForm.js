@@ -108,7 +108,7 @@ const getLocation = (location) => {
     let CHCode = "a1b5f000000enBnAAI";
     let SBCode = "a1b5f000001signAAA";
 
-    // With each location code we can have the variable code whit the correct code
+    // we save only a unique code for each select
     switch (location) {
         case "Los Angeles":
             code = LACode;
