@@ -1,3 +1,4 @@
+<!-- we dont use this file for the blog, because we use the blog with wordpress -->
 <?php
 
 header("Cache-Control: no-cache, must-revalidate");
