@@ -156,7 +156,7 @@ const sendEmail = (first_name, last_name, email, mobile_phone, language_site, le
     });
 }
 
-// Validation for each important input in the form
+// Validation
 const name_input_validation = (name_element) => {
     if (/^ *$/.test(name_element)) {
         document.getElementById('nameInput').innerHTML = 'Please write your name';

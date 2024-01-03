@@ -156,7 +156,7 @@ $all_post = $conn->query($sql);
 
     </main>
     
-    <!-- the footer is the same thing in this file and the  -->
+    <!-- the footer is the same thing in this file and on the other sites like the main index and testimonials -->
     <footer class="p-3 mt-8 bg-[#001E3E]">
         <div class="flex flex-col gap-5 pt-5 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-600 md:flex-row">
             <div class="md:w-4/12">
