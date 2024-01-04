@@ -100,7 +100,9 @@ const getLocation = (location) => {
     let SMCode = "a1b5f000000eT8gAAE";
     let CHCode = "a1b5f000000enBnAAI";
     let SBCode = "a1b5f000001signAAA";
-    let OXCode = "a1bRg000000QIPVIA4"; // New Oxnard office    
+    let ESCode = "";
+    let OXCode = "a1bRg000000QIPVIA4"; // New Oxnard office
+    let RSCode = ""; // New Riverside office 
 
     switch (location) {
         case "Los Angeles":
@@ -121,8 +123,14 @@ const getLocation = (location) => {
         case "San Bernardino":
             code = SBCode;
             break;
+        case "Escondido":
+            code = ESCode;
+            break;
         case "Oxnard":
             code = OXCode;
+            break;
+        case "Riverside":
+            code = RSCode;
             break;
         case "National":
             code = LACode;
