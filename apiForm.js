@@ -1,6 +1,6 @@
 var log = console.log;
 
-$(document).ready(function () {    
+$(document).ready(function () {
     $("#ButtonSend").on("click", function () {
         $(this).attr("disabled", "disabled");
         let firstName = document.getElementById("first_name").value;
@@ -24,7 +24,7 @@ $(document).ready(function () {
         var location_input = location_input_validation(location);
         var phone_number = phone_input_validation(mobilePhone);
         var email_validation = email_input_validation(email);
-        
+
         if (name_input == true && location_input == true && phone_number == true && email_validation) {
             sendData(firstName, lastName, email, mobilePhone, location, language, comment, sms);
         } else {
@@ -45,7 +45,7 @@ const sendData = (firstName, lastName, email, mobilePhone, location, language, c
     createLeadApi(firstName, lastName, email, mobilePhone, location, language, sms, comment);
 }
 
-const createLeadApi = (first_name, last_name, email, mobile_phone, location_name, language_site, sms_option, comment = "-") => {    
+const createLeadApi = (first_name, last_name, email, mobile_phone, location_name, language_site, sms_option, comment = "-") => {
     $.ajax({
         type: 'POST',
         url: 'apiData.php',
@@ -100,7 +100,8 @@ const getLocation = (location) => {
     let SMCode = "a1b5f000000eT8gAAE";
     let CHCode = "a1b5f000000enBnAAI";
     let SBCode = "a1b5f000001signAAA";
-    
+    let OXCode = "a1bRg000000QIPVIA4"; // New Oxnard office    
+
     switch (location) {
         case "Los Angeles":
             code = LACode;
@@ -119,6 +120,9 @@ const getLocation = (location) => {
             break;
         case "San Bernardino":
             code = SBCode;
+            break;
+        case "Oxnard":
+            code = OXCode;
             break;
         case "National":
             code = LACode;
