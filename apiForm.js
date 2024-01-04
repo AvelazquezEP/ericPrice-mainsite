@@ -1,7 +1,6 @@
 var log = console.log;
 
-$(document).ready(function () {
-    // function to disable the submit button and send the data and cant submit again in this way we can create duplicate of the same lead
+$(document).ready(function () {    
     $("#ButtonSend").on("click", function () {
         $(this).attr("disabled", "disabled");
         let firstName = document.getElementById("first_name").value;
@@ -12,7 +11,6 @@ $(document).ready(function () {
         let language = document.getElementById("00N5f00000SB1Ws").value;
         let comment = document.getElementById("message").value;
 
-        // This variables is only for the SMS and can save the YES/NO option in salesforce database when we create the the lead
         var sms = '';
         let sms_yes = document.getElementById('00N5f00000SB1XU1');
 
@@ -26,8 +24,7 @@ $(document).ready(function () {
         var location_input = location_input_validation(location);
         var phone_number = phone_input_validation(mobilePhone);
         var email_validation = email_input_validation(email);
-
-        // This conditions are for make be secure we donde have an empty inputs in the form
+        
         if (name_input == true && location_input == true && phone_number == true && email_validation) {
             sendData(firstName, lastName, email, mobilePhone, location, language, comment, sms);
         } else {
@@ -37,7 +34,6 @@ $(document).ready(function () {
     });
 });
 
-// When send the data we need change the color in the button, from orange to gray
 const sendData = (firstName, lastName, email, mobilePhone, location, language, comment, sms) => {
 
     document.getElementById('locationInput').innerHTML = '';
@@ -49,9 +45,7 @@ const sendData = (firstName, lastName, email, mobilePhone, location, language, c
     createLeadApi(firstName, lastName, email, mobilePhone, location, language, sms, comment);
 }
 
-// can create the lead and send the data to salesforce but its necessary first send to php data file
-const createLeadApi = (first_name, last_name, email, mobile_phone, location_name, language_site, sms_option, comment = "-") => {
-    // we dont need use the meettyng type because we have another rules in the company so in this way is more easy manage this option and now we can redirect only with the location
+const createLeadApi = (first_name, last_name, email, mobile_phone, location_name, language_site, sms_option, comment = "-") => {    
     $.ajax({
         type: 'POST',
         url: 'apiData.php',
@@ -98,7 +92,6 @@ const createLeadApi = (first_name, last_name, email, mobile_phone, location_name
     });
 }
 
-// Can get the code with the location selected
 const getLocation = (location) => {
     var code = "";
     let LACode = "a1b5f000000eT4OAAU";
@@ -107,8 +100,7 @@ const getLocation = (location) => {
     let SMCode = "a1b5f000000eT8gAAE";
     let CHCode = "a1b5f000000enBnAAI";
     let SBCode = "a1b5f000001signAAA";
-
-    // we save only a unique code for each select
+    
     switch (location) {
         case "Los Angeles":
             code = LACode;
@@ -139,7 +131,6 @@ const getLocation = (location) => {
     return code;
 }
 
-// Send email main function, dont return anything because only send the data and send de email
 const sendEmail = (first_name, last_name, email, mobile_phone, language_site, leadID, comment) => {
     $.ajax({
         type: 'POST',
