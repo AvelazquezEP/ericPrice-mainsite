@@ -1,6 +1,6 @@
 <?php
 
-// Whith this we can allow the access to this file from any api (http/https)
+// Whith this we can allow the access to this file from any api or fetcher (http/https)
 header('Access-Control-Allow-Origin: *');
 
 session_start();
@@ -11,7 +11,7 @@ use PHPMailer\PHPMailer\Exception;
 require 'vendor/autoload.php';
 
 try {
-    // We need this variables for create the lead
+    // we need these variables to create the lead
     $firstName = $_POST['FirstName'];
     $LastName = $_POST['LastName'];
     $Email = $_POST['Email'];
