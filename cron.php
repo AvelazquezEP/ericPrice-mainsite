@@ -1,5 +1,4 @@
-<!-- We dont need change anything here this script start in automatic each 3 hours -->
-<!-- CRON FILE / every 3 hours (7am, 10pm, 1pm, 4pm, 7pm, 10pm, 1am, 4am) -->
+<!-- CRON FILE / it will automatically activate every 3 hours (7am, 10pm, 1pm, 4pm, 7pm, 10pm, 1am, 4am) -->
 <?php
 
 session_start();
