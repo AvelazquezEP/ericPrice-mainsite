@@ -1,4 +1,5 @@
 <?php
+// Send the email notification
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
@@ -6,7 +7,6 @@ use PHPMailer\PHPMailer\Exception;
 
 require 'vendor/autoload.php';
 
-header('Access-Control-Allow-Origin: *');
 header("Cache-Control: no-cache, must-revalidate");
 header("Expires: Mon, 26 Jul 2024 05:00:00 GMT");
 
@@ -28,15 +28,15 @@ try {
 
     if ($total_leads){
         //  we dont need do nothing here
-        // only need the 
     } else {
-        saveLead($name, $lastName, $mobile, $email);
+    saveLead($name, $lastName, $mobile, $email);
     }
     
     $sendEmail = sendEmail($language, $email, $name, $lastName, $mobile, $question, $leadID);
     
     echo $sendEmail;
 } catch (Exception $ex) {
+    // For general use if something its wrong only will be redirect to the Thanks page
     echo "****Email Error****";
 }
 
@@ -61,7 +61,7 @@ function sendEmail($language, $email, $name, $lastName, $number, $question, $lea
     }
     
     // whit this we can render all de log for each procces we need when someone send the email notificacion
-    // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+    //  $mail->SMTPDebug = SMTP::DEBUG_SERVER;
     $mail->isSMTP();
     $mail->Host = 'smtp.office365.com';
     $mail->SMTPAuth = true;
@@ -76,9 +76,14 @@ function sendEmail($language, $email, $name, $lastName, $number, $question, $lea
     $mail->addAddress('no-reply@abogadoericprice.com');
     $mail->addReplyTo('no-reply@abogadoericprice.com', 'No Reply');
     
-    // Main emails to send notification    
-    $mail->addAddress('avelazquez2873@LosAngelesImmigration.onmicrosoft.com', 'Alberto Martinez');
+    // Can receive the emails
+    $mail->addAddress('iku@abogadoericprice.com', 'Ivy Ku Flores');
+    $mail->addAddress('fmartinez@greencardla.com', 'Floriberta Martinez');
+    $mail->addAddress('support56@abogadoericprice.com', 'Paola Carolina');
+    $mail->addCC('rterrazas@greencardla.com', 'Robert Terrazas');
+    $mail->addCC('avelazquez2873@LosAngelesImmigration.onmicrosoft.com', 'Alberto Martinez');
     
+    // This its a configuration for can use the character
     $mail->Encoding = 'base64';
     $mail->CharSet = "UTF-8";
 
@@ -90,7 +95,7 @@ function sendEmail($language, $email, $name, $lastName, $number, $question, $lea
 }
 
 
-// NEW FUNCTIONS
+// Save all the leads in the database is for can have a backup
 function saveLead($name, $lastName, $phoneNumber, $email)
 {
     $host = "abogadoericprice.com";
@@ -106,6 +111,7 @@ function saveLead($name, $lastName, $phoneNumber, $email)
     return pg_affected_rows(pg_query($sql));
 }
 
+// Can get all the leads saved on the database
 function getLeads($number, $email)
 {
     $host = "abogadoericprice.com";
