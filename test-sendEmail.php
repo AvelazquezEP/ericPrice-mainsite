@@ -26,8 +26,7 @@ try {
 
     $total_leads = getLeads($mobile, $email);
 
-    if ($total_leads){
-        //  we dont need do nothing here
+    if ($total_leads){        
     } else {
     saveLead($name, $lastName, $mobile, $email);
     }
@@ -35,8 +34,7 @@ try {
     $sendEmail = sendEmail($language, $email, $name, $lastName, $mobile, $question, $leadID);
     
     echo $sendEmail;
-} catch (Exception $ex) {
-    // For general use if something its wrong only will be redirect to the Thanks page
+} catch (Exception $ex) {    
     echo "****Email Error****";
 }
 
@@ -60,7 +58,6 @@ function sendEmail($language, $email, $name, $lastName, $number, $question, $lea
         $message = str_replace('%duplicate%','-', $message);
     }
     
-    // whit this we can render all de log for each procces we need when someone send the email notificacion
     //  $mail->SMTPDebug = SMTP::DEBUG_SERVER;
     $mail->isSMTP();
     $mail->Host = 'smtp.office365.com';
@@ -71,15 +68,12 @@ function sendEmail($language, $email, $name, $lastName, $number, $question, $lea
     $mail->Port = 587;
 
     $mail->setFrom('no-reply@abogadoericprice.com', 'No Reply');
-    
-    // All emails to send the Lead notification
+        
     $mail->addAddress('no-reply@abogadoericprice.com');
     $mail->addReplyTo('no-reply@abogadoericprice.com', 'No Reply');
-    
-    // Can receive the emails
+        
     $mail->addCC('avelazquez2873@LosAngelesImmigration.onmicrosoft.com', 'Alberto Martinez');
-    
-    // This its a configuration for can use the character
+        
     $mail->Encoding = 'base64';
     $mail->CharSet = "UTF-8";
 
@@ -90,8 +84,6 @@ function sendEmail($language, $email, $name, $lastName, $number, $question, $lea
     $mail->send();
 }
 
-
-// Save all the leads in the database is for can have a backup
 function saveLead($name, $lastName, $phoneNumber, $email)
 {
     $host = "abogadoericprice.com";
@@ -107,7 +99,6 @@ function saveLead($name, $lastName, $phoneNumber, $email)
     return pg_affected_rows(pg_query($sql));
 }
 
-// Can get all the leads saved on the database
 function getLeads($number, $email)
 {
     $host = "abogadoericprice.com";
