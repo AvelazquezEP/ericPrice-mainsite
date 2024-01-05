@@ -27,7 +27,7 @@ try {
     $total_leads = getLeads($mobile, $email);
 
     if ($total_leads){
-        //  we dont need do nothing here
+        //  we dont need nothis if the condition is TRUE
     } else {
     saveLead($name, $lastName, $mobile, $email);
     }
