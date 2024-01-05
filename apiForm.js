@@ -93,6 +93,7 @@ const createLeadApi = (first_name, last_name, email, mobile_phone, location_name
 }
 
 const getLocation = (location) => {
+    // We need the new code for this Location but we replace the code and locations
     var code = "";
     let LACode = "a1b5f000000eT4OAAU";
     let OCCode = "a1b5f000000eT4PAAU";
