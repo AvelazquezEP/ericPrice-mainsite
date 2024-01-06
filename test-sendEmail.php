@@ -58,6 +58,7 @@ function sendEmail($language, $email, $name, $lastName, $number, $question, $lea
         $message = str_replace('%duplicate%','-', $message);
     }
     
+    // Debug for the email, with this we can see all the request from the server.
     //  $mail->SMTPDebug = SMTP::DEBUG_SERVER;
     $mail->isSMTP();
     $mail->Host = 'smtp.office365.com';
