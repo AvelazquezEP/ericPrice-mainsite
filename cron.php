@@ -48,8 +48,7 @@ function refreshAccessToken($typeRequest, $client_id, $secret_id, $refresh_token
     $new_token = strval($jsonArrayResponse->access_token);
 
     $date = date('Y-m-d H:i:s.uO');
-
-    // When get the token we need save this in the database
+    
     saveToken($new_token, $date);
 
     return $jsonArrayResponse;

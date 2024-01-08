@@ -101,9 +101,9 @@ const getLocation = (location) => {
     let SMCode = "a1b5f000000eT8gAAE";
     let CHCode = "a1b5f000000enBnAAI";
     let SBCode = "a1b5f000001signAAA";
-    let ESCode = ""; 
+    let ESCode = "a1b5f000000eT8gAAE"; 
     let OXCode = "a1bRg000000QIPVIA4"; // New Oxnard office
-    let RSCode = ""; // New Riverside office
+    let RSCode = "a1b5f000001signAAA"; // New Riverside office
 
     switch (location) {
         case "Los Angeles":
