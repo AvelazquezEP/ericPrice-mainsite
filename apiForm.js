@@ -77,6 +77,7 @@ const createLeadApi = (first_name, last_name, email, mobile_phone, location_name
                 window.location.href = url_thanks;
             }
             else {
+                // Here maybe we need to add the Oxnard location on the if condition
                 if (location_name != "National") {
                     fullUrl = `https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJCAA2&locationType=${inPerson}&WhatId=a1n5f0000006fzTAAQ&WhereID=${locationCode}&sumoapp_WhoId=0055f000007NE9T&clientId=${leadID}`;
                 } else {
@@ -101,7 +102,7 @@ const getLocation = (location) => {
     let SMCode = "a1b5f000000eT8gAAE";
     let CHCode = "a1b5f000000enBnAAI";
     let SBCode = "a1b5f000001signAAA";
-    let ESCode = "a1b5f000000eT8gAAE"; 
+    let ESCode = "a1b5f000000eT8gAAE";
     let OXCode = "a1bRg000000QIPVIA4"; // New Oxnard office
     let RSCode = "a1b5f000001signAAA"; // New Riverside office
 
