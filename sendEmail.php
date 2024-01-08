@@ -1,5 +1,4 @@
 <?php
-// Send the email notification
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
@@ -27,7 +26,7 @@ try {
     $total_leads = getLeads($mobile, $email);
 
     if ($total_leads){
-        //  we dont need nothis if the condition is TRUE
+        //  we dont need this if the condition is TRUE
     } else {
     saveLead($name, $lastName, $mobile, $email);
     }
@@ -36,7 +35,7 @@ try {
     
     echo $sendEmail;
 } catch (Exception $ex) {
-    // For general use if something its wrong only will be redirect to the Thanks page
+    // For general use if something its wrong only will be redirect to the Thanks page but this is with the php or js
     echo "****Email Error****";
 }
 
@@ -61,7 +60,7 @@ function sendEmail($language, $email, $name, $lastName, $number, $question, $lea
     }
     
     // whit this we can render all de log for each procces we need when someone send the email notificacion
-    //  $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+    // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
     $mail->isSMTP();
     $mail->Host = 'smtp.office365.com';
     $mail->SMTPAuth = true;

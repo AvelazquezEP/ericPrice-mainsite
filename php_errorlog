@@ -170,3 +170,5 @@ Stack trace:
 [04-Dec-2023 23:25:58 UTC] PHP Fatal error:  Redefinition of parameter $date in /home/customer/www/abogadoericprice.com/public_html/database.php on line 7
 [04-Dec-2023 23:26:45 UTC] PHP Fatal error:  Redefinition of parameter $date in /home/customer/www/abogadoericprice.com/public_html/database.php on line 7
 [05-Dec-2023 01:37:21 UTC] PHP Parse error:  syntax error, unexpected '5' (T_LNUMBER), expecting variable (T_VARIABLE) or '{' or '$' in /home/customer/www/abogadoericprice.com/public_html/database.php on line 34
+[08-Jan-2024 20:07:31 UTC] PHP Fatal error:  require(): Failed opening required '' (include_path='.:/usr/local/php74/pear') in /home/customer/www/abogadoericprice.com/public_html/test-sendEmail.php on line 15
+[08-Jan-2024 20:07:47 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/customer/www/abogadoericprice.com/public_html/test-sendEmail.php on line 15

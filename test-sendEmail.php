@@ -12,6 +12,7 @@ header("Expires: Mon, 26 Jul 2024 05:00:00 GMT");
 
 try {
 
+    // require ($name = $_POST['FirstName'];);
     $name = $_POST['FirstName'];
     $lastName = $_POST['LastName'];
     $email = $_POST['Email'];
