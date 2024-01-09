@@ -95,6 +95,7 @@ const createLeadApi = (first_name, last_name, email, mobile_phone, location_name
 
 const getLocation = (location) => {
     // We use duplicate codes for Escondido and Riverside because only replace the lable on salesforce but use the same for this locations
+    // We can delete some codes after February 1st
     var code = "";
     let LACode = "a1b5f000000eT4OAAU";
     let OCCode = "a1b5f000000eT4PAAU";
