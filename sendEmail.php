@@ -58,9 +58,7 @@ function sendEmail($language, $email, $name, $lastName, $number, $question, $lea
     } else {
         $message = str_replace('%duplicate%','-', $message);
     }
-    
-    // whit this we can render all de log for each procces we need when someone send the email notificacion
-    // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+        
     $mail->isSMTP();
     $mail->Host = 'smtp.office365.com';
     $mail->SMTPAuth = true;
