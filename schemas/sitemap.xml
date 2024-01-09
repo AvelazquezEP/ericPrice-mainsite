@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<urlset xmlns="https://www.abogadoericprice.com/schemas/sitemap.xml">
+<urlset xmlns="https://abogadoericprice.com/schemas/sitemap.xml">
 
     <url>
-        <loc>https://www.abogadoericprice.com/</loc>
+        <loc>https://abogadoericprice.com/</loc>
         <lastmod>2023-08-28</lastmod>
         <priority>0.9</priority>        
         <changefreq>weekly</changefreq>
     </url>
 
     <url>
-        <loc>https://www.blog.abogadoericprice.com/</loc>
+        <loc>https://blog.abogadoericprice.com/</loc>
         <lastmod>2023-08-10</lastmod>
         <changefreq>weekly</changefreq>
     </url>
 
     <url>
-        <loc>https://www.survey.abogadoericprice.com/</loc>
+        <loc>https://survey.abogadoericprice.com/</loc>
         <lastmod>2023-08-10</lastmod>
         <changefreq>monthly</changefreq>
     </url>
 
     <url>
-        <loc>https://www.report.abogadoericprice.com/</loc>
+        <loc>https://report.abogadoericprice.com/</loc>
         <lastmod>2023-08-15</lastmod>
         <changefreq>monthly</changefreq>
     </url>
