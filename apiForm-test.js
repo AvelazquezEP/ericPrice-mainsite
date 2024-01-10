@@ -76,16 +76,15 @@ const createLeadApi = (first_name, last_name, email, mobile_phone, location_name
             if (leadID == "" || leadID == null || leadID == undefined) {
                 console.log(locationCode);
                 // let url_thanks = 'https://abogadoericprice.com/thanks.html';
-                // window.location.href = url_thanks;
+                // window.location.href = url_thanks;x
             }
             else {
+                // console.log(location_name);
                 // Here maybe we need to add the Oxnard location on the if condition
-                if (location_name != "National" || location_name != "Oxnard") {
-                    // Change the order of proceesID
-                    fullUrl = `https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJZAA2&locationType=${inPerson}&WhatId=a1n5f0000006fzTAAQ&WhereID=${locationCode}&sumoapp_WhoId=0055f000007NE9T&clientId=${leadID}`;
+                if (location_name == "National" || location_name == "Oxnard") {
+                    fullUrl = `https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJZAA2&locationType=${byPhone}&WhatId=a1n5f0000006fzTAAQ&WhereID=${locationCode}&sumoapp_WhoId=0055f000007NE9T&clientId=${leadID}`;
                 } else {
-                    fullUrl = `https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJCAA2&locationType=${byPhone}&WhatId=a1n5f0000006fzTAAQ&WhereID=${locationCode}&sumoapp_WhoId=0055f000007NE9T&clientId=${leadID}`;
-                    // fullUrl = `https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJCAA2&locationType=${byPhone}&WhatId=a1n5f0000006fzTAAQ&WhereID=a1b5f000000enBiAAI&sumoapp_WhoId=0055f000007NE9T&clientId=${leadID}`;
+                    fullUrl = `https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJCAA2&locationType=${inPerson}&WhatId=a1n5f0000006fzTAAQ&WhereID=${locationCode}&sumoapp_WhoId=0055f000007NE9T&clientId=${leadID}`;
                 }
 
                 window.location.href = fullUrl;
