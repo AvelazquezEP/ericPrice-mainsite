@@ -42,10 +42,19 @@ const sendData = (firstName, lastName, email, mobilePhone, location, language, c
     document.getElementById('ButtonSend').style.backgroundColor = 'gray';
     document.getElementById('ButtonSend').innerHTML = 'Sending Data';
 
+    console.log(location);
     createLeadApi(firstName, lastName, email, mobilePhone, location, language, sms, comment);
 }
 
 const createLeadApi = (first_name, last_name, email, mobile_phone, location_name, language_site, sms_option, comment = "-") => {
+
+    let location_name_sf = "";
+    if (location_name == "Oxnard-virtual" || location_name == "Oxnard-person") {
+        location_name_sf = "Oxnard";
+    } else {
+        location_name_sf = location_name;
+    }
+
     $.ajax({
         type: 'POST',
         url: 'test-apiData.php',
@@ -55,14 +64,13 @@ const createLeadApi = (first_name, last_name, email, mobile_phone, location_name
             "Email": email,
             "LeadSource": "EP-CA-Website",
             "MobilePhone": mobile_phone,
-            "Location__c": location_name,
+            "Location__c": location_name_sf,
             "Language__c": language_site,
             "SMS_Opt_In__c": sms_option,
             "comments": comment
         },
         dataType: 'json',
         success: function (data) {
-            console.log(location_name);
             var fullUrl = "";
             let leadID = data.id;
 
@@ -79,9 +87,12 @@ const createLeadApi = (first_name, last_name, email, mobile_phone, location_name
                 // window.location.href = url_thanks;x
             }
             else {
-                // console.log(location_name);
-                // Here maybe we need to add the Oxnard location on the if condition
-                if (location_name == "National" || location_name == "Oxnard") {
+                // This is the correct way to create an appointment
+                // location_name == "Oxnard-person"
+                // if (location_name == "Oxnard-virtual") {
+                //     fullUrl = `https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJZAA2&locationType=${byPhone}&WhatId=a1n5f0000006fzTAAQ&WhereID=${locationCode}&sumoapp_WhoId=0055f000007NE9T&clientId=${leadID}`;
+                // } 
+                if (location_name == "National" || location_name == "Oxnard-virtual") {
                     fullUrl = `https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJZAA2&locationType=${byPhone}&WhatId=a1n5f0000006fzTAAQ&WhereID=${locationCode}&sumoapp_WhoId=0055f000007NE9T&clientId=${leadID}`;
                 } else {
                     fullUrl = `https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJCAA2&locationType=${inPerson}&WhatId=a1n5f0000006fzTAAQ&WhereID=${locationCode}&sumoapp_WhoId=0055f000007NE9T&clientId=${leadID}`;
@@ -131,9 +142,11 @@ const getLocation = (location) => {
         case "Escondido":
             code = ESCode;
             break;
-        case "Oxnard":
-            // code = OXCode;
+        case "Oxnard-virtual":
             code = LACode;
+            break;
+        case "Oxnard-person":
+            code = OXCode;
             break;
         case "Riverside":
             code = RSCode;

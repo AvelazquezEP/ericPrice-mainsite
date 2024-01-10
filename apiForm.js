@@ -46,6 +46,14 @@ const sendData = (firstName, lastName, email, mobilePhone, location, language, c
 }
 
 const createLeadApi = (first_name, last_name, email, mobile_phone, location_name, language_site, sms_option, comment = "-") => {
+
+    // let location_name_sf = "";
+    // if (location_name == "Oxnard-virtual" || location_name == "Oxnard-person") {
+    //     location_name_sf = "Oxnard";
+    // } else {
+    //     location_name_sf = location_name;
+    // }
+
     $.ajax({
         type: 'POST',
         url: 'apiData.php',
@@ -56,6 +64,7 @@ const createLeadApi = (first_name, last_name, email, mobile_phone, location_name
             "LeadSource": "EP-CA-Website",
             "MobilePhone": mobile_phone,
             "Location__c": location_name,
+            // "Location__c": location_name_sf,
             "Language__c": language_site,
             "SMS_Opt_In__c": sms_option,
             "comments": comment
@@ -78,6 +87,7 @@ const createLeadApi = (first_name, last_name, email, mobile_phone, location_name
             }
             else {
 
+                // if (location_name == "National" || location_name == "Oxnard-virtual") {
                 if (location_name == "National" || location_name == "Oxnard") {
                     fullUrl = `https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJZAA2&locationType=${byPhone}&WhatId=a1n5f0000006fzTAAQ&WhereID=${locationCode}&sumoapp_WhoId=0055f000007NE9T&clientId=${leadID}`;
                 } else {
