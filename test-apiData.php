@@ -29,8 +29,7 @@ try {
     $location_name = $_POST['Location__c'];
     $response = $location_name;
 
-    echo $response;
-    // header("Location: https://abogadoericprice.com/sorry.html");
+    echo $response;    
 }
 
 function createLeadApi($first_name, $last_name, $email, $mobile_phone, $location_name, $language_site, $sms_option) {
