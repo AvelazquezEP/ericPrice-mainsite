@@ -109,8 +109,6 @@ const createLeadApi = (first_name, last_name, email, mobile_phone, location_name
 }
 
 const getLocation = (location) => {
-    // We use duplicate codes for Escondido and Riverside because only replace the lable on salesforce but use the same for this locations
-    // We can delete some codes after February 1st
     var code = "";
     let LACode = "a1b5f000000eT4OAAU";
     let OCCode = "a1b5f000000eT4PAAU";
@@ -119,8 +117,8 @@ const getLocation = (location) => {
     let CHCode = "a1b5f000000enBnAAI";
     let SBCode = "a1b5f000001signAAA";
     let ESCode = "a1b5f000000eT8gAAE";
-    let OXCode = "a1bRg000000QIPVIA4"; // New Oxnard office
-    let RSCode = "a1b5f000001signAAA"; // New Riverside office
+    let OXCode = "a1bRg000000QIPVIA4";
+    let RSCode = "a1b5f000001signAAA";
 
     switch (location) {
         case "Los Angeles":
@@ -143,6 +141,9 @@ const getLocation = (location) => {
             break;
         case "Escondido":
             code = ESCode;
+            break;
+        case "Oxnard-virtual":
+            code = OXCode;
             break;
         case "Oxnard":
             // code = OXCode;
