@@ -19,7 +19,7 @@ try {
     $sms_option = $_POST['SMS_Opt_In__c'];
     $comments = $_POST['comments'];
     
-    $response =  createLeadApi( $firstName, $LastName, $Email, $mobile_phone, $location_name, $Language_site, $sms_option);    
+    $response =  createLeadApi( $firstName, $LastName, $Email, $mobile_phone, $location_name, $Language_site, $sms_option);
 
     echo $response;
 } catch (Exception $e) {
