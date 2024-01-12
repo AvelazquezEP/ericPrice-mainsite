@@ -1,0 +1,12 @@
+diff --git a/politicaPrivacidad.html b/politicaPrivacidad.html
+index 48cee34..8029f2c 100644
+--- a/politicaPrivacidad.html
++++ b/politicaPrivacidad.html
+@@ -1,6 +1,6 @@
+ <!-- This file its to can show the Privacy Policy -->
+ <!DOCTYPE html>
+-<html lang="es-MX">
++<html lang="en">
+ 
+ <head>
+     <meta charset="UTF-8">
