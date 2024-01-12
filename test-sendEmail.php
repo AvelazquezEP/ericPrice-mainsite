@@ -73,8 +73,8 @@ function sendEmail($language, $email, $name, $lastName, $number, $question, $lea
         
     $mail->addAddress('no-reply@abogadoericprice.com');
     $mail->addReplyTo('no-reply@abogadoericprice.com', 'No Reply');
-        
-    // $mail->addAddress('iku@abogadoericprice.com', 'Ivy Ku Flores');
+                
+    // $mail->addAddress('iku@abogadoericprice.com', 'Ivy Ku Flores');    
     $mail->addCC('avelazquez2873@LosAngelesImmigration.onmicrosoft.com', 'Alberto Martinez');
         
     $mail->Encoding = 'base64';
