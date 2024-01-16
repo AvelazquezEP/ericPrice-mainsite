@@ -1,12 +1,23 @@
-diff --git a/politicaPrivacidad.html b/politicaPrivacidad.html
-index 48cee34..8029f2c 100644
---- a/politicaPrivacidad.html
-+++ b/politicaPrivacidad.html
-@@ -1,6 +1,6 @@
- <!-- This file its to can show the Privacy Policy -->
- <!DOCTYPE html>
+diff --git a/sorry.html b/sorry.html
+index 1501c02..b6a4fa6 100644
+--- a/sorry.html
++++ b/sorry.html
+@@ -1,4 +1,4 @@
 -<html lang="es-MX">
-+<html lang="en">
++<html lang="es">
  
  <head>
      <meta charset="UTF-8">
+diff --git a/test.php b/test.php
+index 5b155f6..d1051a9 100644
+--- a/test.php
++++ b/test.php
+@@ -19,7 +19,7 @@ try {
+     $sms_option = $_POST['SMS_Opt_In__c'];
+     $comments = $_POST['comments'];
+     
+-    $response =  createLeadApi( $firstName, $LastName, $Email, $mobile_phone, $location_name, $Language_site, $sms_option);
++    $response =  createLeadApi( $firstName, $LastName, $Email, $mobile_phone, $location_name, $Language_site, $sms_option);    
+ 
+     echo $response;
+ } catch (Exception $e) {
