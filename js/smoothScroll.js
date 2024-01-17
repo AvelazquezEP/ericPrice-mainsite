@@ -1,4 +1,4 @@
-// Add smooth scrolling to all links
+// Smooth scroll down from the link to the section in the sane page
 $(document).ready(function () {
     $("a").on('click', function (event) {
 

@@ -47,6 +47,7 @@ const sendData = (firstName, lastName, email, mobilePhone, location, language, c
 
 const createLeadApi = (first_name, last_name, email, mobile_phone, location_name, language_site, sms_option, comment = "-") => {
 
+    // For oxnard office
     // let location_name_sf = "";
     // if (location_name == "Oxnard-virtual" || location_name == "Oxnard-person") {
     //     location_name_sf = "Oxnard";
@@ -64,7 +65,7 @@ const createLeadApi = (first_name, last_name, email, mobile_phone, location_name
             "LeadSource": "EP-CA-Website",
             "MobilePhone": mobile_phone,
             "Location__c": location_name,
-            // "Location__c": location_name_sf,
+            // "Location__c": location_name_sf, remove the line above and only use this code line
             "Language__c": language_site,
             "SMS_Opt_In__c": sms_option,
             "comments": comment
@@ -87,17 +88,13 @@ const createLeadApi = (first_name, last_name, email, mobile_phone, location_name
             }
             else {
 
+                // Change the condition for the oxnard location only virtual
                 // if (location_name == "National" || location_name == "Oxnard-virtual") {
                 if (location_name == "National" || location_name == "Oxnard") {
                     fullUrl = `https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJZAA2&locationType=${byPhone}&WhatId=a1n5f0000006fzTAAQ&WhereID=${locationCode}&sumoapp_WhoId=0055f000007NE9T&clientId=${leadID}`;
                 } else {
                     fullUrl = `https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJCAA2&locationType=${inPerson}&WhatId=a1n5f0000006fzTAAQ&WhereID=${locationCode}&sumoapp_WhoId=0055f000007NE9T&clientId=${leadID}`;
                 }
-                // if (location_name != "National") {
-                //     fullUrl = `https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJZAA2&locationType=${inPerson}&WhatId=a1n5f0000006fzTAAQ&WhereID=${locationCode}&sumoapp_WhoId=0055f000007NE9T&clientId=${leadID}`;
-                // } else {
-                //     fullUrl = `https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJCAA2&locationType=${byPhone}&WhatId=a1n5f0000006fzTAAQ&WhereID=a1b5f000000enBiAAI&sumoapp_WhoId=0055f000007NE9T&clientId=${leadID}`;
-                // }
 
                 window.location.href = fullUrl;
             }
