@@ -119,6 +119,8 @@ const getLocation = (location) => {
     let ESCode = "a1b5f000000eT8gAAE"; //Duplicate
     let OXCode = "a1bRg000000QIPVIA4"; // New Oxnard office
     let RSCode = "a1b5f000001signAAA"; // New Riverside office - Duplicate
+    let FRCode = "a1bRg000000UFCvIAO";
+    let BACode = "a1bRg000000UFpdIAG";
 
     switch (location) {
         case "Los Angeles":
@@ -154,8 +156,14 @@ const getLocation = (location) => {
         case "National":
             code = LACode;
             break;
+        case "Fresno":
+            code = FRCode;
+            break;
+        case "Bakersfield":
+            code = BACode;
+            break;
         default:
-            code = strval(LACode);
+            code = LACode;
             break;
     }
 
