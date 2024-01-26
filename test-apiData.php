@@ -10,8 +10,7 @@ use PHPMailer\PHPMailer\Exception;
 
 require 'vendor/autoload.php';
 
-try {
-    // we need these variables to create the lead
+try {    
     $firstName = $_POST['FirstName'];
     $LastName = $_POST['LastName'];
     $Email = $_POST['Email'];
