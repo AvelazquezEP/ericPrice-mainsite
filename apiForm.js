@@ -47,7 +47,7 @@ const sendData = (firstName, lastName, email, mobilePhone, location, language, c
 
 const createLeadApi = (first_name, last_name, email, mobile_phone, location_name, language_site, sms_option, comment = "-") => {
 
-    // For oxnard office
+    // This comments lines are only if on oxnard we can create virtial apporintments too
     // let location_name_sf = "";
     // if (location_name == "Oxnard-virtual" || location_name == "Oxnard-person") {
     //     location_name_sf = "Oxnard";
@@ -65,7 +65,7 @@ const createLeadApi = (first_name, last_name, email, mobile_phone, location_name
             "LeadSource": "EP-CA-Website",
             "MobilePhone": mobile_phone,
             "Location__c": location_name,
-            // "Location__c": location_name_sf, remove the line above and only use this code line
+            // "Location__c": location_name_sf,
             "Language__c": language_site,
             "SMS_Opt_In__c": sms_option,
             "comments": comment
