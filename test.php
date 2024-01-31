@@ -2,6 +2,7 @@
 
 header('Access-Control-Allow-Origin: *');
 
+// Session share the date with other files
 session_start();
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
