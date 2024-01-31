@@ -34,8 +34,7 @@ try {
     $sendEmail = sendEmail($language, $email, $name, $lastName, $mobile, $question, $leadID);
     
     echo $sendEmail;
-} catch (Exception $ex) {
-    // For general use if something its wrong only will be redirect to the Thanks page but this is with the php or js
+} catch (Exception $ex) {    
     echo "****Email Error****";
 }
 
