@@ -65,7 +65,7 @@ const createLeadApi = (first_name, last_name, email, mobile_phone, location_name
             "LeadSource": "EP-CA-Website",
             "MobilePhone": mobile_phone,
             "Location__c": location_name,
-            // "Location__c": location_name_sf,
+            // "Location__c": location_name_sf, only in case need two different appointments
             "Language__c": language_site,
             "SMS_Opt_In__c": sms_option,
             "comments": comment
@@ -88,6 +88,7 @@ const createLeadApi = (first_name, last_name, email, mobile_phone, location_name
             }
             else {
 
+                // only in case need two different appointments
                 // Change the condition for the oxnard location only virtual
                 // if (location_name == "National" || location_name == "Oxnard-virtual") {
                 if (location_name == "National") {
@@ -144,7 +145,6 @@ const getLocation = (location) => {
             break;
         case "Oxnard":
             code = OXCode;
-            // code = LACode;
             break;
         case "Riverside":
             code = RSCode;
