@@ -117,6 +117,8 @@ const getLocation = (location) => {
     let ESCode = "a1b5f000000eT8gAAE";
     let OXCode = "a1bRg000000QIPVIA4";
     let RSCode = "a1b5f000001signAAA";
+    let FRCode = "a1bRg000000UFCvIAO";
+    let BACode = "a1bRg000000UFpdIAG";
 
     switch (location) {
         case "Los Angeles":
@@ -148,6 +150,12 @@ const getLocation = (location) => {
             break;
         case "Riverside":
             code = RSCode;
+            break;
+        case "Fresno":
+            code = FRCode;
+            break;
+        case "Bakersfield":
+            code = BACode;
             break;
         case "National":
             code = LACode;
