@@ -1,23 +1,30 @@
-diff --git a/sorry.html b/sorry.html
-index 1501c02..b6a4fa6 100644
---- a/sorry.html
-+++ b/sorry.html
-@@ -1,4 +1,4 @@
--<html lang="es-MX">
-+<html lang="es">
- 
- <head>
-     <meta charset="UTF-8">
-diff --git a/test.php b/test.php
-index 5b155f6..d1051a9 100644
---- a/test.php
-+++ b/test.php
-@@ -19,7 +19,7 @@ try {
-     $sms_option = $_POST['SMS_Opt_In__c'];
-     $comments = $_POST['comments'];
-     
--    $response =  createLeadApi( $firstName, $LastName, $Email, $mobile_phone, $location_name, $Language_site, $sms_option);
-+    $response =  createLeadApi( $firstName, $LastName, $Email, $mobile_phone, $location_name, $Language_site, $sms_option);    
- 
-     echo $response;
- } catch (Exception $e) {
+diff --git a/english.html b/english.html
+index 7561a7a..d6ee58b 100644
+--- a/english.html
++++ b/english.html
+@@ -876,9 +876,7 @@ src="https://www.facebook.com/tr?id=381364605320562&ev=PageView&noscript=1"
+                                 <option value="Orange County">Orange County</option>
+                                 <option value="Escondido">Escondido</option>
+                                 <option value="Riverside">Riverside</option>
+-                                <!-- <option value="San Bernardino">San Bernardino</option> -->
+-                                <!-- Remove the comments chars to can enable the 2 new office, but make this until February 1st -->
+-                                <!-- <option value="Oxnard">Oxnard</option> -->
++                                <option value="Oxnard">Oxnard</option>                                
+                             </select>
+                             <span id="locationInput" style="color: red;"></span>
+                         </div>
+diff --git a/index.html b/index.html
+index d7030b7..6fdfc92 100644
+--- a/index.html
++++ b/index.html
+@@ -941,9 +941,7 @@
+                                 <option value="Orange County">Orange County</option>
+                                 <option value="Escondido">Escondido</option>
+                                 <option value="Riverside">Riverside</option>
+-                                <!-- <option value="San Bernardino">San Bernardino</option> -->
+-                                <!-- Remove the comments chars to can enable the 2 new office, but make this until February 1st -->
+-                                <!-- <option value="Oxnard">Oxnard</option> -->
++                                <option value="Oxnard">Oxnard</option>                                                                                                
+                             </select>
+                             <span id="locationInput" style="color: red;"></span>
+                         </div>
