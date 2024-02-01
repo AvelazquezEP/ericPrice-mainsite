@@ -90,7 +90,6 @@ function sendEmail($language, $email, $name, $lastName, $number, $question, $lea
     $mail->send();
 }
 
-
 // Save all the leads in the database is for can have a backup
 function saveLead($name, $lastName, $phoneNumber, $email)
 {
