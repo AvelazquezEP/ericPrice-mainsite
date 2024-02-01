@@ -26,7 +26,7 @@ try {
     $total_leads = getLeads($mobile, $email);
 
     if ($total_leads){
-        //  we dont need this if the condition is TRUE
+        // We never use this part in the condition
     } else {
     saveLead($name, $lastName, $mobile, $email);
     }
