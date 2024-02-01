@@ -1,6 +1,5 @@
 <?php
 
-// Whith this we can allow the access to this file from any api or fetcher (http/https)
 header('Access-Control-Allow-Origin: *');
 
 session_start();
@@ -70,7 +69,7 @@ function getLastToken()
     $user = "uhgpgzxv2hhak";
     $password = "700Flower!";
 
-    $connection_string = "host={$host} port={$port} dbname={$dbname} user={$user} password={$password} ";
+    $connection_string = "host={$host} port={$port} dbname={$dbname} user={$user} password={$password}";
     $dbconn = pg_connect($connection_string) or die('Could not reach database.');
 
     $sql = "select id_token, new_token from tokenacess order by id_token desc limit 1";
