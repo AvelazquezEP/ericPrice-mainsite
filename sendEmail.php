@@ -100,7 +100,7 @@ function saveLead($name, $lastName, $phoneNumber, $email)
     $user = "uhgpgzxv2hhak";
     $password = "700Flower!";
 
-    $connection_string = "host={$host} port={$port} dbname={$dbname} user={$user} password={$password} ";
+    $connection_string = "host={$host} port={$port} dbname={$dbname} user={$user} password={$password}";
     $dbconn = pg_connect($connection_string) or die('Could not reach database.');
     
     $sql = "INSERT INTO save_leads(lead_name, last_name, phone_number, email) " . "VALUES('" . cleanData($name) . "','" . cleanData($lastName) . "','" . cleanData($phoneNumber) . "','" . cleanData($email) . "')";
@@ -116,7 +116,7 @@ function getLeads($number, $email)
     $user = "uhgpgzxv2hhak";
     $password = "700Flower!";
 
-    $connection_string = "host={$host} port={$port} dbname={$dbname} user={$user} password={$password} ";
+    $connection_string = "host={$host} port={$port} dbname={$dbname} user={$user} password={$password}";
     $dbconn = pg_connect($connection_string) or die('Could not reach database.');
 
     $sql = "select lead_name, last_name, phone_number, email from save_leads where phone_number = '" . $number . "' or email = '" . $email . "' order by id_lead desc";
