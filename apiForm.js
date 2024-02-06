@@ -91,7 +91,8 @@ const createLeadApi = (first_name, last_name, email, mobile_phone, location_name
                 // only in case need two different appointments
                 // Change the condition for the oxnard location only virtual
                 // if (location_name == "National" || location_name == "Oxnard-virtual") {
-                if (location_name == "National" || location_name == "Bakersfield") {
+                // if (location_name == "National" || location_name == "Bakersfield") {
+                if (location_name == "National") {
                     fullUrl = `https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJZAA2&locationType=${byPhone}&WhatId=a1n5f0000006fzTAAQ&WhereID=${locationCode}&sumoapp_WhoId=0055f000007NE9T&clientId=${leadID}`;
                 } else {
                     fullUrl = `https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJCAA2&locationType=${inPerson}&WhatId=a1n5f0000006fzTAAQ&WhereID=${locationCode}&sumoapp_WhoId=0055f000007NE9T&clientId=${leadID}`;
@@ -155,7 +156,7 @@ const getLocation = (location) => {
             code = FRCode;
             break;
         case "Bakersfield":
-            code = LACode;
+            code = BACode;
             break;
         case "National":
             code = LACode;
