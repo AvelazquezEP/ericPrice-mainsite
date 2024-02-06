@@ -1,30 +1,12 @@
 diff --git a/english.html b/english.html
-index 7561a7a..d6ee58b 100644
+index a7d1d2a..8f27bf3 100644
 --- a/english.html
 +++ b/english.html
-@@ -876,9 +876,7 @@ src="https://www.facebook.com/tr?id=381364605320562&ev=PageView&noscript=1"
-                                 <option value="Orange County">Orange County</option>
-                                 <option value="Escondido">Escondido</option>
-                                 <option value="Riverside">Riverside</option>
--                                <!-- <option value="San Bernardino">San Bernardino</option> -->
--                                <!-- Remove the comments chars to can enable the 2 new office, but make this until February 1st -->
--                                <!-- <option value="Oxnard">Oxnard</option> -->
-+                                <option value="Oxnard">Oxnard</option>                                
-                             </select>
-                             <span id="locationInput" style="color: red;"></span>
-                         </div>
-diff --git a/index.html b/index.html
-index d7030b7..6fdfc92 100644
---- a/index.html
-+++ b/index.html
-@@ -941,9 +941,7 @@
-                                 <option value="Orange County">Orange County</option>
-                                 <option value="Escondido">Escondido</option>
-                                 <option value="Riverside">Riverside</option>
--                                <!-- <option value="San Bernardino">San Bernardino</option> -->
--                                <!-- Remove the comments chars to can enable the 2 new office, but make this until February 1st -->
--                                <!-- <option value="Oxnard">Oxnard</option> -->
-+                                <option value="Oxnard">Oxnard</option>                                                                                                
-                             </select>
-                             <span id="locationInput" style="color: red;"></span>
-                         </div>
+@@ -44,7 +44,6 @@ src="https://www.facebook.com/tr?id=381364605320562&ev=PageView&noscript=1"
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
+         rel="stylesheet">
+-        
+     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+ 
+     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
