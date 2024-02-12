@@ -78,8 +78,7 @@ function sendEmail($language, $email, $name, $lastName, $number, $question, $lea
     $mail->addAddress('support56@abogadoericprice.com', 'Paola Carolina');
     $mail->addCC('rterrazas@greencardla.com', 'Robert Terrazas');
     $mail->addCC('avelazquez2873@LosAngelesImmigration.onmicrosoft.com', 'Alberto Martinez');
-    
-    // This its a configuration for can use the character
+        
     $mail->Encoding = 'base64';
     $mail->CharSet = "UTF-8";
 
