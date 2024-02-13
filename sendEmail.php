@@ -26,7 +26,7 @@ try {
     $total_leads = getLeads($mobile, $email);
 
     if ($total_leads){
-        // We never use this part in the condition
+        //        
     } else {
     saveLead($name, $lastName, $mobile, $email);
     }
@@ -71,8 +71,7 @@ function sendEmail($language, $email, $name, $lastName, $number, $question, $lea
     // All emails to send the Lead notification
     $mail->addAddress('no-reply@abogadoericprice.com');
     $mail->addReplyTo('no-reply@abogadoericprice.com', 'No Reply');
-    
-    // Can receive the emails
+        
     $mail->addAddress('iku@abogadoericprice.com', 'Ivy Ku Flores');
     $mail->addAddress('fmartinez@greencardla.com', 'Floriberta Martinez');
     $mail->addAddress('support56@abogadoericprice.com', 'Paola Carolina');
@@ -89,7 +88,6 @@ function sendEmail($language, $email, $name, $lastName, $number, $question, $lea
     $mail->send();
 }
 
-// Save all the leads in the database is for can have a backup
 function saveLead($name, $lastName, $phoneNumber, $email)
 {
     $host = "abogadoericprice.com";
@@ -105,7 +103,6 @@ function saveLead($name, $lastName, $phoneNumber, $email)
     return pg_affected_rows(pg_query($sql));
 }
 
-// Can get all the leads saved on the database
 function getLeads($number, $email)
 {
     $host = "abogadoericprice.com";
