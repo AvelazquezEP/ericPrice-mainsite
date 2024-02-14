@@ -61,7 +61,6 @@ body {
     background-color: #ff8239;
 }
 
-/* This its to make responsive the office section in the footer */
 @media screen and (max-width: 768px) {
     .custom-office {
         margin-left: 10%;
