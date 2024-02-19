@@ -1,5 +1,4 @@
 <?php
-// Send the email notification
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
@@ -17,7 +16,7 @@ try {
     $lastName = $_POST['LastName'];
     $email = $_POST['Email'];
     $mobile = $_POST['MobilePhone'];
-    $language = $_POST['Language'];
+    $language = $_POST['Language']; 
     $leadID = $_POST['leadID'];
     $question = $_POST['question'];
 
