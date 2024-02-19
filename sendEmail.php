@@ -67,8 +67,7 @@ function sendEmail($language, $email, $name, $lastName, $number, $question, $lea
     $mail->Port = 587;
 
     $mail->setFrom('no-reply@abogadoericprice.com', 'No Reply');
-    
-    // All emails to send the Lead notification
+        
     $mail->addAddress('no-reply@abogadoericprice.com');
     $mail->addReplyTo('no-reply@abogadoericprice.com', 'No Reply');
         

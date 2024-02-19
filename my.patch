@@ -1,12 +1,134 @@
+diff --git a/apiForm.js b/apiForm.js
+index e08cc88..df1c4c7 100644
+--- a/apiForm.js
++++ b/apiForm.js
+@@ -46,15 +46,6 @@ const sendData = (firstName, lastName, email, mobilePhone, location, language, c
+ }
+ 
+ const createLeadApi = (first_name, last_name, email, mobile_phone, location_name, language_site, sms_option, comment = "-") => {
+-
+-    // This comments lines are only if on oxnard we can create virtial apporintments too
+-    // let location_name_sf = "";
+-    // if (location_name == "Oxnard-virtual" || location_name == "Oxnard-person") {
+-    //     location_name_sf = "Oxnard";
+-    // } else {
+-    //     location_name_sf = location_name;
+-    // }
+-
+     $.ajax({
+         type: 'POST',
+         url: 'apiData.php',
+@@ -65,7 +56,6 @@ const createLeadApi = (first_name, last_name, email, mobile_phone, location_name
+             "LeadSource": "EP-CA-Website",
+             "MobilePhone": mobile_phone,
+             "Location__c": location_name,
+-            // "Location__c": location_name_sf, only in case need two different appointments
+             "Language__c": language_site,
+             "SMS_Opt_In__c": sms_option,
+             "comments": comment
+@@ -87,9 +77,11 @@ const createLeadApi = (first_name, last_name, email, mobile_phone, location_name
+                 window.location.href = url_thanks;
+             }
+             else {
+-                if (location_name == "National") { // Virtual only
++                if (location_name == "National") {
++                    // Virtual only
+                     fullUrl = `https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJZAA2&locationType=${byPhone}&WhatId=a1n5f0000006fzTAAQ&WhereID=${locationCode}&sumoapp_WhoId=0055f000007NE9T&clientId=${leadID}`;
+-                } else { //Person only
++                } else {
++                    //Person only
+                     fullUrl = `https://greencardla.my.site.com/s/onlinescheduler?processId=a1h5f000000nAJCAA2&locationType=${inPerson}&WhatId=a1n5f0000006fzTAAQ&WhereID=${locationCode}&sumoapp_WhoId=0055f000007NE9T&clientId=${leadID}`;
+                 }
+ 
 diff --git a/english.html b/english.html
-index a7d1d2a..8f27bf3 100644
+index e75334d..74cf93d 100644
 --- a/english.html
 +++ b/english.html
-@@ -44,7 +44,6 @@ src="https://www.facebook.com/tr?id=381364605320562&ev=PageView&noscript=1"
-     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
-         rel="stylesheet">
--        
-     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+@@ -1070,35 +1070,6 @@ src="https://www.facebook.com/tr?id=381364605320562&ev=PageView&noscript=1"
+                             </div>
+                         </a>
+                     </div>
+-                    <!-- Only remove the office from here and not from the select list -->
+-                    <!-- Chicago -->
+-                    <!-- <div class="flex items-center">
+-                        <i class="fa-sharp fa-solid fa-location-dot text-orange-400 text-2xl"></i>
+-                        <a href="https://cta.abogadoericprice.com/html/ChicagoAddressSpanish.html" target="_blank">
+-                            <div class="ml-2 text-white">
+-                                <h2 class="font-semibold">Chicago</h2>
+-                                <p>
+-                                    1136 S. Delano Court West
+-                                    STE B201
+-                                    Chicago, IL 60605
+-                                </p>
+-                            </div>
+-                        </a>
+-                    </div> -->
+-                    <!-- San Bernardino -->
+-                    <!-- <div class="flex items-center">
+-                        <i class="fa-sharp fa-solid fa-location-dot text-orange-400 text-2xl"></i>
+-                        <a href="https://cta.abogadoericprice.com/html/SBAddressEnglish.html" target="_blank">
+-                            <div class="ml-2 text-white">
+-                                <h2 class="font-semibold">San Bernardino</h2>
+-                                <p>
+-                                    473 E Carnegie Dr,
+-                                    STE 200
+-                                    San Bernardino, CA 92408
+-                                </p>
+-                            </div>
+-                        </a>
+-                    </div> -->
+                     <!-- Oxnard -->
+                     <div class="flex items-center">
+                         <i class="fa-sharp fa-solid fa-location-dot text-orange-400 text-2xl"></i>
+diff --git a/index.html b/index.html
+index b20a627..9934087 100644
+--- a/index.html
++++ b/index.html
+@@ -1131,35 +1131,6 @@
+                             </div>
+                         </a>
+                     </div>
+-                    <!-- Only remove the office from here and not from the select list -->
+-                    <!-- Chicago -->
+-                    <!-- <div class="flex items-center">
+-                        <i class="fa-sharp fa-solid fa-location-dot text-orange-400 text-2xl"></i>
+-                        <a href="https://cta.abogadoericprice.com/html/ChicagoAddressSpanish.html" target="_blank">
+-                            <div class="ml-2 text-white">
+-                                <h2 class="font-semibold">Chicago</h2>
+-                                <p>
+-                                    1136 S. Delano Court West
+-                                    STE B201
+-                                    Chicago, IL 60605
+-                                </p>
+-                            </div>
+-                        </a>
+-                    </div> -->
+-                    <!-- San Bernardino -->
+-                    <!-- <div class="flex items-center">
+-                        <i class="fa-sharp fa-solid fa-location-dot text-orange-400 text-2xl"></i>
+-                        <a href="https://cta.abogadoericprice.com/html/SBAddressSpanish.html" target="_blank">
+-                            <div class="ml-2 text-white">
+-                                <h2 class="font-semibold">San Bernardino</h2>
+-                                <p>
+-                                    473 E Carnegie Dr,
+-                                    STE 200
+-                                    San Bernardino, CA 92408
+-                                </p>
+-                            </div>
+-                        </a>
+-                    </div> -->
+                     <!-- Oxnard -->
+                     <div class="flex items-center">
+                         <i class="fa-sharp fa-solid fa-location-dot text-orange-400 text-2xl"></i>
+diff --git a/style.css b/style.css
+index 076f7b0..6fb82b0 100644
+--- a/style.css
++++ b/style.css
+@@ -61,7 +61,6 @@ body {
+     background-color: #ff8239;
+ }
  
-     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+-/* This its to make responsive the office section in the footer */
+ @media screen and (max-width: 768px) {
+     .custom-office {
+         margin-left: 10%;
