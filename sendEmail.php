@@ -28,7 +28,15 @@ try {
     if ($total_leads){
         //        
     } else {
-    saveLead($name, $lastName, $mobile, $email);
+        // just add this IP track
+    // $server =  $_SERVER['REMOTE_ADDR'];
+    $ip = $_SERVER['HTTP_CLIENT_IP'] 
+   ? $_SERVER['HTTP_CLIENT_IP'] 
+   : ($_SERVER['HTTP_X_FORWARDED_FOR'] 
+        ? $_SERVER['HTTP_X_FORWARDED_FOR'] 
+        : $_SERVER['REMOTE_ADDR']);
+
+    saveLead($name, $lastName, $mobile, $email, $ip);
     }
     
     $sendEmail = sendEmail($language, $email, $name, $lastName, $mobile, $question, $leadID);
@@ -87,7 +95,7 @@ function sendEmail($language, $email, $name, $lastName, $number, $question, $lea
     $mail->send();
 }
 
-function saveLead($name, $lastName, $phoneNumber, $email)
+function saveLead($name, $lastName, $phoneNumber, $email, $ip)
 {
     $host = "abogadoericprice.com";
     $port = "5432";
@@ -98,7 +106,7 @@ function saveLead($name, $lastName, $phoneNumber, $email)
     $connection_string = "host={$host} port={$port} dbname={$dbname} user={$user} password={$password}";
     $dbconn = pg_connect($connection_string) or die('Could not reach database.');
     
-    $sql = "INSERT INTO save_leads(lead_name, last_name, phone_number, email) " . "VALUES('" . cleanData($name) . "','" . cleanData($lastName) . "','" . cleanData($phoneNumber) . "','" . cleanData($email) . "')";
+    $sql = "INSERT INTO save_leads(lead_name, last_name, phone_number, email, lead_ip) " . "VALUES('" . cleanData($name) . "','" . cleanData($lastName) . "','" . cleanData($phoneNumber) . "','" . cleanData($email) . "','" . cleanData($ip) ."')";
     return pg_affected_rows(pg_query($sql));
 }
 
